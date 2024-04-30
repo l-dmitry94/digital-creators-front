@@ -1,25 +1,20 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../Sidebar';
+import Header from '../Header';
 
 const AppBar = () => {
     return (
-        <>
-            <header>
-                <nav>
-                    <ul>
-                        <li>
-                            <NavLink to="/">Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/contacts">Contacts</NavLink>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+        <div>
+            <Sidebar />
 
-            <main>
-                <Outlet />
-            </main>
-        </>
+            <div>
+                <Header />
+
+                <main>
+                    <Outlet />
+                </main>
+            </div>
+        </div>
     );
 };
 

@@ -1,14 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 import AppBar from './AppBar';
+import WelcomePage from '../pages/WelcomePage';
+import AuthPage from '../pages/AuthPage';
 import HomePage from '../pages/HomePage';
-import ContactsPage from '../pages/ContactsPage';
 
 const App = () => {
     return (
         <Routes>
+            <Route path="/welcome" element={<WelcomePage />} />
+
             <Route path="/" element={<AppBar />}>
-                <Route index element={<HomePage />} />
-                <Route path="contacts" element={<ContactsPage />} />
+                <Route path="home" element={<HomePage />} />
+                <Route path="auth/:id" element={<AuthPage />} />
             </Route>
         </Routes>
     );
