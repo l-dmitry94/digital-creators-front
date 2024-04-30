@@ -1,6 +1,5 @@
 {
   "name": "digital-creators-front",
-  "homepage": "https://digital-creators-front.vercel.app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
