@@ -1,5 +1,5 @@
 const Sidebar = () => {
-    return <div>Side1bar</div>;
+    return <div>Sidebar</div>;
 };
 
 export default Sidebar;
