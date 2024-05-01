@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714551681124</updated>
       <workItem from="1714551682387" duration="1760000" />
-      <workItem from="1714553493360" duration="5887000" />
+      <workItem from="1714553493360" duration="6235000" />
     </task>
     <task id="LOCAL-00001" summary="fixed .gitignore">
       <option name="closed" value="true" />
