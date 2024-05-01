@@ -1,0 +1,36 @@
+.button {
+    height: 49px;
+    border-radius: 8px;
+    width: 100%;
+    height: 49px;
+    background-color: var(--light-green);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--black);
+}
+
+.buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    composes: button;
+}
+
+.plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background-color: var(--black);
+}
+
+.plusIcon {
+    width: 14px;
+    height: 14px;
+    stroke: var(--white);
+}

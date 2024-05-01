@@ -13,12 +13,12 @@
 }
 
 @mixin transition($property1, $property2: null) {
-    $transition: $property1 0.2s linear;
+    $transition: $property1 0.3s linear;
 
     @if $property2 {
         $transition:
             $transition,
-            $property2 0.2s linear;
+            $property2 0.3s linear;
     }
 
     transition: $transition;
