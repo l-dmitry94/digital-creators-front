@@ -1,0 +1,14 @@
+.logoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 104px;
+  height: 32px;
+}
+
+.logoTitle {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}

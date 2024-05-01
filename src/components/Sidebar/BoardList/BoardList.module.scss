@@ -1,0 +1,36 @@
+.boardsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.boardsTitle {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: var(--dark-grey);
+}
+
+@media (max-width: 767px) {
+  .boardsContainer {
+    width: 197px;
+  }
+}
+
+@media (min-width: 768px) {
+  .boardsContainer {
+    width: 212px;
+    height: 70px;
+  }
+}
+
+
+.createText {
+  width: 76px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
