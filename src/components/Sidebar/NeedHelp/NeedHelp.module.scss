@@ -1,0 +1,13 @@
+@import 'src/styles/mixins.scss';
+
+.helpContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  border-radius: 8px;
+  width: 197px;
+  height: 238px;
+  background: #1f1f1f;
+  padding-left: 15px;
+  padding-right: 14px;
+}

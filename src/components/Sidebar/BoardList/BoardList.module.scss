@@ -1,3 +1,40 @@
+@import 'src/styles/mixins.scss';
+
+.button {
+  border-radius: 6px;
+  width: 40px;
+  height: 36px;
+  background-color: var(--light-green);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  @include transition(background-color);
+
+  &:is(:hover, :focus) {
+    background-color: var(--dark-green);
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  composes: button;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plusIcon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--dark-bg-sidebar);
+}
+
 .boardsContainer {
   display: flex;
   justify-content: space-between;
@@ -11,20 +48,6 @@
   letter-spacing: -0.02em;
   color: var(--dark-grey);
 }
-
-@media (max-width: 767px) {
-  .boardsContainer {
-    width: 197px;
-  }
-}
-
-@media (min-width: 768px) {
-  .boardsContainer {
-    width: 212px;
-    height: 70px;
-  }
-}
-
 
 .createText {
   width: 76px;

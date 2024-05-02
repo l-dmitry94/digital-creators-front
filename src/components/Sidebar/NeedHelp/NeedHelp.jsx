@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import line from '../images/line.svg';
 import icons from '../../../assets/icons/icons.svg';
-import scss from './BoardList.module.scss';
+import scss from './NeedHelp.module.scss';
 import CustomModal from '../../CustomModal/CustomModal.jsx';
 import CustomInput from '../../CustomInput/CustomInput.jsx';
 
-const BoardList = () => {
+const NeedHelp = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => {
@@ -17,12 +16,15 @@ const BoardList = () => {
     };
 
     return (
-        <div>
-            <h2 className={scss.boardsTitle}>My boards</h2>
-            <img src={line} alt="line" />
-            <div className={scss.boardsContainer}>
-                <p className={scss.createText}>Create New Board</p>
-                <button className={scss.buttonWrapper} onClick={openModal}>
+        <div className={scss.helpContainer}>
+            <p className={scss.helpText}>
+                If you need help with TaskPro, check out our support resources
+                or reach out to our customer support team.
+            </p>
+            <div>
+                <button onClick={openModal}>
+                    {' '}
+                    Need help?
                     <div className={scss.plus}>
                         <svg className={scss.plusIcon}>
                             <use href={`${icons}#icon-plus`}></use>
@@ -33,9 +35,8 @@ const BoardList = () => {
                     <CustomInput />
                 </CustomModal>
             </div>
-            <img src={line} alt="line" />
         </div>
     );
 };
 
-export default BoardList;
+export default NeedHelp;
