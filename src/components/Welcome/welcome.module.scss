@@ -1,7 +1,9 @@
 @import "../../styles/mixins";
 
 .welcome_page {
-  padding-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2);
   color: black;
