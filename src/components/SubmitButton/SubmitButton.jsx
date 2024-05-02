@@ -23,7 +23,7 @@ const SubmitButton = ({ buttonText }) => {
             );
         case 'Registration':
             return (
-                <button className={scss.button} type="submit">
+                <button className={scss.buttonRegistration} type="submit">
                     {buttonText}
                 </button>
             );
