@@ -21,12 +21,6 @@ const SubmitButton = ({ buttonText }) => {
                     {buttonText}
                 </button>
             );
-        case 'Registration':
-            return (
-                <button className={scss.button} type="submit">
-                    {buttonText}
-                </button>
-            );
         default:
             return (
                 <button className={scss.buttonWrapper} type="submit">

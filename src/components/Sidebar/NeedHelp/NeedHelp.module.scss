@@ -1,0 +1,73 @@
+@import 'src/styles/mixins.scss';
+
+.helpContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 197px;
+  height: 238px;
+  background: #1f1f1f;
+  padding: 14px 14px 14px 15px;
+
+  @include media-rules(tablet) {
+  width: 212px;
+  height: 272px;
+  }
+
+  @include media-rules(desktop) {
+  padding: 20px;
+  }
+}
+
+.flowerpot {
+  width: 54px;
+  height: 78px;
+  margin-bottom: 14px;
+}
+
+.helpButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 94px;
+  height: 20px;
+}
+
+.helpText {
+  width: 168px;
+  height: 80px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 18px;
+
+  @include media-rules(tablet) {
+  width: 172px;
+  height: 102px;
+  font-size: 14px;
+  line-height: 1.42857;
+  }
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.questionIcon {
+  stroke: var(--white);
+  fill: transparent;
+}
+
+.helpButtonText {
+  display: flex;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}

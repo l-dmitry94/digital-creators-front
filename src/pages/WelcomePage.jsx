@@ -1,5 +1,7 @@
+import Welcome from '../components/Welcome/Welcome.jsx';
+
 const WelcomePage = () => {
-    return <div>Welcome Page</div>;
+    return <Welcome />;
 };
 
 export default WelcomePage;

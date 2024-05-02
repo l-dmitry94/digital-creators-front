@@ -1,3 +1,5 @@
+@import 'src/styles/mixins';
+
 .button {
     height: 49px;
     border-radius: 8px;
@@ -9,6 +11,11 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     color: var(--black);
+    @include transition(background-color);
+
+    &:is(:hover, :focus) {
+        background-color: var(--dark-green);
+    }
 }
 
 .buttonWrapper {
@@ -17,6 +24,12 @@
     justify-content: center;
     gap: 8px;
     composes: button;
+}
+
+.buttonRegistration {
+    composes: button;
+    color: var(--white);
+    background-color: var(--black);
 }
 
 .plus {

@@ -1,0 +1,53 @@
+@import 'src/styles/mixins.scss';
+
+.sidebar {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    height: 100vh;
+    background-color: var(--dark-bg-sidebar);
+    width: 225px;
+    @include transition(transform);
+    padding: 14px;
+
+    @include media-rules(tablet) {
+        width: 260px;
+        padding: 24px;
+    }
+}
+.active {
+    composes:sidebar;
+    transform: translateX(0);
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     top: 0;
+    //     background-color: rgba($color: #000000, $alpha: 0.5);
+    //     width: 100%;
+    //     height: 100%;
+    // }
+}
+
+.logoBordFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include media-rules(tablet) {
+        gap: 60px;
+    }
+}
+
+.helpLogoutFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
