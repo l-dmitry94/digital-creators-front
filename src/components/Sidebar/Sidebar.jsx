@@ -13,6 +13,7 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
         setActive(isActiveSidebar);
     }, [isActiveSidebar]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleClickOutside = event => {
         if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
             setActive(false);
@@ -25,6 +26,7 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const sidebarClassName = `${scss.sidebar} ${active ? scss.active : ''}`;
