@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import line from '../images/line.svg';
 import icons from '../../../assets/icons/icons.svg';
 import scss from './BoardList.module.scss';
 import CustomModal from '../../CustomModal/CustomModal.jsx';
@@ -17,9 +16,8 @@ const BoardList = () => {
     };
 
     return (
-        <div>
+        <div className={scss.boardsFlex}>
             <h2 className={scss.boardsTitle}>My boards</h2>
-            <img src={line} alt="line" />
             <div className={scss.boardsContainer}>
                 <p className={scss.createText}>Create New Board</p>
                 <button className={scss.buttonWrapper} onClick={openModal}>
@@ -33,7 +31,6 @@ const BoardList = () => {
                     <CustomInput />
                 </CustomModal>
             </div>
-            <img src={line} alt="line" />
         </div>
     );
 };
