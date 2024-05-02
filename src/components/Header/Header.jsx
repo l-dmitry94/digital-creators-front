@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import styles from './Header.module.scss';
 import icons from '../../assets/icons/icons.svg';
-import Sidebar from '../Sidebar/Sidebar.jsx';
 import { selectUser } from '../../redux/auth/auth-selectors.js';
 
-const Header = () => {
+const Header = ({ handleClick }) => {
     const [selectedOption, setSelectedOption] = useState('Theme');
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
     const userInfo = useSelector(selectUser);
+
+    handleClick(isOpenSidebar);
 
     // const customStyles = {
     //     control: provided => ({
@@ -55,23 +56,21 @@ const Header = () => {
 
     return (
         <Container>
-            {isOpenSidebar && <Sidebar />}
             <header>
-                {!isOpenSidebar && (
-                    <button
-                        className={styles.btnBurger}
-                        type="button"
-                        onClick={() => setIsOpenSidebar(true)}
-                    >
-                        <svg>
-                            <use href={`${icons}#icon-burger`}></use>
-                        </svg>
-                    </button>
-                )}
+                <button
+                    className={styles.btnBurger}
+                    type="button"
+                    onClick={() => setIsOpenSidebar(true)}
+                >
+                    <svg>
+                        <use href={`${icons}#icon-burger`}></use>
+                    </svg>
+                </button>
                 <div className={styles.rightSide}>
                     <Select
                         onChange={setSelectedOption}
                         options={options}
+                        unstyled
                         placeholder="Theme"
                         className="react-select-container"
                         classNamePrefix="react-select"

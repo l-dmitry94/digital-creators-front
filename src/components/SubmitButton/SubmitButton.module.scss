@@ -26,6 +26,12 @@
     composes: button;
 }
 
+.buttonRegistration {
+    composes: button;
+    color: var(--white);
+    background-color: var(--black);
+}
+
 .plus {
     display: flex;
     align-items: center;

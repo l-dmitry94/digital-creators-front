@@ -4,6 +4,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 svg {
     fill: var(--white);
@@ -25,9 +27,5 @@ svg {
     }
 }
 .react-select-container {
-    & .react-select {
-        &__control {
-           background-color: red;
-        }
-    }
-}   
+    
+} 
