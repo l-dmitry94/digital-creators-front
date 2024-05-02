@@ -4,9 +4,10 @@ import NeedHelp from './NeedHelp/NeedHelp.jsx';
 import Logout from './Logout/Logout.jsx';
 import scss from './Sidebar.module.scss';
 
-const Sidebar = () => {
+const Sidebar = ({ isActiveSidebar }) => {
+    const sidebarClassName = `${scss.sidebar} ${isActiveSidebar ? scss.active : ''}`;
     return (
-        <div className={scss.sidebar}>
+        <div className={sidebarClassName}>
             <div className={scss.logoBordFlex}>
                 <Logo />
 
