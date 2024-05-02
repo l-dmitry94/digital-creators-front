@@ -1,0 +1,8 @@
+
+.appBar {
+    background-color: inherit;
+}
+.active {
+    composes:appBar;
+    opacity: 0.5;
+}
