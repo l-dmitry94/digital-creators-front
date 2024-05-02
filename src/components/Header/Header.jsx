@@ -1,15 +1,15 @@
 import Container from '../Container/Container.jsx';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import styles from './Header.module.scss';
 import icons from '../../assets/icons/icons.svg';
-import { selectUser } from '../../redux/auth/auth-selectors.js';
+//import { selectUser } from '../../redux/auth/auth-selectors.js';
 
 const Header = ({ handleClick }) => {
-    const [selectedOption, setSelectedOption] = useState('Theme');
+    const [, setSelectedOption] = useState('Theme');
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-    const userInfo = useSelector(selectUser);
+    // const userInfo = useSelector(selectUser);
 
     handleClick(isOpenSidebar);
 

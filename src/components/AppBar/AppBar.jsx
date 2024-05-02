@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
-    console.log(isActiveSidebar)
+    console.log(isActiveSidebar);
 
     const handleClick = prop => setIsActiveSidebar(prop);
     return (
         <div>
-            <Sidebar isActiveSidebar={isActiveSidebar}/>
+            <Sidebar isActiveSidebar={isActiveSidebar} />
 
             <div>
-                <Header handleClick={handleClick}/>
+                <Header handleClick={handleClick} />
 
                 <main>
                     <Outlet />
