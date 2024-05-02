@@ -1,0 +1,33 @@
+@import 'src/styles/mixins.scss';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+svg {
+    fill: var(--white);
+    stroke: var(--white);
+}
+
+.userInfo {
+    display: flex;
+    gap: 8px;
+}
+.rightSide {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+.btnBurger {
+    @include media-rules(desktop) {
+        display: none;
+    }
+}
+.react-select-container {
+    & .react-select {
+        &__control {
+           background-color: red;
+        }
+    }
+}   
