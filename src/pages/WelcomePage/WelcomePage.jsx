@@ -31,8 +31,8 @@ const WelcomePage = () => {
                     </div>
                     <p className={css.descr}>
                         Supercharge your productivity and take control of your
-                        tasks with Task Pro - Don't wait, start achieving your
-                        goals now!
+                        tasks with Task Pro - Don&apos;t wait, start achieving
+                        your goals now!
                     </p>
                     <div className={css.link_wrapper}>
                         <Link className={css.link_signup} to="/auth/:id">
