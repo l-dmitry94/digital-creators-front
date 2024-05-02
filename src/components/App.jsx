@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import AppBar from './AppBar';
-import WelcomePage from '../pages/WelcomePage';
+import WelcomePage from '../pages/WelcomePage/WelcomePage.jsx';
 import AuthPage from '../pages/AuthPage';
 import HomePage from '../pages/HomePage';
 
 const App = () => {
     return (
+        //*path="/welcome"// для WelcomePage повернути
         <Routes>
-            <Route path="/welcome" element={<WelcomePage />} />
+            <Route index element={<WelcomePage />} />
             <Route path="/auth/:id" element={<AuthPage />} />
 
             <Route path="/" element={<AppBar />}>

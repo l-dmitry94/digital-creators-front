@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore" />
+    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/auth-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/redux",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/GitHubDesk/react-hw-08-phonebook-rework",
+    "last_opened_file_path": "D:/GitHubDesk/digital-creators-front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -60,7 +64,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "D:\\GitHubDesk\\digital-creators-front\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "D:\\WebStorm\\WebStorm 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +91,12 @@
       <updated>1714551681124</updated>
       <workItem from="1714551682387" duration="1760000" />
       <workItem from="1714553493360" duration="6235000" />
-      <workItem from="1714584498399" duration="2180000" />
+      <workItem from="1714584498399" duration="2781000" />
+      <workItem from="1714638008710" duration="821000" />
+      <workItem from="1714643428456" duration="60000" />
+      <workItem from="1714644723317" duration="29000" />
+      <workItem from="1714652519667" duration="755000" />
+      <workItem from="1714662233085" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="fixed .gitignore">
       <option name="closed" value="true" />
