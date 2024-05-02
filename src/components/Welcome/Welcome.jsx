@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 import image from '../../assets/images/welcome-developer.png';
 import icons from '../../assets/icons/icons.svg';
-import css from './welcome-page.module.scss';
+import css from './welcome.module.scss';
 
-import Container from '../../components/Container/index.js';
+import Container from '../Container/index.js';
 
-const WelcomePage = () => {
+const Welcome = () => {
     return (
         <div className={css.welcome_page}>
             <Container>
@@ -21,8 +21,6 @@ const WelcomePage = () => {
                             <svg className={css.welcome_icon}>
                                 <use
                                     className={css.test}
-                                    width="15"
-                                    height="20"
                                     href={`${icons}#icon-lightning`}
                                 />
                             </svg>
@@ -35,10 +33,10 @@ const WelcomePage = () => {
                         your goals now!
                     </p>
                     <div className={css.link_wrapper}>
-                        <Link className={css.link_signup} to="/auth/:id">
+                        <Link className={css.link_signup} to="/auth/register">
                             Registration
                         </Link>
-                        <Link className={css.link_login} to="/auth/:id">
+                        <Link className={css.link_login} to="/auth/login">
                             Login
                         </Link>
                     </div>
@@ -48,4 +46,4 @@ const WelcomePage = () => {
     );
 };
 
-export default WelcomePage;
+export default Welcome;

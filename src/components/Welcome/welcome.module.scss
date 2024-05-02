@@ -1,4 +1,4 @@
-@import "src/styles/mixins";
+@import "../../styles/mixins";
 
 .welcome_page {
   padding-top: 110px;
@@ -15,7 +15,7 @@
     max-width: 438px;
   }
 
- 
+
 }
 
 .welcome_image {
@@ -51,6 +51,8 @@
 }
 
 .welcome_icon {
+  width: 15px;
+  height: 20px;
   fill: white;
   stroke: rgba(255, 255, 255, 0.4);
 }
