@@ -8,10 +8,10 @@ import icons from '../../assets/icons/icons.svg';
 
 const Header = ({ handleClick }) => {
     const [, setSelectedOption] = useState('Theme');
-    const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+    const [isOpenSidebar] = useState(false);
     // const userInfo = useSelector(selectUser);
 
-    handleClick(isOpenSidebar);
+    // handleClick(isOpenSidebar);
 
     // const customStyles = {
     //     control: provided => ({
@@ -60,7 +60,7 @@ const Header = ({ handleClick }) => {
                 <button
                     className={styles.btnBurger}
                     type="button"
-                    onClick={() => setIsOpenSidebar(true)}
+                    onClick={() => handleClick(!isOpenSidebar)}
                 >
                     <svg>
                         <use href={`${icons}#icon-burger`}></use>
