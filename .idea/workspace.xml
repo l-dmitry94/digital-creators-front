@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore" />
+    <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore">
+      <change afterPath="$PROJECT_DIR$/src/pages/WelcomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/WelcomePage/WelcomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Welcome/Welcome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/WelcomePage/welcome-page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Welcome/welcome.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,9 +55,9 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;redux-task&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#11 on feature/redux&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GitHubDesk/react-hw-08-phonebook-rework&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GitHubDesk/digital-creators-front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -60,13 +66,15 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\GitHubDesk\\digital-creators-front\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\WebStorm\\WebStorm 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHubDesk\digital-creators-front\src\components\Welcome" />
+      <recent name="D:\GitHubDesk\digital-creators-front\src\pages\WelcomePage" />
       <recent name="D:\GitHubDesk\digital-creators-front\src\redux" />
     </key>
   </component>
@@ -87,6 +95,13 @@
       <updated>1714551681124</updated>
       <workItem from="1714551682387" duration="1760000" />
       <workItem from="1714553493360" duration="6235000" />
+      <workItem from="1714584498399" duration="2781000" />
+      <workItem from="1714638008710" duration="821000" />
+      <workItem from="1714643428456" duration="60000" />
+      <workItem from="1714644723317" duration="29000" />
+      <workItem from="1714652519667" duration="755000" />
+      <workItem from="1714662233085" duration="972000" />
+      <workItem from="1714670348448" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="fixed .gitignore">
       <option name="closed" value="true" />
@@ -101,6 +116,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

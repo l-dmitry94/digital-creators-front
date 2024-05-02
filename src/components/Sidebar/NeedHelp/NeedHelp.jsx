@@ -2,8 +2,8 @@ import { useState } from 'react';
 import icons from '../../../assets/icons/icons.svg';
 import scss from './NeedHelp.module.scss';
 import CustomModal from '../../CustomModal/CustomModal.jsx';
-import CustomInput from '../../CustomInput/CustomInput.jsx';
 import flowerpot from '../images/flowerpot.svg';
+import NeedHelpsPopup from '../../Popups/NeedHelpsPopup/NeedHelpsPopup.jsx';
 
 const NeedHelp = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -33,7 +33,7 @@ const NeedHelp = () => {
                     <p className={scss.helpButtonText}>Need help?</p>
                 </button>
                 <CustomModal isOpen={modalIsOpen} onClose={closeModal}>
-                    <CustomInput />
+                    <NeedHelpsPopup />
                 </CustomModal>
             </div>
         </div>
