@@ -9,6 +9,7 @@ const Sidebar = () => {
         <div className={scss.sidebar}>
             <div className={scss.logoBordFlex}>
                 <Logo />
+
                 <BoardList />
             </div>
             <div className={scss.helpLogoutFlex}>

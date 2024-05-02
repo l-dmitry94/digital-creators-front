@@ -1,28 +1,33 @@
 @import 'src/styles/mixins.scss';
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  height: 100vh;
-  background-color: var(--dark-bg-sidebar);
-  width: 225px;
-  padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    height: 100vh;
+    background-color: var(--dark-bg-sidebar);
+    width: 225px;
+    padding: 14px;
 
-  @include media-rules(tablet) {
-  width: 260px;
-  padding: 24px;
-  }
+    @include media-rules(tablet) {
+        width: 260px;
+        padding: 24px;
+    }
 }
 
 .logoBordFlex {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include media-rules(tablet) {
+        gap: 60px;
+    }
 }
 
 .helpLogoutFlex {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
