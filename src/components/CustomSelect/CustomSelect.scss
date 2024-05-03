@@ -1,4 +1,4 @@
-
+@import 'src/styles/mixins';
 
 .react-select-container {
     & .react-select {
@@ -16,20 +16,33 @@
             height: 16px;
         }
         &__menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            min-width: 100px;
             background-color: var(--black);
-            padding: 18px;
             border-radius: 8px;
+            border: 1px solid var(--light-green);
+            padding: 18px;
+        }
+
+        &__menu-list {
             display: flex;
             flex-direction: column;
             gap: 4px;
-            min-width: 100px;
         }
         &__option {
             font-size: 14px;
-        }
-        &__option--is-selected,
-        &__option--is-focus {
-            fill: var(--light-green);
+            cursor: pointer;
+            @include transition(color);
+
+            &:is(:hover, :focus) {
+                color: var(--light-green);
+            }
+
+            &--is-selected {
+                color: var(--light-green);
+            }
         }
     }
 }

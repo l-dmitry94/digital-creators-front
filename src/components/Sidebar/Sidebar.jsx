@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Logo from './Logo/Logo.jsx';
 import BoardList from './BoardList/BoardList.jsx';
 import NeedHelp from './NeedHelp/NeedHelp.jsx';
@@ -25,7 +26,6 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const sidebarClassName = `${scss.sidebar} ${active ? scss.active : ''}`;
