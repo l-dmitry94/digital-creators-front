@@ -1,4 +1,3 @@
-import icons from '../../assets/icons/icons.svg';
 import scss from './CustomInput.module.scss';
 
 const CustomInput = ({ type, placeholder, name, onChange, onBlur, value }) => {

@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+// import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { yupResolver } from '@hookform/resolvers/yup';
+// import { yupResolver } from '@hookform/resolvers/yup';
 import { signup } from '../../../redux/auth/auth-operations';
-import Container from '../../Container';
+// import Container from '../../Container';
 import CustomInput from '../../CustomInput/CustomInput';
 import css from './RegisterForm.module.scss';
 import icons from '../../../assets/icons/icons.svg';
@@ -13,10 +13,13 @@ import SubmitButton from '../../SubmitButton/SubmitButton';
 import { NavLink } from 'react-router-dom';
 
 import { useFormik } from 'formik';
+import { selectToken } from '../../../redux/auth/auth-selectors';
 
 const RegistrationForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch();
+    const token = useSelector(selectToken);
+    const navigate = useNavigate();
 
     const initialValues = {
         username: '',
@@ -38,8 +41,14 @@ const RegistrationForm = () => {
     });
 
     const onSubmit = async values => {
-        console.log(dispatch(signup(values)));
+        dispatch(signup(values));
     };
+
+    useEffect(() => {
+        if (token) {
+            navigate('/home');
+        }
+    }, [token, navigate]);
 
     const formik = useFormik({
         initialValues,
@@ -129,7 +138,6 @@ const RegistrationForm = () => {
         </section>
     );
 
-    // const navigate = useNavigate();
     // const dispatch = useDispatch();
     // const [showPassword, SetShowPassword] = useState(false);
 
