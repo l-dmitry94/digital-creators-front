@@ -1,7 +1,7 @@
 import icons from '../../assets/icons/icons.svg';
 import scss from './SubmitButton.module.scss';
 
-const SubmitButton = ({ buttonText }) => {
+const SubmitButton = ({ buttonText, onSubmit }) => {
     switch (buttonText) {
         case 'Send':
             return (
@@ -11,13 +11,13 @@ const SubmitButton = ({ buttonText }) => {
             );
         case 'Register Now':
             return (
-                <button className={scss.button} type="submit">
+                <button className={scss.button} type="submit" onClick={onSubmit}>
                     {buttonText}
                 </button>
             );
         case 'Log In Now':
             return (
-                <button className={scss.button} type="submit">
+                <button className={scss.button} type="submit" onClick={onSubmit}>
                     {buttonText}
                 </button>
             );

@@ -5,14 +5,47 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    
+    max-width: 335px;
+    height: auto;
+    background: black;
+    padding: 24px;
+    border-radius: 8px;
 }
 
 .register_page{
     display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
     background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2)}
         
+.auth_nav{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        height: fit-content;      
+        gap: 25px;
+padding: 0;
+        display: flex;
+        flex-direction: row;
+}
+
+.active {
+    composes: auth_nav;
+    color: green}
+
+.auth_form{
+    margin-top: 20px;
+    
+}
+
+.input{
+    color: green;
+}
+
+.auth_div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
