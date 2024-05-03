@@ -1,70 +1,68 @@
-import React, { useState } from 'react';
+import {
+  useState,
+  // useId
+} from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import { yupResolver } from '@hookform/resolvers';
+import { useDispatch } from 'react-redux';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { signup } from '../../../redux/auth/auth-operations';
+import Container from '../../Container';
+import CustomInput from '../../CustomInput/CustomInput'
+import css from './RegisterForm.module.scss';
+// import icons from '../../../assets/icons/icons.svg';
+ 
 
-const RegistrationForm = () => {
-  const [loading, setLoading] = useState(false);
+const RegisterSchema = Yup.object().shape({
+        name: Yup.string().required('Name is required'),
+        email: Yup.string()
+            .email('Invalid email')
+            .required('Email is required'),
+        password: Yup.string()
+            .min(8, 'Password must be at least 8 characters')
+            .required('Password is required'),
+    });
 
-  const schema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
-  });
-
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = async (data) => {
-    setLoading(true);
-    try {
-      // Make API call to register user
-      const response = await fetch('/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      const json = await response.json();
-      if (json.success) {
-        // Automatically log in user and redirect to home page
-        localStorage.setItem('token', json.token);
-        window.location.href = '/';
-      } else {
-        alert('Registration failed');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Registration failed');
-    } finally {
-      setLoading(false);
+  const RegistrationForm = () => {
+    const dispatch = useDispatch();
+    const [showPassword, setShowPassword] = useState(false);
+    
+    const unvisionPassword = () => {
+      setShowPassword(prevState => !prevState);
     }
-  };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          Name:
-          <input type="text" {...register('name')} />
-          {errors.name && <div>{errors.name.message}</div>}
-        </label>
-        <label>
-          Email:
-          <input type="email" {...register('email')} />
-          {errors.email && <div>{errors.email.message}</div>}
-        </label>
-        <label>
-          Password:
-          <input type="password" {...register('password')} />
-          {errors.password && <div>{errors.password.message}</div>}
-        </label>
-        <button type="submit" disabled={loading}>
-          {loading? 'Loading...' : 'Register Now'}
-        </button>
-      </form>
-    </div>
-  );
-};
+    const { register, handleSubmit, reset, errors } = useForm({
+      defaultValues: { name: '', email: '', password: '' }, 
+      resolver: yupResolver(RegisterSchema),
+      mode: 'onChange',
+    });
+    
+    const onSubmit = (data) => {
+      dispatch(signup(data))
+      reset()
+      }
+
+
+    return (
+      <div className={css.register_page}>
+      <Container >
+        <div className={css.container}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <CustomInput type="text" placeholder="Name" name="name" register={register} errors={errors} />
+          <CustomInput type="email" placeholder="Email" name="email" register={register} errors={errors} />
+          <CustomInput
+            type="password"
+            placeholder="Password"
+            name="password"
+            register={register}
+            errors={errors}
+          />
+          <button type="submit">Register Now</button>
+          </form>
+          </div>
+        </Container>
+      </div>
+    );
+  }
 
 export default RegistrationForm;

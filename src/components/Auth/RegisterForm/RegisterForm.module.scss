@@ -1,5 +1,17 @@
 @import "src/styles/mixins";
 
-.register_page{
-    background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2);
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
 }
+
+.register_page{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2);
+        color: black;}
