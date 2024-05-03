@@ -1,12 +1,24 @@
 @import 'src/styles/mixins.scss';
 
 header {
+    background-color: var(--black);
+}
+.box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 18px;
     padding-bottom: 18px;
+    @include media-rules(tablet) {
+        padding-top: 20px;
+        padding-bottom: 20px; 
+    }
+    @include media-rules(desktop) {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
 }
+
 svg {
     fill: var(--white);
     stroke: var(--white);
@@ -15,14 +27,27 @@ svg {
 .userInfo {
     display: flex;
     gap: 8px;
+    & p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
 }
 .rightSide {
     display: flex;
     align-items: baseline;
     gap: 14px;
+    margin-left: auto;
 }
 .btnBurger {
     @include media-rules(desktop) {
         display: none;
+    }
+    & svg {
+        width: 24px;
+        height: 24px;
+        @include media-rules(tablet) {
+            width: 32px;
+            height: 32px; 
+        }
     }
 }

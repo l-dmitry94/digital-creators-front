@@ -1,0 +1,9 @@
+@import 'src/styles/mixins';
+
+.appBar {
+    @include transition(opacity);
+}
+.active {
+    composes: appBar;
+    opacity: 0.5;
+}
