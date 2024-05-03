@@ -2,6 +2,8 @@ import Container from '../Container/Container.jsx';
 import { useState } from 'react';
 //import { useSelector } from 'react-redux';
 import CustomSelect from '../CustomSelect/CustomSelect.jsx';
+import EditUser from '../Popups/EditUser/EditUser.jsx';
+import CustomModal from '../CustomModal/CustomModal.jsx';
 import styles from './Header.module.scss';
 import icons from '../../assets/icons/icons.svg';
 //import { selectUser } from '../../redux/auth/auth-selectors.js';
@@ -9,6 +11,15 @@ import icons from '../../assets/icons/icons.svg';
 const Header = ({ handleClick, isOpenSidebar }) => {
     const [isShowSidebar] = useState(false);
     // const userInfo = useSelector(selectUser);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
 
     return (
         <header>
@@ -27,7 +38,11 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                     )}
                     <div className={styles.rightSide}>
                         <CustomSelect />
-                        <div className={styles.userInfo}>
+                        <button
+                            type="button"
+                            className={styles.userInfo}
+                            onClick={openModal}
+                        >
                             <p>Name</p>
                             <img
                                 src="https://wallpapercave.com/wp/wp4100932.jpg"
@@ -35,8 +50,16 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                                 height={32}
                                 alt="photo"
                             ></img>
-                        </div>
+                        </button>
                     </div>
+                    <CustomModal
+                        title="Edit  profile"
+                        buttonText="Send"
+                        isOpen={modalIsOpen}
+                        onClose={closeModal}
+                    >
+                        <EditUser />
+                    </CustomModal>
                 </div>
             </Container>
         </header>
