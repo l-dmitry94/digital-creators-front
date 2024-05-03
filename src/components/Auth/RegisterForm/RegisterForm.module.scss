@@ -44,3 +44,21 @@ padding: 0;
     flex-direction: column;
     gap: 20px;
 }
+
+.inputWrapper {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+}
+
+.eyeIcon {
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.4);
+}
