@@ -1,7 +1,6 @@
 @import 'src/styles/mixins';
 
 .appBar {
-    background-color: var(--black-form);
     @include transition(opacity);
 }
 .active {
