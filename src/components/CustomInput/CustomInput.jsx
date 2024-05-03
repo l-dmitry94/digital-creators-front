@@ -12,9 +12,7 @@ const CustomInput = ({ type, placeholder, name, onClick, showPassword }) => {
                         placeholder={placeholder}
                         className={scss.input}
                     />
-                    <button className={scss.eye}
-                        onClick={onClick}
-                    >
+                    <button className={scss.eye} onClick={onClick}>
                         <svg className={scss.eyeIcon}>
                             <use href={`${icons}#icon-eye`}></use>
                         </svg>

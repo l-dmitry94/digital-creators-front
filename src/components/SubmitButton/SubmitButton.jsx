@@ -11,13 +11,21 @@ const SubmitButton = ({ buttonText, onSubmit }) => {
             );
         case 'Register Now':
             return (
-                <button className={scss.button} type="submit" onClick={onSubmit}>
+                <button
+                    className={scss.button}
+                    type="submit"
+                    onClick={onSubmit}
+                >
                     {buttonText}
                 </button>
             );
         case 'Log In Now':
             return (
-                <button className={scss.button} type="submit" onClick={onSubmit}>
+                <button
+                    className={scss.button}
+                    type="submit"
+                    onClick={onSubmit}
+                >
                     {buttonText}
                 </button>
             );

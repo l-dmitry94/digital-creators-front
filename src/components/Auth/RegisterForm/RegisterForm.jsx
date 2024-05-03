@@ -105,7 +105,10 @@ const RegistrationForm = () => {
                                 </span>
                             )}
                             {/* <button type="submit"> submit</button> */}
-                            <SubmitButton buttonText="Register Now" onSubmit={handleSubmit} />
+                            <SubmitButton
+                                buttonText="Register Now"
+                                onSubmit={handleSubmit}
+                            />
                         </div>
                     </form>
                 </div>
