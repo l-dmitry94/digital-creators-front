@@ -1,13 +1,23 @@
-import * as authInstance from '../../api/auth-api.js';
+import axios from 'axios';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
+const baseURL = import.meta.env.VITE_BACKEND_URL;
+
+const setToken = token => {
+    if (token) {
+        axios.defaults.headers.authorization = `Bearer ${token}`;
+    }
+    axios.defaults.headers.authorization = '';
+};
 
 export const signup = createAsyncThunk(
     'auth/signup',
     async (body, { rejectWithValue }) => {
         try {
-            const { data } = await authInstance.signupRequest(body);
-            return data;
+            const response = await axios.post(`${baseURL}/auth/signup`, body);
+            setToken(response.data.token);
+            return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
@@ -18,8 +28,9 @@ export const login = createAsyncThunk(
     'auth/login',
     async (body, { rejectWithValue }) => {
         try {
-            const { data } = await authInstance.loginRequest(body);
-            return data;
+            const response = await axios.post(`${baseURL}/auth/signin`, body);
+            setToken(response.data.token);
+            return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
@@ -31,8 +42,15 @@ export const current = createAsyncThunk(
     async (_, { rejectWithValue, getState }) => {
         try {
             const { auth } = getState();
-            const data = await authInstance.currentRequest(auth.token);
-            return data;
+            const persistedToken = auth.token;
+
+            if (persistedToken === null) {
+                return rejectWithValue('Unable to fetch user');
+            }
+
+            setToken(persistedToken);
+            const response = await axios.get(`${baseURL}/auth/current`);
+            return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
@@ -51,8 +69,8 @@ export const logout = createAsyncThunk(
     'auth/logout',
     async (_, { rejectWithValue }) => {
         try {
-            const data = await authInstance.logoutRequest();
-            return data;
+            await axios.post(`${baseURL}/auth/logout`);
+            setToken();
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
