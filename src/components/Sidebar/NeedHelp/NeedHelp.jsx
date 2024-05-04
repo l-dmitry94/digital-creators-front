@@ -38,7 +38,7 @@ const NeedHelp = () => {
                     <p className={scss.helpButtonText}>Need help?</p>
                 </button>
                 <CustomModal
-             buttonText={'Send'} title={'Need help'} isOpen={modalIsOpen} onClose={closeModal}>
+            title={'Need help'} isOpen={modalIsOpen} onClose={closeModal}>
                     <NeedHelpsPopup onSubmit={handleSubmit}/>
                 </CustomModal>
             </div>

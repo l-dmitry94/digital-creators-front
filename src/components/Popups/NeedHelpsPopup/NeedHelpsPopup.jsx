@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import CustomInput from '../../CustomInput/CustomInput';
-import SubmitButton from '../../SubmitButton/SubmitButton';
+import axios from 'axios';
 
-const NeedHelpsPopup = ({ onSubmit }) => {
+const NeedHelpsPopup = ({ onClose }) => {
     const [email, setEmail] = useState('');
-    // const [comment, setComment] = useState('');
 
     const handleEmailChange = event => {
         setEmail(event.target.value);
     };
-    const handleSubmit = () => {
-        onSubmit(email);
+
+    const handleSubmit = async () => {
+        try {
+            await axios.post('/api/send-email', { email });
+            alert('Email sent successfully!');
+            onClose();
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Error sending email. Please try again later.');
+        }
     };
 
     return (
@@ -28,3 +35,4 @@ const NeedHelpsPopup = ({ onSubmit }) => {
 };
 
 export default NeedHelpsPopup;
+
