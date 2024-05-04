@@ -1,0 +1,27 @@
+.startPage {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 90vh;
+    /////////
+    // position: relative;
+    // height: 100vh;
+    // width: 335px;
+}
+
+.text {
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--dark-grey);
+    margin-top: 258px;
+    // position: absolute;
+    // top: 50%;
+    // // left: 50%;
+    // transform: translate(0%, -50%);
+}
+
+.span {
+    color: var(--light-green);
+}
