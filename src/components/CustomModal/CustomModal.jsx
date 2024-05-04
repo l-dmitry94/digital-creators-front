@@ -24,7 +24,7 @@ const CustomModal = ({ isOpen, onClose, buttonText, title, children }) => {
 
             {children}
 
-            <SubmitButton buttonText={buttonText} />
+            {buttonText && <SubmitButton buttonText={buttonText} />}
         </Modal>
     );
 };
