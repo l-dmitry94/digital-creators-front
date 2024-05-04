@@ -48,17 +48,14 @@
 
 .auth_form{
     margin-top: 20px;
-    
-}
-
-
-.auth_div{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
     
 }
+
+
 
 .inputWrapper {
     position: relative;

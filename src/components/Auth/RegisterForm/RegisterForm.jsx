@@ -48,6 +48,19 @@ const RegistrationForm = () => {
         setShowPassword(!showPassword);
     };
 
+    // const handleSubmit = async (values, { setSubmitting }) => {
+    //     try {
+    //         const response = await signup(values);
+    //         const token = response.data.token;
+    //         localStorage.setItem('token', token);
+    //         navigate('/home');
+    //     } catch (error) {
+    //         console.error(error);
+    //     } finally {
+    //         setSubmitting(false);
+    //     }
+    // };
+
     return (
         <section className={css.register_page}>
             <Container>
@@ -76,10 +89,11 @@ const RegistrationForm = () => {
                         initialValues={initialValues}
                         validationSchema={validationSchema}
                         operation={signup}
+                        // onSubmit={handleSubmit}
                         buttonText="Register Now"
                     >
                         {formik => (
-                            <div>
+                            <div className={css.auth_form}>
                                 <div>
                                     <CustomInput
                                         name="username"
