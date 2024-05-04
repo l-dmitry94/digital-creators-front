@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
-// import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// import { yupResolver } from '@hookform/resolvers/yup';
-import { signup } from '../../../redux/auth/auth-operations';
-// import Container from '../../Container';
-import CustomInput from '../../CustomInput/CustomInput';
-import css from './RegisterForm.module.scss';
-import icons from '../../../assets/icons/icons.svg';
-import SubmitButton from '../../SubmitButton/SubmitButton';
 import { NavLink } from 'react-router-dom';
 
-import { useFormik } from 'formik';
+import { signup } from '../../../redux/auth/auth-operations';
+import Container from '../../Container';
+import CustomInput from '../../CustomInput/CustomInput';
+import SubmitButton from '../../SubmitButton/SubmitButton';
 import { selectToken } from '../../../redux/auth/auth-selectors';
+import css from './RegisterForm.module.scss';
+import icons from '../../../assets/icons/icons.svg';
+
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 
 const RegistrationForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -61,80 +60,102 @@ const RegistrationForm = () => {
     };
 
     return (
-        <section>
-            <div>
-                <ul className={css.auth_nav}>
-                    <li>
-                        <NavLink to="/auth/register">Registration</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/auth/login">Log In</NavLink>
-                    </li>
-                </ul>
-
-                <form onSubmit={formik.handleSubmit}>
+        <section className={css.register_page}>
+            <Container>
+                <div className={css.form}>
                     <div>
-                        <div>
-                            <CustomInput
-                                name="username"
-                                type="text"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.username}
-                                placeholder="Enter your name"
-                            />
-                            {formik.errors.username &&
-                                formik.touched.username && (
-                                    <div>{formik.errors.username}</div>
-                                )}
-                        </div>
-
-                        <div>
-                            <CustomInput
-                                name="email"
-                                type="text"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.email}
-                                placeholder="Enter your email"
-                            />
-                            {formik.errors.email && formik.touched.email && (
-                                <div>{formik.errors.email}</div>
-                            )}
-                        </div>
-
-                        <div>
-                            <div className={css.inputWrapper}>
-                                <CustomInput
-                                    name="password"
-                                    type={showPassword ? 'text' : 'password'}
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.password}
-                                    placeholder="Create a password"
-                                    isShowPassword={passwordVisibility}
-                                />
-                                <button
-                                    type="button"
-                                    className={css.eye}
-                                    onClick={passwordVisibility}
+                        <ul className={css.auth_nav}>
+                            <li>
+                                <NavLink
+                                    className={css.classNavLink}
+                                    to="/auth/register"
                                 >
-                                    <svg className={css.eyeIcon}>
-                                        <use href={`${icons}#icon-eye`}></use>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            {formik.errors.password &&
-                                formik.touched.password && (
-                                    <div>{formik.errors.password}</div>
-                                )}
-                        </div>
+                                    Registration
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className={css.classNavLink}
+                                    to="/auth/login"
+                                >
+                                    Log In
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
 
-                    <SubmitButton buttonText="Register Now" />
-                </form>
-            </div>
+                    <form
+                        onSubmit={formik.handleSubmit}
+                        className={css.auth_form}
+                    >
+                        <div className={css.auth_div}>
+                            <div>
+                                <CustomInput
+                                    name="username"
+                                    type="text"
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.username}
+                                    placeholder="Enter your name"
+                                />
+                                {formik.errors.username &&
+                                    formik.touched.username && (
+                                        <div>{formik.errors.username}</div>
+                                    )}
+                            </div>
+
+                            <div>
+                                <CustomInput
+                                    name="email"
+                                    type="text"
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.email}
+                                    placeholder="Enter your email"
+                                />
+                                {formik.errors.email &&
+                                    formik.touched.email && (
+                                        <div>{formik.errors.email}</div>
+                                    )}
+                            </div>
+
+                            <div>
+                                <div className={css.inputWrapper}>
+                                    <CustomInput
+                                        name="password"
+                                        type={
+                                            showPassword ? 'text' : 'password'
+                                        }
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.password}
+                                        placeholder="Create a password"
+                                        isShowPassword={passwordVisibility}
+                                    />
+                                    <button
+                                        type="button"
+                                        className={css.eye}
+                                        onClick={passwordVisibility}
+                                    >
+                                        <svg className={css.eyeIcon}>
+                                            <use
+                                                href={`${icons}#icon-eye`}
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                {formik.errors.password &&
+                                    formik.touched.password && (
+                                        <div>{formik.errors.password}</div>
+                                    )}
+                            </div>
+                        </div>
+
+                        <SubmitButton buttonText="Register Now" />
+                    </form>
+                </div>
+            </Container>
         </section>
     );
 

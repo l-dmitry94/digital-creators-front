@@ -1,34 +1,47 @@
-@import "src/styles/mixins";
+@import 'src/styles/mixins.scss';
 
-.container {
+.register_page {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2)
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 50px;
     max-width: 335px;   
     height: auto;
     background: black;
     padding: 24px;
     border-radius: 8px;
+
+    @include media-rules(tablet){
+        width: 425px;
+        padding: 40px;
+    }
+
+    
 }
 
-.register_page{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2)}
-        
+
+
+    
+
 .auth_nav{
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 27px;
-        height: fit-content;      
-        gap: 25px;
-padding: 0;
-        display: flex;
-        flex-direction: row;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    height: fit-content;      
+    gap: 25px;
+    flex-direction: row;
+
+    
+
 }
 
 
@@ -43,6 +56,8 @@ padding: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 20px;
+    
 }
 
 .inputWrapper {
@@ -61,4 +76,8 @@ padding: 0;
     height: 18px;
     fill: transparent;
     stroke: rgba(255, 255, 255, 0.4);
+}
+
+.classNavLink:global(.active){
+    color: white;
 }

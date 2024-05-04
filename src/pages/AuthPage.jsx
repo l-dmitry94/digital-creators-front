@@ -6,18 +6,14 @@ import RegisterForm from '../components/Auth/RegisterForm';
 
 const AuthPage = () => {
     const { id } = useParams();
-    const dispatch = useDispatch();
-
-    const handleSignup = data => {
-        dispatch(signup(data));
-    };
+    
 
     return (
         <div>
             {id === 'login' ? (
                 <LoginForm />
             ) : (
-                <RegisterForm onSubmit={handleSignup} />
+                <RegisterForm />
             )}
         </div>
     );
