@@ -1,4 +1,3 @@
-import NameColumn from '../NameColumn/NameColumn';
 import scss from './TodoCarts.module.scss';
 import icons from '../../../assets/icons/icons.svg';
 
