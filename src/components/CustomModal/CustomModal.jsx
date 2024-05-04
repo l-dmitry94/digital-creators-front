@@ -3,7 +3,7 @@ import icons from '../../assets/icons/icons.svg';
 import './CustomModal.scss';
 import SubmitButton from '../SubmitButton/SubmitButton';
 
-const CustomModal = ({ isOpen, onClose, buttonText, title, children }) => {
+const CustomModal = ({ isOpen, onClose, buttonText, title, children, onSubmit }) => {
     return (
         <Modal
             isOpen={isOpen}
@@ -24,7 +24,7 @@ const CustomModal = ({ isOpen, onClose, buttonText, title, children }) => {
 
             {children}
 
-            <SubmitButton buttonText={buttonText} />
+            <SubmitButton buttonText={buttonText} onClick={onSubmit}/>
         </Modal>
     );
 };
