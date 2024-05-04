@@ -5,7 +5,7 @@ import RegisterForm from '../components/Auth/RegisterForm';
 const AuthPage = () => {
     const { id } = useParams();
 
-    return <>{id === 'login' ? <LoginForm /> : <RegisterForm />}</>;
+    return <div>{id === 'login' ? <LoginForm /> : <RegisterForm />}</div>;
 };
 
 export default AuthPage;
