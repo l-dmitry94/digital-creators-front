@@ -1,31 +1,31 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import {
+    useEffect,
+    // useState
+} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
 
 import { login } from '../../../redux/auth/auth-operations';
 import { selectToken } from '../../../redux/auth/auth-selectors';
 import Container from '../../Container';
-import css from './LoginForm.module.scss';
-
+import css from '../RegisterForm/RegisterForm.module.scss';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
-const initialValues = {
+export const LoginForm = () => {
+    const initialValues = {
         email: '',
         password: '',
     };
 
-export const LoginForm = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    const [state, setState] = useState({ ...initialValues });
-    
+    // const [showPassword, setShowPassword] = useState(false);
+    // const [state, setState] = useState({ ...initialValues });
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const token = useSelector(selectToken);
-
 
     const LogInschema = yup.object().shape({
         email: yup
@@ -48,24 +48,21 @@ export const LoginForm = () => {
         }
     }, [token, navigate]);
 
-
     const formik = useFormik({
         initialValues,
         onSubmit,
         LogInschema,
     });
 
-    const passwordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
-
+    // const passwordVisibility = () => {
+    //     setShowPassword(!showPassword);
+    // };
 
     return (
         <section>
             <Container>
                 <div className={css.form}>
-                <div>
-                    
+                    <div>
                         <ul className={css.auth_nav}>
                             <li>
                                 <NavLink
@@ -86,12 +83,15 @@ export const LoginForm = () => {
                         </ul>
                     </div>
 
-            
-                    <form></form>
+                    <form onSubmit={formik.handleSubmit}></form>
                 </div>
-</Container>
+            </Container>
         </section>
-    )};
+    );
+};
 
+// const  = () => {
+//     return <div>Login Form</div>;
+// };
 
-
+export default LoginForm;
