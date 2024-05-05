@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .input {
+        display: contents;
+    }
+    & .boxUpload {
+        position: relative;
+    }
+    & label {
+        position: absolute;
+        left: 30%;
+        bottom: -18%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        background-color: var(--light-green);
+        border-radius: 6px;
+    }
+    & svg {
+        stroke: var(--black);
+        width: 10px;
+        height: 10px;
+    }
+}
