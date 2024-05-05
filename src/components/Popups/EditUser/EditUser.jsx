@@ -45,6 +45,7 @@ const EditUser = () => {
                             <input
                                 type="file"
                                 className={scss.input}
+                                accept="images/*, .png, .jpg, .web"
                                 onChange={event => {
                                     const file = event.currentTarget.files[0];
                                     setFieldValue('image', file);
