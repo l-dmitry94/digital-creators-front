@@ -1,0 +1,20 @@
+.customRadioGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.customRadioInput {
+  display: none;
+}
+
+
+.svgIcon {
+  opacity: 0.5;
+  width: 18px;
+  height: 18px;
+}
+
+.customRadioInput:checked+svg {
+  opacity: 1;
+  stroke: white;
+}
