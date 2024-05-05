@@ -2,7 +2,6 @@ import { useState } from 'react';
 import icons from '../../../assets/icons/icons.svg';
 import scss from './BoardList.module.scss';
 import CustomModal from '../../CustomModal/CustomModal.jsx';
-import CustomInput from '../../CustomInput/CustomInput.jsx';
 import CreateNewBoard from '../../Popups/CreateNewBoard/CreateNewBoard.jsx';
 
 const BoardList = () => {
