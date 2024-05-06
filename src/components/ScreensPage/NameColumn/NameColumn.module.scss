@@ -4,7 +4,6 @@
     padding: 18px 20px;
     background-color: var(--dark-bg-sidebar);
     justify-content: space-between;
-    margin-bottom: 14px;
 }
 
 .nameColumnBtn {
@@ -15,11 +14,4 @@
 .name {
     font-weight: 500;
     letter-spacing: -0.02em;
-}
-
-.nameColumnIcon {
-    width: 16px;
-    height: 16px;
-    stroke: var(--dark-grey);
-    fill: var(--dark-bg-sidebar);
 }

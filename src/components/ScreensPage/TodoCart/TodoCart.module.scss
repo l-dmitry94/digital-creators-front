@@ -52,6 +52,8 @@
     font-size: 10px;
     letter-spacing: -0.02em;
     color: var(--white);
+    display: flex;
+    align-items: center;
 }
 
 .settingIcon {
@@ -64,4 +66,14 @@
 .btnSetting {
     display: flex;
     gap: 8px;
+}
+
+ul.listSetting li:nth-child(1) .setSign::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #8fa1d0;
+    margin-right: 4px;
 }
