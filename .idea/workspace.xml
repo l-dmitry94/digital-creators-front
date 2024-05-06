@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore">
-      <change afterPath="$PROJECT_DIR$/src/pages/WelcomePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/WelcomePage/WelcomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Welcome/Welcome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/WelcomePage/welcome-page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Welcome/welcome.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#11 on feature/redux&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/logout&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/GitHubDesk/digital-creators-front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -102,6 +101,7 @@
       <workItem from="1714652519667" duration="755000" />
       <workItem from="1714662233085" duration="972000" />
       <workItem from="1714670348448" duration="288000" />
+      <workItem from="1715011356821" duration="1654000" />
     </task>
     <task id="LOCAL-00001" summary="fixed .gitignore">
       <option name="closed" value="true" />
@@ -132,5 +132,20 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fixed .gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed .gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Sidebar/Logout/Logout.jsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Header/Header.jsx</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
