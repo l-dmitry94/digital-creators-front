@@ -1,7 +1,7 @@
 @import 'src/styles/mixins.scss';
 
 header {
-    background-color: var(--black);
+    background-color: var(--theme-default-header-bg);
 }
 .box {
     display: flex;
@@ -11,7 +11,7 @@ header {
     padding-bottom: 18px;
     @include media-rules(tablet) {
         padding-top: 20px;
-        padding-bottom: 20px; 
+        padding-bottom: 20px;
     }
     @include media-rules(desktop) {
         padding-top: 18px;
@@ -47,7 +47,7 @@ svg {
         height: 24px;
         @include media-rules(tablet) {
             width: 32px;
-            height: 32px; 
+            height: 32px;
         }
     }
 }

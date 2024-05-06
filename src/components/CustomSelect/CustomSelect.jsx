@@ -16,23 +16,16 @@ const CustomSelect = () => {
         { value: THEME_VIOLET, label: 'Violet' },
     ];
 
-    const handleThemeChange = selectedTheme => {
-        isTheme.change(selectedTheme.value);
-    };
-
     return (
-        <>
-            {isTheme.theme}
-            <Select
-                onChange={handleThemeChange}
-                isSearchable={false}
-                options={options}
-                unstyled
-                placeholder="Theme"
-                className="react-select-container"
-                classNamePrefix="react-select"
-            />
-        </>
+        <Select
+            onChange={selectedTheme => isTheme.change(selectedTheme.value)}
+            isSearchable={false}
+            options={options}
+            unstyled
+            placeholder="Theme"
+            className="react-select-container"
+            classNamePrefix="react-select"
+        />
     );
 };
 
