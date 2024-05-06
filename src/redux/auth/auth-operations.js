@@ -75,3 +75,19 @@ export const logout = createAsyncThunk(
         }
     }
 );
+
+export const updateUser = createAsyncThunk(
+    'auth/updateUser',
+    async (body, { rejectWithValue }) => {
+        try {
+            const { data } = await axios.patch(
+                `${baseURL}/auth/editProfile`,
+                body
+            );
+            setToken(data.token);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.response.data.message);
+        }
+    }
+);
