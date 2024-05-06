@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
@@ -8,15 +7,15 @@ import Container from '../../Container';
 import CustomInput from '../../CustomInput/CustomInput';
 
 import CustomForm from '../../CustomForm/CustomForm';
-import { selectToken } from '../../../redux/auth/auth-selectors';
 import css from './RegisterForm.module.scss';
 import icons from '../../../assets/icons/icons.svg';
 
 import * as yup from 'yup';
+import { useAuth } from '../../../hooks/useAuth';
 
 const RegistrationForm = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const token = useSelector(selectToken);
+    const { isLogin } = useAuth();
     const navigate = useNavigate();
 
     const initialValues = {
@@ -39,27 +38,14 @@ const RegistrationForm = () => {
     });
 
     useEffect(() => {
-        if (token) {
+        if (isLogin) {
             navigate('/home');
         }
-    }, [token, navigate]);
+    }, [isLogin, navigate]);
 
     const passwordVisibility = () => {
         setShowPassword(!showPassword);
     };
-
-    // const handleSubmit = async (values, { setSubmitting }) => {
-    //     try {
-    //         const response = await signup(values);
-    //         const token = response.data.token;
-    //         localStorage.setItem('token', token);
-    //         navigate('/home');
-    //     } catch (error) {
-    //         console.error(error);
-    //     } finally {
-    //         setSubmitting(false);
-    //     }
-    // };
 
     return (
         <section className={css.register_page}>
@@ -89,7 +75,6 @@ const RegistrationForm = () => {
                         initialValues={initialValues}
                         validationSchema={validationSchema}
                         operation={signup}
-                        // onSubmit={handleSubmit}
                         buttonText="Register Now"
                     >
                         {formik => (

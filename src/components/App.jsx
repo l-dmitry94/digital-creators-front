@@ -15,12 +15,12 @@ const App = () => {
     useEffect(() => {
         dispatch(current());
     }, [dispatch]);
+
     return (
         <>
             {!isRefreshing && (
-                //*path="/welcome"// для Welcome повернути
                 <Routes>
-                    <Route index element={<WelcomePage />} />
+                    <Route path="/welcome" element={<WelcomePage />} />
                     <Route path="/auth/:id" element={<AuthPage />} />
 
                     <Route path="/" element={<AppBar />}>

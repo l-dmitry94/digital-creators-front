@@ -1,12 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import image from '../../assets/images/welcome-developer.png';
 import icons from '../../assets/icons/icons.svg';
 import css from './welcome.module.scss';
 
 import Container from '../Container/index.js';
+import { useAuth } from '../../hooks/useAuth.js';
+import { useEffect } from 'react';
 
 const Welcome = () => {
+    const { isLogin } = useAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isLogin) {
+            navigate('/home');
+        }
+    });
     return (
         <div className={css.welcome_page}>
             <Container>
@@ -19,10 +29,7 @@ const Welcome = () => {
                     <div className={css.welcome_title_wrapper}>
                         <div className={css.icon_wrapper}>
                             <svg className={css.welcome_icon}>
-                                <use
-                                    className={css.test}
-                                    href={`${icons}#icon-lightning`}
-                                />
+                                <use href={`${icons}#icon-logo`} />
                             </svg>
                         </div>
                         <h1 className={css.title}>Task Pro</h1>
