@@ -1,0 +1,67 @@
+.todoCart {
+    border-radius: 8px;
+    padding: 0px 20px;
+    background-color: var(--dark-bg-sidebar);
+    border-left: 4px solid #8fa1d0;
+}
+
+.title {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    padding-bottom: 8px;
+}
+
+.text {
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    color: var(--dark-grey);
+}
+
+.cartTask {
+    padding: 14px 0px;
+    border-bottom: 1px solid var(--dark-grey-line);
+}
+
+.cartSetting {
+    padding: 14px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.todoCart::before {
+    padding: 2px;
+    background: #8fa1d0;
+    width: 4px;
+}
+
+.listSetting {
+    display: flex;
+    gap: 14px;
+}
+
+.setName {
+    font-size: 8px;
+    letter-spacing: -0.02em;
+    color: var(--dark-grey);
+    padding-bottom: 4px;
+}
+
+.setSign {
+    font-size: 10px;
+    letter-spacing: -0.02em;
+    color: var(--white);
+}
+
+.settingIcon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--dark-grey);
+    fill: var(--dark-bg-sidebar);
+}
+
+.btnSetting {
+    display: flex;
+    gap: 8px;
+}

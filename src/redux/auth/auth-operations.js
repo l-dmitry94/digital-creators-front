@@ -7,8 +7,7 @@ const baseURL = import.meta.env.VITE_BACKEND_URL;
 const setToken = token => {
     if (token) {
         axios.defaults.headers.authorization = `Bearer ${token}`;
-    }
-    axios.defaults.headers.authorization = '';
+    } else axios.defaults.headers.authorization = '';
 };
 
 export const signup = createAsyncThunk(
@@ -44,7 +43,7 @@ export const current = createAsyncThunk(
             const { auth } = getState();
             const persistedToken = auth.token;
 
-            if (persistedToken === null) {
+            if (persistedToken === '') {
                 return rejectWithValue('Unable to fetch user');
             }
 

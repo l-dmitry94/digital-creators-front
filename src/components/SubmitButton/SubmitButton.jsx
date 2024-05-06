@@ -29,6 +29,21 @@ const SubmitButton = ({ buttonText, onSubmit }) => {
                     {buttonText}
                 </button>
             );
+        case 'Add another column':
+            return (
+                <button
+                    className={scss.buttonColumn}
+                    type="submit"
+                    onClick={onSubmit}
+                >
+                    <div className={scss.plusColumn}>
+                        <svg className={scss.plusIconColumn}>
+                            <use href={`${icons}#icon-plus`}></use>
+                        </svg>
+                    </div>
+                    {buttonText}
+                </button>
+            );
         default:
             return (
                 <button className={scss.buttonWrapper} type="submit">
