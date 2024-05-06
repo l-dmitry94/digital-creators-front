@@ -19,10 +19,7 @@ const Welcome = () => {
                     <div className={css.welcome_title_wrapper}>
                         <div className={css.icon_wrapper}>
                             <svg className={css.welcome_icon}>
-                                <use
-                                    className={css.test}
-                                    href={`${icons}#icon-lightning`}
-                                />
+                                <use href={`${icons}#icon-logo`} />
                             </svg>
                         </div>
                         <h1 className={css.title}>Task Pro</h1>
