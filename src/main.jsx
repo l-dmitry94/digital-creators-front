@@ -9,12 +9,16 @@ import App from './components/App';
 import { store, persistor } from './redux/store.js';
 import './styles/index.scss';
 
+import ThemeProvider from './context/ThemeProvider.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <BrowserRouter basename="/digital-creators-front">
-                    <App />
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
                 </BrowserRouter>
             </PersistGate>
         </Provider>
