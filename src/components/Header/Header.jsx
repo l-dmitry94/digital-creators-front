@@ -11,7 +11,7 @@ import { selectUser } from '../../redux/auth/auth-selectors.js';
 
 const Header = ({ handleClick, isOpenSidebar }) => {
     const [isShowSidebar] = useState(false);
-    const { user } = useSelector(selectUser);
+    const user = useSelector(selectUser);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => {
