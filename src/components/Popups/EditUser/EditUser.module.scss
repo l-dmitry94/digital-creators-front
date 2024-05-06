@@ -17,9 +17,15 @@
         box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
         @include transition(border-color);
         padding: 0 54px 0 18px;
-    
+
         &:focus {
             border-color: var(--light-green);
+        }
+        & .eyeIcon {
+            width: 18px;
+            height: 18px;
+            fill: transparent;
+            stroke: rgba(255, 255, 255, 0.4);
         }
     }
     & .input {
@@ -39,12 +45,12 @@
         background-color: var(--light-green);
         border-radius: 6px;
     }
-    & svg {
+    & .iconPlus {
         stroke: var(--black);
         width: 10px;
         height: 10px;
     }
-    & .fields{
+    & .fields {
         display: flex;
         flex-direction: column;
         gap: 14px;
@@ -52,4 +58,19 @@
         margin-bottom: 24px;
         width: 100%;
     }
+}
+.passwordField {
+    position: relative;
+}
+.eye {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+}
+.eyeIcon {
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.4);
 }
