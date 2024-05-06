@@ -26,7 +26,6 @@ const NeedHelpsPopup = () => {
     const handleSubmit = data => {
         setData(data);
     };
-
     useEffect(() => {
         const fetchSendMail = async () => {
             try {
@@ -42,7 +41,7 @@ const NeedHelpsPopup = () => {
             }
         };
         fetchSendMail();
-    }, []);
+    }, [data.email, data.comment]);
 
     return (
         <CustomForm
