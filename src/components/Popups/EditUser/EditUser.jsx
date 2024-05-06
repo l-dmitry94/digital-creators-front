@@ -69,20 +69,22 @@ const EditUser = () => {
                     </div>
                     {touched.image && errors.image && <div>{errors.image}</div>}
                     <div className={scss.fields}>
-                    <Field type="text" name="username" placeholder="Name" />
-                    {touched.username && errors.username && (
-                        <div>{errors.username}</div>
-                    )}
-                    <Field type="email" name="email" placeholder="Email" />
-                    {touched.email && errors.email && <div>{errors.email}</div>}
-                    <Field
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                    />
-                    {touched.password && errors.password && (
-                        <div>{errors.password}</div>
-                    )}
+                        <Field type="text" name="username" placeholder="Name" />
+                        {touched.username && errors.username && (
+                            <div>{errors.username}</div>
+                        )}
+                        <Field type="email" name="email" placeholder="Email" />
+                        {touched.email && errors.email && (
+                            <div>{errors.email}</div>
+                        )}
+                        <Field
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                        />
+                        {touched.password && errors.password && (
+                            <div>{errors.password}</div>
+                        )}
                     </div>
                     <SubmitButton buttonText={'Send'} />
                 </Form>
