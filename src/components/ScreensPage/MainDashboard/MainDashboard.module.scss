@@ -1,0 +1,22 @@
+.cartList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.head {
+    display: flex;
+    gap: 34px;
+}
+
+.right {
+    display: flex;
+    // gap: 34px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 334px;
+}

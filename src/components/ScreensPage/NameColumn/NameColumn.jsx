@@ -1,21 +1,13 @@
 import scss from './NameColumn.module.scss';
-import icons from '../../../assets/icons/icons.svg';
+import TodoBtn from '../TodoBtn/TodoBtn';
 
-const NameColumn = () => {
+const NameColumn = ({ nameColumn }) => {
     return (
         <div className={scss.nameColumn}>
-            <p className={scss.name}>To do</p>
+            <p className={scss.name}>{nameColumn}</p>
             <div className={scss.nameColumnBtn}>
-                <button className={scss.btn}>
-                    <svg className={scss.nameColumnIcon}>
-                        <use href={`${icons}#icon-pencil`}></use>
-                    </svg>
-                </button>
-                <button className={scss.btn}>
-                    <svg className={scss.nameColumnIcon}>
-                        <use href={`${icons}#icon-trash`}></use>
-                    </svg>
-                </button>
+                <TodoBtn iconName={'icon-pencil'} />
+                <TodoBtn iconName={'icon-trash'} />
             </div>
         </div>
     );

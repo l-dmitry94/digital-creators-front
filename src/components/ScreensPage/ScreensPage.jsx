@@ -1,4 +1,4 @@
-import StartPage from './StartPage/StartPage';
+// import StartPage from './StartPage/StartPage';
 import scss from './ScreensPage.module.scss';
 // import SubmitButton from '../SubmitButton';
 import Container from '../Container';
@@ -12,9 +12,7 @@ const ScreensPage = () => {
                 <HeaderDashboard />
                 <MainDashboard />
 
-                <StartPage />
-
-                {/* <SubmitButton buttonText={'Add another card'} /> */}
+                {/* <StartPage /> */}
             </div>
         </Container>
     );
