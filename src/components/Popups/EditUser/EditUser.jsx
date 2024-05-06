@@ -68,6 +68,7 @@ const EditUser = () => {
                         </label>
                     </div>
                     {touched.image && errors.image && <div>{errors.image}</div>}
+                    <div className={scss.fields}>
                     <Field type="text" name="username" placeholder="Name" />
                     {touched.username && errors.username && (
                         <div>{errors.username}</div>
@@ -82,6 +83,7 @@ const EditUser = () => {
                     {touched.password && errors.password && (
                         <div>{errors.password}</div>
                     )}
+                    </div>
                     <SubmitButton buttonText={'Send'} />
                 </Form>
             )}
