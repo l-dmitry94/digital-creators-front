@@ -1,7 +1,7 @@
 import icons from '../../../assets/icons/icons.svg';
 import scss from './Logout.module.scss';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { logout } from '../../../redux/auth/auth-operations.js';
 
