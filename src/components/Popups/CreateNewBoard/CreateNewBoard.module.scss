@@ -1,1 +1,31 @@
 @import 'src/styles/mixins.scss';
+
+
+.createBoardInput {
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.createRadioGroup {
+  margin-bottom: 24px;
+}
+
+.iconsTitle {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.backgroundTitle {
+  font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+
+.createGallery {
+  margin-bottom: 14px;
+}
