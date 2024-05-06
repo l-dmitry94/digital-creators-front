@@ -3,6 +3,7 @@ import CustomForm from '../../CustomForm/CustomForm';
 import * as yup from 'yup';
 
 import scss from './NeedHelpsPopup.module.scss';
+import CustomTextarea from '../../CustomTextarea/CustomTextarea';
 
 const NeedHelpsPopup = () => {
     const initialValues = {
@@ -35,6 +36,9 @@ const NeedHelpsPopup = () => {
                         />
                         {formik.errors.email && formik.touched.email && <div>{formik.errors.email}</div>}
                     </div>
+                    <CustomTextarea
+                    placeholder={'Comment'}
+                    />
                 </div>
             )}
         </CustomForm>
