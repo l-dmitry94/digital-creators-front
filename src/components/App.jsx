@@ -11,7 +11,7 @@ import RestrictedRoute from './RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
 
 const App = () => {
-    const { isRefreshing } = useAuth();
+    // const { isRefreshing } = useAuth();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,11 +20,8 @@ const App = () => {
 
     return (
         <>
-            {!isRefreshing && (
+            {
                 <Routes>
-                    <Route path="/" element={<AppBar />}>
-                        <Route path="home" element={<HomePage />} />/
-                    </Route>
                     <Route
                         path="register"
                         element={
@@ -47,16 +44,26 @@ const App = () => {
                         path="home"
                         element={
                             <PrivateRoute
-                                redirectTo="home"
-                                component={<HomePage />}
+                                redirectTo="/welcome"
+                                component={
+                                    <>
+                                        <AppBar />
+                                        <HomePage />
+                                    </>
+                                }
                             />
                         }
                     />
+
+                    {/* <Route path="/home" element={<AppBar />}>
+                        <Route index element={<HomePage />} />
+                    </Route> */}
+                    <Route path="/" element={<WelcomePage />}></Route>
                     <Route path="/welcome" element={<WelcomePage />} />
 
                     <Route path="/auth/:id" element={<AuthPage />} />
                 </Routes>
-            )}
+            }
         </>
     );
 };

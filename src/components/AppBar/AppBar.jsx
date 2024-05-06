@@ -8,14 +8,6 @@ import { useAuth } from '../../hooks/useAuth';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
-    const { isLogin } = useAuth();
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!isLogin) {
-            navigate('/welcome');
-        }
-    });
 
     const appBarClassName = `${scss.appBar} ${isActiveSidebar ? scss.active : ''}`;
     const handleClick = prop => setIsActiveSidebar(prop);
