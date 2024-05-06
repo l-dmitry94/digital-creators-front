@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Routes, redirect } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import AppBar from './AppBar';
 import WelcomePage from '../pages/WelcomePage.jsx';
