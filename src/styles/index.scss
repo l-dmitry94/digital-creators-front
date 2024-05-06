@@ -3,7 +3,7 @@
 
 :root {
     //colors
-    --white:#ffffff;
+    --white: #ffffff;
     --light-green: #bedbb0;
     --dark-green: #9dc888;
     --black: #161616;
@@ -19,11 +19,28 @@
 
     //fonts
     --font-family: 'Poppins';
+
+    /* THEMES */
+    --theme-light-body: var(--black);
+    --theme-dark-body: var(--white);
+    --theme-violet-body: var(--black);
+    --theme-default-body: var(--theme-dark-body);
+
+    //Header
+    --theme-light-header-bg: #fcfcfc;
+    --theme-dark-header-bg: var(--black);
+    --theme-violet-header-bg: var(--white);
+    --theme-default-header-bg: var(--theme-dark-header-bg);
+
+    --theme-light-select-header: rgba(22, 22, 22, 0.8);
+    --theme-dark-select-header: var(--white);
+    --theme-violet-select-header: rgba(22, 22, 22, 0.8);
+    --theme-default-select-header: var(--theme-dark-select-header);
 }
 
 body {
     font-family: var(--font-family);
     font-size: 14px;
-    color: var(--white);
+    color: var(--theme-default-body);
     background-color: var(--dark-bg);
 }

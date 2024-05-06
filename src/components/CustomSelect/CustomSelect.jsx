@@ -1,18 +1,24 @@
 import Select from 'react-select';
-import { useState } from 'react';
 import './CustomSelect.scss';
 
+import { useTheme } from '../../hooks/useTheme.js';
+import {
+    THEME_LIGHT,
+    THEME_VIOLET,
+    THEME_DARK,
+} from '../../constants/themeConstants.js';
+
 const CustomSelect = () => {
-    const [theme, setSelectedOption] = useState('Theme');
-    console.log(theme);
+    const isTheme = useTheme();
     const options = [
-        { value: 'light', label: 'Light' },
-        { value: 'dark', label: 'Dark' },
-        { value: 'violet', label: 'Violet' },
+        { value: THEME_LIGHT, label: 'Light' },
+        { value: THEME_DARK, label: 'Dark' },
+        { value: THEME_VIOLET, label: 'Violet' },
     ];
+
     return (
         <Select
-            onChange={setSelectedOption}
+            onChange={selectedTheme => isTheme.change(selectedTheme.value)}
             isSearchable={false}
             options={options}
             unstyled

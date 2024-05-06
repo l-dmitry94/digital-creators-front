@@ -15,6 +15,11 @@ const validationSchema = Yup.object().shape({
 
 const EditUser = () => {
     const [imagePreview, setImagePreview] = useState(defaultImage);
+    const [showPassword, setShowPassword] = useState(false);
+
+    const passwordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <Formik
@@ -25,7 +30,7 @@ const EditUser = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={values => {
-                // Обробка даних форми
+                // Form data handling
                 console.log(values);
             }}
         >
@@ -50,7 +55,6 @@ const EditUser = () => {
                                     const file = event.currentTarget.files[0];
                                     setFieldValue('image', file);
 
-                                    // Перегляд зображення для попереднього перегляду
                                     const reader = new FileReader();
                                     reader.onload = () => {
                                         setImagePreview(reader.result);
@@ -62,26 +66,41 @@ const EditUser = () => {
                                     }
                                 }}
                             />
-                            <svg>
+                            <svg className={scss.iconPlus}>
                                 <use href={`${icon}#icon-plus`}></use>
                             </svg>
                         </label>
                     </div>
                     {touched.image && errors.image && <div>{errors.image}</div>}
-                    <Field type="text" name="username" placeholder="Name" />
-                    {touched.username && errors.username && (
-                        <div>{errors.username}</div>
-                    )}
-                    <Field type="email" name="email" placeholder="Email" />
-                    {touched.email && errors.email && <div>{errors.email}</div>}
-                    <Field
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                    />
-                    {touched.password && errors.password && (
-                        <div>{errors.password}</div>
-                    )}
+                    <div className={scss.fields}>
+                        <Field type="text" name="username" placeholder="Name" />
+                        {touched.username && errors.username && (
+                            <div>{errors.username}</div>
+                        )}
+                        <Field type="email" name="email" placeholder="Email" />
+                        {touched.email && errors.email && (
+                            <div>{errors.email}</div>
+                        )}
+                        <div className={scss.passwordField}>
+                            <Field
+                                type={showPassword ? 'text' : 'password'}
+                                name="password"
+                                placeholder="Password"
+                            />
+                            <button
+                                type="button"
+                                className={scss.eye}
+                                onClick={passwordVisibility}
+                            >
+                                <svg className={scss.eyeIcon}>
+                                    <use href={`${icon}#icon-eye`}></use>
+                                </svg>
+                            </button>
+                            {touched.password && errors.password && (
+                                <div>{errors.password}</div>
+                            )}
+                        </div>
+                    </div>
                     <SubmitButton buttonText={'Send'} />
                 </Form>
             )}

@@ -1,6 +1,6 @@
 import Container from '../Container/Container.jsx';
 import { useState } from 'react';
-//import { useSelector } from 'react-redux';
+
 import CustomSelect from '../CustomSelect/CustomSelect.jsx';
 import EditUser from '../Popups/EditUser/EditUser.jsx';
 import CustomModal from '../CustomModal/CustomModal.jsx';
@@ -11,7 +11,7 @@ import { selectUser } from '../../redux/auth/auth-selectors.js';
 
 const Header = ({ handleClick, isOpenSidebar }) => {
     const [isShowSidebar] = useState(false);
-    const {user} = useSelector(selectUser);
+    const { user } = useSelector(selectUser);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => {
