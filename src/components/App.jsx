@@ -8,9 +8,10 @@ import HomePage from '../pages/HomePage';
 import { current } from '../redux/auth/auth-operations.js';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
+import { useAuth } from '../hooks/useAuth.js';
 
 const App = () => {
-    // const { isRefreshing } = useAuth();
+    const { isRefreshing } = useAuth();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -19,7 +20,7 @@ const App = () => {
 
     return (
         <>
-            {
+            {!isRefreshing && (
                 <Routes>
                     <Route
                         path="register"
@@ -62,7 +63,7 @@ const App = () => {
 
                     <Route path="/auth/:id" element={<AuthPage />} />
                 </Routes>
-            }
+            )}
         </>
     );
 };
