@@ -1,7 +1,4 @@
-import {
-    // useDispatch,
-    useSelector,
-} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -23,9 +20,6 @@ export const LoginForm = () => {
     };
 
     const [showPassword, setShowPassword] = useState(false);
-    // const [state, setState] = useState({ ...initialValues });
-
-    // const dispatch = useDispatch();
     const navigate = useNavigate();
     const token = useSelector(selectToken);
 
@@ -51,7 +45,7 @@ export const LoginForm = () => {
     };
 
     return (
-        <section>
+        <section className={css.register_page}>
             <Container>
                 <div className={css.form}>
                     <div>
@@ -81,7 +75,7 @@ export const LoginForm = () => {
                         buttonText="Log In Now"
                     >
                         {formik => (
-                            <div>
+                            <div className={css.auth_form}>
                                 <div>
                                     <CustomInput
                                         name="email"
@@ -137,9 +131,5 @@ export const LoginForm = () => {
         </section>
     );
 };
-
-// const  = () => {
-//     return <div>Login Form</div>;
-// };
 
 export default LoginForm;

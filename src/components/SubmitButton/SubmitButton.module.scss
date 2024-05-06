@@ -23,7 +23,18 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    height: 56px;
     composes: button;
+}
+
+.buttonColumn {
+    background-color: var(--dark-bg-sidebar);
+    color: var(--white);
+
+    &:is(:hover, :focus) {
+        background-color: var(--dark-grey-line);
+    }
+    composes: buttonWrapper;
 }
 
 .buttonRegistration {
@@ -46,4 +57,14 @@
     width: 14px;
     height: 14px;
     stroke: var(--white);
+}
+
+.plusColumn {
+    background-color: var(--white);
+    composes: plus;
+}
+
+.plusIconColumn {
+    stroke: var(--black);
+    composes: plusIcon;
 }
