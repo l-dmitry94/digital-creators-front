@@ -4,10 +4,15 @@ import * as yup from 'yup';
 
 import scss from './NeedHelpsPopup.module.scss';
 import CustomTextarea from '../../CustomTextarea/CustomTextarea';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const NeedHelpsPopup = () => {
+    const [data, setData] = useState({});
+
     const initialValues = {
         email: '',
+        comment: '',
     };
 
     const validationSchema = yup.object().shape({
@@ -15,16 +20,42 @@ const NeedHelpsPopup = () => {
             .string()
             .email('Invalid email')
             .required('Email is required'),
+        comment: yup.string().required('Comment is required'),
     });
+
+    const handleSubmit = data => {
+        setData(data);
+    };
+
+    useEffect(() => {
+        const fetchSendMail = async () => {
+            try {
+                await axios.post(
+                    'https://digital-creators-back.onrender.com/api/support/sendmail',
+                    {
+                        email: data.email,
+                        value: data.comment,
+                    }
+                );
+            } catch (error) {
+                console.log(error.message);
+            }
+        };
+        fetchSendMail();
+    }, []);
+
     return (
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Send'}
+            handleSubmit={handleSubmit}
         >
             {formik => (
                 <div>
-                    <div className={`${scss.inputContainer} ${scss.emailInput}`}>
+                    <div
+                        className={`${scss.inputContainer} ${scss.emailInput}`}
+                    >
                         <CustomInput
                             type="email"
                             name="email"
@@ -34,11 +65,22 @@ const NeedHelpsPopup = () => {
                             onBlur={formik.handleBlur}
                             className={scss.emailInput}
                         />
-                        {formik.errors.email && formik.touched.email && <div>{formik.errors.email}</div>}
+                        {formik.errors.email && formik.touched.email && (
+                            <div>{formik.errors.email}</div>
+                        )}
                     </div>
-                    <CustomTextarea
-                    placeholder={'Comment'}
-                    />
+                    <div className={scss.textareaBlock}>
+                        <CustomTextarea
+                            name="comment"
+                            placeholder={'Comment'}
+                            value={formik.values.comment}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {formik.errors.comment && formik.touched.comment && (
+                            <div>{formik.errors.comment}</div>
+                        )}
+                    </div>
                 </div>
             )}
         </CustomForm>

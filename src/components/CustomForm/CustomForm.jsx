@@ -7,11 +7,16 @@ const CustomForm = ({
     validationSchema,
     operation,
     buttonText,
+    handleSubmit,
     children,
 }) => {
     const dispatch = useDispatch();
 
     const onSubmit = async values => {
+        if (handleSubmit) {
+            handleSubmit(values);
+            return;
+        }
         dispatch(operation(values));
     };
 

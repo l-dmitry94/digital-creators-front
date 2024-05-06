@@ -16,10 +16,9 @@ const NeedHelp = () => {
         setModalIsOpen(false);
     };
 
-    const handleSubmit = (email) => {
+    const handleSubmit = email => {
         console.log('Email submitted:', email);
     };
-
 
     return (
         <div className={scss.helpContainer}>
@@ -40,8 +39,11 @@ const NeedHelp = () => {
                     <p className={scss.helpButtonText}>Need help?</p>
                 </button>
                 <CustomModal
-            title={'Need help'} isOpen={modalIsOpen} onClose={closeModal}>
-                    <NeedHelpsPopup onSubmit={handleSubmit}/>
+                    title={'Need help'}
+                    isOpen={modalIsOpen}
+                    onClose={closeModal}
+                >
+                    <NeedHelpsPopup onSubmit={handleSubmit} />
                 </CustomModal>
             </div>
         </div>
