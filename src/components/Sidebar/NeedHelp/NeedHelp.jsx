@@ -21,8 +21,10 @@ const NeedHelp = () => {
             <img className={scss.flowerpot} src={flowerpot} alt="Flowerpot" />
             <div>
                 <p className={scss.helpText}>
-                    If you need help with TaskPro, check out our support
-                    resources or reach out to our customer support team.
+                    If you need help with{' '}
+                    <span className={scss.helpLogoText}>TaskPro</span>, check
+                    out our support resources or reach out to our customer
+                    support team.
                 </p>
                 <button className={scss.helpButton} onClick={openModal}>
                     <div className={scss.question}>
