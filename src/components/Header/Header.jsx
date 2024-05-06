@@ -6,6 +6,7 @@ import EditUser from '../Popups/EditUser/EditUser.jsx';
 import CustomModal from '../CustomModal/CustomModal.jsx';
 import styles from './Header.module.scss';
 import icons from '../../assets/icons/icons.svg';
+//import { selectUser } from '../../redux/auth/auth-selectors.js';
 
 const Header = ({ handleClick, isOpenSidebar }) => {
     const [isShowSidebar] = useState(false);
