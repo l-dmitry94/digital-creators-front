@@ -50,7 +50,7 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                                 width={32}
                                 height={32}
                                 alt="photo"
-                            ></img>
+                            />
                         </button>
                     </div>
                     <CustomModal
