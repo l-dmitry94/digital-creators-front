@@ -1,4 +1,3 @@
-import React from 'react';
 import scss from './CustomTextarea.module.scss';
 
 const CustomTextarea = ({
@@ -9,33 +8,33 @@ const CustomTextarea = ({
     onBlur,
     value,
 }) => {
-    switch(placeholder) {
-        case 'Comment': 
-        return (
-            <textarea
-            type={type}
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            placeholder={placeholder}
-            className={scss.textarea}
-        />
-        )
+    switch (placeholder) {
+        case 'Comment':
+            return (
+                <textarea
+                    type={type}
+                    name={name}
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    value={value}
+                    placeholder={placeholder}
+                    className={scss.textarea}
+                />
+            );
         case 'Description':
             return (
                 <textarea
-                type={type}
-                name={name}
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
-                placeholder={placeholder}
-                className={scss.description}
-            />
-            )
-        default :
-        return (
+                    type={type}
+                    name={name}
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    value={value}
+                    placeholder={placeholder}
+                    className={scss.description}
+                />
+            );
+        default:
+            return (
                 <textarea
                     type={type}
                     name={name}
@@ -45,7 +44,7 @@ const CustomTextarea = ({
                     onBlur={onBlur}
                     value={value}
                 />
-        )
+            );
     }
 };
 
