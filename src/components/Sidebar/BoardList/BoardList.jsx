@@ -31,7 +31,6 @@ const BoardList = () => {
                     title={'New board'}
                     isOpen={modalIsOpen}
                     onClose={closeModal}
-                    buttonText={'Create'}
                 >
                     <CreateNewBoard />
                 </CustomModal>

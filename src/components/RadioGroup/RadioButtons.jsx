@@ -13,6 +13,7 @@ const CustomRadioGroup = () => {
 
     const sendSelectedOptionToServer = index => {
         const selectedIcon = radioOptions[index];
+        console.log(index);
         fetch('YOUR_SERVER_URL', {
             method: 'POST',
             headers: {
