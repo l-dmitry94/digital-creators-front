@@ -1,10 +1,8 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import scss from './AppBar.module.scss';
-import { useAuth } from '../../hooks/useAuth';
-// import ScreensPage from '../ScreensPage';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
