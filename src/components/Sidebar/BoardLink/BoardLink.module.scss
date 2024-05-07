@@ -8,30 +8,49 @@
 
 .linkItem {
     display: flex;
-    gap: 8px;
-    align-items: center;
-    width: 255px;
+    justify-content: space-between;
+    width: 100%;
     height: 61px;
     color: var(--dark-grey);
     cursor: pointer;
 }
 
 .linkItem.checked {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    width: 255px;
     height: 61px;
     background: var(--dark-bg);
     color: var(--white);
 }
 
+.iconTitleFlex {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.svgFlex {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 .svgIcon {
-  stroke: var(--white);
+    stroke: var(--white);
     opacity: 0.4;
+    width: 18px;
 }
 
 .checked .svgIcon {
+    opacity: 1;
+}
+
+.svgIconControl {
+    stroke: var(--white);
+    fill: none;
+    opacity: 0.4;
+    width: 16px;
+}
+
+.checked .svgIconControl {
     opacity: 1;
 }
 
