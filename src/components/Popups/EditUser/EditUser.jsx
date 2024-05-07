@@ -7,6 +7,8 @@ import icon from '../../../assets/icons/icons.svg';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
+console.log('hello');
+
 const validationSchema = Yup.object().shape({
     username: Yup.string(),
     email: Yup.string().email('Invalid email address'),
