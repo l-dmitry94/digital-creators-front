@@ -4,12 +4,9 @@ import * as yup from 'yup';
 
 import scss from './NeedHelpsPopup.module.scss';
 import CustomTextarea from '../../CustomTextarea/CustomTextarea';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const NeedHelpsPopup = () => {
-    const [data, setData] = useState({});
-
     const initialValues = {
         email: '',
         comment: '',
@@ -24,8 +21,6 @@ const NeedHelpsPopup = () => {
     });
 
     const handleSubmit = async data => {
-        setData(data);
-
         await axios.post(
             'https://digital-creators-back.onrender.com/api/support/sendmail',
             {
