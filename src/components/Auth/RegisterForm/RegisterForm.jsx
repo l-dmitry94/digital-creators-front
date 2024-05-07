@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { signup } from '../../../redux/auth/auth-operations';
 import Container from '../../Container';
 import CustomInput from '../../CustomInput/CustomInput';
-
 import CustomForm from '../../CustomForm/CustomForm';
 import css from './RegisterForm.module.scss';
 import icons from '../../../assets/icons/icons.svg';

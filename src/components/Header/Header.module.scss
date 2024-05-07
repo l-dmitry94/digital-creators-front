@@ -19,11 +19,6 @@ header {
     }
 }
 
-svg {
-    fill: var(--white);
-    stroke: var(--white);
-}
-
 .userInfo {
     display: flex;
     align-items: center;
@@ -49,6 +44,7 @@ svg {
         display: none;
     }
     & svg {
+        stroke: var(--white);
         width: 24px;
         height: 24px;
         @include media-rules(tablet) {

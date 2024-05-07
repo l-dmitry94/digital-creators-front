@@ -18,7 +18,7 @@ export const signup = createAsyncThunk(
             setToken(response.data.token);
             return response.data;
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.message);
         }
     }
 );
@@ -31,7 +31,7 @@ export const login = createAsyncThunk(
             setToken(response.data.token);
             return response.data;
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.message);
         }
     }
 );
@@ -51,7 +51,7 @@ export const current = createAsyncThunk(
             const response = await axios.get(`${baseURL}/auth/current`);
             return response.data;
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.message);
         }
     },
     {
@@ -71,7 +71,7 @@ export const logout = createAsyncThunk(
             await axios.post(`${baseURL}/auth/logout`);
             setToken();
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.message);
         }
     }
 );
@@ -87,7 +87,7 @@ export const updateUser = createAsyncThunk(
             setToken(data.token);
             return data;
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.message);
         }
     }
 );

@@ -46,11 +46,12 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                         >
                             {user && <p>{user.username}</p>}
                             <img
-                                src="https://wallpapercave.com/wp/wp4100932.jpg"
-                                width={32}
-                                height={32}
-                                alt="photo"
-                            ></img>
+                                src={
+                                    user.avatarURL
+                                        ? user.avatarURL
+                                        : 'https://wallpapercave.com/wp/wp4100932.jpg'
+                                }
+                            />
                         </button>
                     </div>
                     <CustomModal

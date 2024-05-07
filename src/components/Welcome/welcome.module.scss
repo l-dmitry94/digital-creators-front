@@ -16,8 +16,6 @@
   @include media-rules(tablet) {
     max-width: 438px;
   }
-
-
 }
 
 .welcome_image {
@@ -55,6 +53,7 @@
 .welcome_icon {
   width: 15px;
   height: 20px;
+  fill: var(--white);
 }
 
 .descr {

@@ -1,8 +1,9 @@
-import { Outlet } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
 import { useState } from 'react';
 import scss from './AppBar.module.scss';
+import ScreensPage from '../ScreensPage/ScreensPage';
+import Container from '../Container';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
@@ -23,7 +24,9 @@ const AppBar = () => {
                 />
 
                 <main>
-                    <Outlet />
+                    <Container>
+                        <ScreensPage />
+                    </Container>
                 </main>
             </div>
         </div>
