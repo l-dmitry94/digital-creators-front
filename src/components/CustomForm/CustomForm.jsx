@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 const CustomForm = ({
     initialValues,

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
- import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { pending, rejected } from '../redux-constants.js';
 
 import {
@@ -74,7 +74,7 @@ const authSlice = createSlice({
             .addCase(updateUser.fulfilled, (state, { payload }) => {
                 toast.dismiss();
                 toast.success(`${payload}`);
-                state.user = payload.user;
+                state.user = payload;
                 state.isLoading = false;
                 state.token = payload.token;
                 state.isLogin = true;
