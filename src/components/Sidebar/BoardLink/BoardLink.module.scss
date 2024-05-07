@@ -1,7 +1,42 @@
 @import 'src/styles/mixins.scss';
 
 .linkFlex {
-  display: flex;
-  width: 255px;
-  height: 61px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.linkItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 255px;
+    height: 61px;
+    color: var(--dark-grey);
+    cursor: pointer;
+}
+
+.linkItem.checked {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 255px;
+    height: 61px;
+    background: var(--dark-bg);
+    color: var(--white);
+}
+
+.svgIcon {
+    opacity: 0.4;
+}
+
+.checked .svgIcon {
+    opacity: 1;
+}
+
+.linkTiitle {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    opacity: 0.4;
 }
