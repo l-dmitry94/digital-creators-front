@@ -9,6 +9,8 @@ import { current } from '../redux/auth/auth-operations.js';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
 import { useAuth } from '../hooks/useAuth.js';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     const { isRefreshing } = useAuth();
@@ -64,6 +66,7 @@ const App = () => {
                     <Route path="/auth/:id" element={<AuthPage />} />
                 </Routes>
             )}
+            <ToastContainer />
         </>
     );
 };

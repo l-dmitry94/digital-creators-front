@@ -3,7 +3,7 @@ import {
     // ToastContainer,
     toast,
 } from 'react-toastify';
-import { pending, rejected } from '../redux-constants.js';
+import { pending, rejected } from './auth-constants.js';
 
 import {
     signup,
@@ -41,7 +41,7 @@ const authSlice = createSlice({
             .addCase(login.pending, pending)
             .addCase(login.fulfilled, (state, { payload }) => {
                 toast.dismiss();
-                toast.success(`${payload}`);
+                toast.success(`Login success`);
                 state.isLoading = false;
                 state.error = null;
                 state.user = payload.user;
@@ -66,7 +66,7 @@ const authSlice = createSlice({
             .addCase(logout.pending, pending)
             .addCase(logout.fulfilled, state => {
                 toast.dismiss();
-                toast.success();
+                toast.success('Logout success');
                 state.user = {};
                 state.token = '';
                 state.isLogin = false;
@@ -76,7 +76,7 @@ const authSlice = createSlice({
             .addCase(updateUser.pending, pending)
             .addCase(updateUser.fulfilled, (state, { payload }) => {
                 toast.dismiss();
-                toast.success(`${payload}`);
+                toast.success(`Edit success`);
                 state.user = payload;
                 state.isLoading = false;
                 state.token = payload.token;
