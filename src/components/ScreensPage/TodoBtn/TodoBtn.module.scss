@@ -1,0 +1,11 @@
+.todoIcon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--dark-grey);
+    fill: var(--dark-bg-sidebar);
+}
+
+.bellIcon {
+    stroke: var(--light-green);
+    composes: todoIcon;
+}

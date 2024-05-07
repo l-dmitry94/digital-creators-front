@@ -33,7 +33,7 @@ const SubmitButton = ({ buttonText, onSubmit }) => {
             return (
                 <button
                     className={scss.buttonColumn}
-                    type="submit"
+                    type="button"
                     onClick={onSubmit}
                 >
                     <div className={scss.plusColumn}>
