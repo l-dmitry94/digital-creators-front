@@ -24,11 +24,11 @@ const BoardLink = () => {
         if (savedSelectedItem) {
             setSelectedItem(savedSelectedItem);
         } else {
-            setSelectedItem("Project office");
+            setSelectedItem('Project office');
         }
     }, []);
 
-    const handleItemClick = (item) => {
+    const handleItemClick = item => {
         if (selectedItem === item) {
             setSelectedItem(null);
             localStorage.removeItem('selectedItem');
@@ -43,14 +43,14 @@ const BoardLink = () => {
             <LinksListItem
                 iconName="icon-project"
                 title="Project office"
-                onSelect={() => handleItemClick("Project office")}
-                isChecked={selectedItem === "Project office"}
+                onSelect={() => handleItemClick('Project office')}
+                isChecked={selectedItem === 'Project office'}
             />
             <LinksListItem
                 iconName="icon-puzzle"
                 title="Neon Light Project"
-                onSelect={() => handleItemClick("Neon Light Project")}
-                isChecked={selectedItem === "Neon Light Project"}
+                onSelect={() => handleItemClick('Neon Light Project')}
+                isChecked={selectedItem === 'Neon Light Project'}
             />
         </ul>
     );
