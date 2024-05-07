@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import SubmitButton from '../../SubmitButton/SubmitButton';
@@ -7,7 +8,8 @@ import icon from '../../../assets/icons/icons.svg';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
-console.log('hello');
+import { selectUser } from '../../../redux/auth/auth-selectors';
+import { updateUser } from '../../../redux/auth/auth-operations';
 
 const validationSchema = Yup.object().shape({
     username: Yup.string(),
@@ -16,12 +18,22 @@ const validationSchema = Yup.object().shape({
 });
 
 const EditUser = () => {
+    const userInfo = useSelector(selectUser);
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [showPassword, setShowPassword] = useState(false);
+
+    const dispatch = useDispatch();
 
     const passwordVisibility = () => {
         setShowPassword(!showPassword);
     };
+    useEffect(() => {
+        if (imagePreview !== defaultImage) {
+            setImagePreview(imagePreview);
+        } else {
+            setImagePreview(userInfo.avatarURL);
+        }
+    }, [imagePreview, userInfo.avatarURL]);
 
     return (
         <Formik
@@ -29,11 +41,29 @@ const EditUser = () => {
                 username: '',
                 email: '',
                 password: '',
+                avatarURL: userInfo.avatarURL,
+                avatar: null,
             }}
             validationSchema={validationSchema}
+            async
             onSubmit={values => {
-                // Form data handling
-                console.log(values);
+                const formatData = new FormData();
+                // Перевірка чи змінювались поля
+                if (values.username !== userInfo.username) {
+                    formatData.append('username', values.username);
+                }
+                if (values.email !== userInfo.email) {
+                    formatData.append('email', values.email);
+                }
+                if (values.password !== userInfo.password) {
+                    formatData.append('password', values.password);
+                }
+                try {
+                    formatData.append('avatar', values.image);
+                    dispatch(updateUser(formatData));
+                } catch (error) {
+                    console.log(error);
+                }
             }}
         >
             {({ handleSubmit, errors, touched, setFieldValue }) => (
@@ -63,6 +93,7 @@ const EditUser = () => {
                                     };
                                     if (file) {
                                         reader.readAsDataURL(file);
+                                        console.log(file);
                                     } else {
                                         setImagePreview(defaultImage);
                                     }
@@ -75,11 +106,19 @@ const EditUser = () => {
                     </div>
                     {touched.image && errors.image && <div>{errors.image}</div>}
                     <div className={scss.fields}>
-                        <Field type="text" name="username" placeholder="Name" />
+                        <Field
+                            type="text"
+                            name="username"
+                            placeholder={userInfo.username}
+                        />
                         {touched.username && errors.username && (
                             <div>{errors.username}</div>
                         )}
-                        <Field type="email" name="email" placeholder="Email" />
+                        <Field
+                            type="email"
+                            name="email"
+                            placeholder={userInfo.email}
+                        />
                         {touched.email && errors.email && (
                             <div>{errors.email}</div>
                         )}
@@ -87,7 +126,7 @@ const EditUser = () => {
                             <Field
                                 type={showPassword ? 'text' : 'password'}
                                 name="password"
-                                placeholder="Password"
+                                placeholder="qwerty123"
                             />
                             <button
                                 type="button"

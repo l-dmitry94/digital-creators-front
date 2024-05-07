@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import AppBar from './AppBar';
 import WelcomePage from '../pages/WelcomePage.jsx';
 import AuthPage from '../pages/AuthPage';
-import HomePage from '../pages/HomePage';
+// import HomePage from '../pages/HomePage';
 import { current } from '../redux/auth/auth-operations.js';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
@@ -48,7 +48,7 @@ const App = () => {
                                 component={
                                     <>
                                         <AppBar />
-                                        <HomePage />
+                                        {/* <HomePage /> */}
                                     </>
                                 }
                             />
