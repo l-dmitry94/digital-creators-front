@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { signup } from '../../../redux/auth/auth-operations';
 import Container from '../../Container';
 import CustomInput from '../../CustomInput/CustomInput';
-
+import ErrorsComponent from '../../ErrorsCustomComponent/ErrorsCustomComponent';
 import CustomForm from '../../CustomForm/CustomForm';
 import css from './RegisterForm.module.scss';
 import icons from '../../../assets/icons/icons.svg';
@@ -76,6 +76,7 @@ const RegistrationForm = () => {
                         validationSchema={validationSchema}
                         operation={signup}
                         buttonText="Register Now"
+                        errorName = "Email Register"
                     >
                         {formik => (
                             <div className={css.auth_form}>
@@ -107,6 +108,7 @@ const RegistrationForm = () => {
                                         formik.touched.email && (
                                             <div>{formik.errors.email}</div>
                                         )}
+                                      <ErrorsComponent /> 
                                 </div>
 
                                 <div>
@@ -141,6 +143,7 @@ const RegistrationForm = () => {
                                             <div>{formik.errors.password}</div>
                                         )}
                                 </div>
+                               
                             </div>
                         )}
                     </CustomForm>
