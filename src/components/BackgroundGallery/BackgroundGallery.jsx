@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import scss from './BackgroundGallery.module.scss';
 import blockImage from '../../assets/images/block.svg';
+import axios from 'axios';
 
 const BackgroundRadioGroup = () => {
     const [backgrounds, setBackgrounds] = useState([]);
@@ -9,14 +10,10 @@ const BackgroundRadioGroup = () => {
     const baseURL = import.meta.env.VITE_BACKEND_URL;
 
     useEffect(() => {
-        fetch(`${baseURL}/user/folders/desktop_bg`)
+        axios
+            .get(`${baseURL}/user/folders/tablet_bg`)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
+                const data = response.data;
                 const newBackgrounds = [blockImage, ...data.resources];
                 setBackgrounds(newBackgrounds);
                 console.log('Received data from server:', data.resources);
@@ -34,20 +31,10 @@ const BackgroundRadioGroup = () => {
     const sendSelectedOptionToServer = index => {
         const selectedBackground = backgrounds[index];
         // Відправка даних на сервер (яку тему вибрав користувач)
-        fetch('YOUR_SERVER_URL', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ selectedOption: selectedBackground }),
-        })
+        axios
+            .post('YOUR_SERVER_URL', { selectedOption: selectedBackground })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
+                const data = response.data;
                 console.log('Server response:', data);
             })
             .catch(error => {
