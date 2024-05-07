@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { pending, rejected } from '../redux-constants.js';
+import { pending, rejected } from './auth-constants.js';
 
 import {
     signup,

@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7d1849-14a8-402b-8f18-42ab33031b26" name="Changes" comment="fixed .gitignore">
-      <change afterPath="$PROJECT_DIR$/src/redux/api/api-tasks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-initialState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-operations/tasks-boards-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-operations/tasks-cards-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-operations/tasks-columns-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks/tasks-slice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-slice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +78,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHubDesk\digital-creators-front\src\redux\auth" />
+      <recent name="D:\GitHubDesk\digital-creators-front\src\redux\tasks\tasks" />
       <recent name="D:\GitHubDesk\digital-creators-front\src\components\Welcome" />
       <recent name="D:\GitHubDesk\digital-creators-front\src\pages\WelcomePage" />
       <recent name="D:\GitHubDesk\digital-creators-front\src\redux" />
