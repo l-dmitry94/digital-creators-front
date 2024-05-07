@@ -23,25 +23,17 @@ const NeedHelpsPopup = () => {
         comment: yup.string().required('Comment is required'),
     });
 
-    const handleSubmit = data => {
+    const handleSubmit = async data => {
         setData(data);
-    };
-    useEffect(() => {
-        const fetchSendMail = async () => {
-            try {
-                await axios.post(
-                    'https://digital-creators-back.onrender.com/api/support/sendmail',
-                    {
-                        email: data.email,
-                        value: data.comment,
-                    }
-                );
-            } catch (error) {
-                console.log(error.message);
+
+        await axios.post(
+            'https://digital-creators-back.onrender.com/api/support/sendmail',
+            {
+                email: data.email,
+                value: data.comment,
             }
-        };
-        fetchSendMail();
-    }, [data.email, data.comment]);
+        );
+    };
 
     return (
         <CustomForm
@@ -51,10 +43,8 @@ const NeedHelpsPopup = () => {
             handleSubmit={handleSubmit}
         >
             {formik => (
-                <div>
-                    <div
-                        className={`${scss.inputContainer} ${scss.emailInput}`}
-                    >
+                <div className={scss.inputContainer}>
+                    <div>
                         <CustomInput
                             type="email"
                             name="email"

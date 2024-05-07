@@ -1,7 +1,6 @@
 .inputContainer {
-    margin-top: 24px;
-}
-
-.emailInput {
-    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 24px 0;
 }
