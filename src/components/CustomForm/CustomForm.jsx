@@ -1,7 +1,8 @@
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import SubmitButton from '../SubmitButton/SubmitButton';
-import ErrorsComponent from '../ErrorsCustomComponent/ErrorsCustomComponent';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const CustomForm = ({
     initialValues,
@@ -9,7 +10,6 @@ const CustomForm = ({
     operation,
     buttonText,
     children,
-    errorName
 }) => {
     const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ const CustomForm = ({
         <form onSubmit={formik.handleSubmit}>
             {children(formik)}
 
-            <ErrorsComponent errorName={errorName} /> 
+            <ToastContainer />
             <SubmitButton buttonText={buttonText} />
         </form>
     );
