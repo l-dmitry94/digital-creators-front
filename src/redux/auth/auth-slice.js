@@ -30,7 +30,9 @@ const authSlice = createSlice({
             .addCase(signup.pending, pending)
             .addCase(signup.fulfilled, (state, { payload }) => {
                 toast.dismiss();
-                toast.success(`${payload}`);
+                toast.success(
+                    `User ${payload.user.username} registered success `
+                );
                 state.user = payload.user;
                 state.isLoading = false;
                 state.token = payload.token;
