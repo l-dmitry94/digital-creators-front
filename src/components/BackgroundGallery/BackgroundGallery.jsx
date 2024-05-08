@@ -37,9 +37,9 @@ const BackgroundRadioGroup = () => {
     return (
         <Formik
             initialValues={{ background: selectedOption }}
-            onSubmit={(values, actions) => {
-                // Код обробки подання форми, якщо потрібно
-            }}
+            // onSubmit={(values, actions) => {
+            //     // Код обробки подання форми, якщо потрібно
+            // }}
         >
             {({ values, setFieldValue }) => (
                 <div className={scss.backgroundsContainer}>
