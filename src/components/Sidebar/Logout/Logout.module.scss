@@ -1,8 +1,7 @@
 @import 'src/styles/mixins.scss';
 
 .logoutContainer {
-  width: 105px;
-  height: 32px;
+
   padding: 0 14px;
   
     @include media-rules(tablet) {
