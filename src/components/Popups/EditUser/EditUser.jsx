@@ -11,10 +11,29 @@ import defaultImage from '../../../assets/images/user@1x-min.png';
 import { selectUser } from '../../../redux/auth/auth-selectors';
 import { updateUser } from '../../../redux/auth/auth-operations';
 
+import {
+    usernameRegexp,
+    emailRegexp,
+    passwordRegexp,
+} from '../../../constants/validation';
+
 const validationSchema = Yup.object().shape({
-    username: Yup.string(),
-    email: Yup.string().email('Invalid email address'),
-    password: Yup.string().min(8, 'Password must be at least 8 characters'),
+    username: Yup.string().matches(
+        usernameRegexp,
+        'Your username must be 2-32 characters long and can only contain letters (both uppercase and lowercase), numbers, and certain special characters'
+    ),
+    email: Yup.string()
+        // .email('Invalid email address')
+        .matches(
+            emailRegexp,
+            `The email should be in the format 'example@example.com'.`
+        ),
+    password: Yup.string()
+        // .min(8, 'Password must be at least 8 characters')
+        .matches(
+            passwordRegexp,
+            ' Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit'
+        ),
 });
 
 const EditUser = ({ closeModal }) => {
@@ -164,10 +183,10 @@ const EditUser = ({ closeModal }) => {
                                     <use href={`${icon}#icon-eye`}></use>
                                 </svg>
                             </button>
-                            {touched.password && errors.password && (
-                                <div>{errors.password}</div>
-                            )}
                         </div>
+                        {touched.password && errors.password && (
+                            <div>{errors.password}</div>
+                        )}
                     </div>
                     <SubmitButton buttonText={'Send'} />
                 </Form>
