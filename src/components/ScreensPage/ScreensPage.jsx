@@ -7,7 +7,7 @@ import MainDashboard from './MainDashboard/MainDashboard';
 const ScreensPage = () => {
     return (
         <div className={scss.flex}>
-            <HeaderDashboard />
+            <HeaderDashboard boardName={'Project office'} />
             <MainDashboard />
 
             {/* <StartPage /> */}
