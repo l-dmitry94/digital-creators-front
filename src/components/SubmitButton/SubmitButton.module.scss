@@ -30,7 +30,8 @@
 .buttonColumn {
     background-color: var(--dark-bg-sidebar);
     color: var(--white);
-    width: 334px;
+    min-width: 334px;
+    max-width: 335px;
     &:is(:hover, :focus) {
         background-color: var(--dark-grey-line);
     }
