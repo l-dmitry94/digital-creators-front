@@ -8,14 +8,14 @@ import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 const CreateNewBoard = () => {
     const initialValues = {
         title: '',
-        icon: '',
-        background: '',
+        icon: 'icon-project',
+        // background: '',
     };
 
     const validationSchema = yup.object().shape({
         title: yup.string().required('Title is required'),
         icon: yup.string().required('Icon is required'),
-        background: yup.string().required('Background is required'),
+        // background: yup.string().required('Background is required'),
     });
     return (
         <CustomForm

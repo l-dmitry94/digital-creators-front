@@ -21,12 +21,12 @@ const MainDashboard = () => {
 
     const column = [{ name: 'To do' }, { name: 'In progress' }];
 
-    console.log(carts.length);
-    console.log(TodoCart.length);
+    // console.log(carts.length);
+    // console.log(TodoCart.length);
 
-    column.map(col => {
-        console.log(col.name);
-    });
+    // column.map(col => {
+    //     console.log(col.name);
+    // });
 
     return (
         <div>

@@ -16,7 +16,7 @@ const BackgroundRadioGroup = () => {
                 const data = response.data;
                 const newBackgrounds = [blockImage, ...data.resources];
                 setBackgrounds(newBackgrounds);
-                console.log('Received data from server:', data.resources);
+                // console.log('Received data from server:', data.resources);
             })
             .catch(error => {
                 console.error('There was an error!', error);
@@ -30,16 +30,7 @@ const BackgroundRadioGroup = () => {
 
     const sendSelectedOptionToServer = index => {
         const selectedBackground = backgrounds[index];
-        // Відправка даних на сервер (яку тему вибрав користувач)
-        axios
-            .post('YOUR_SERVER_URL', { selectedOption: selectedBackground })
-            .then(response => {
-                const data = response.data;
-                console.log('Server response:', data);
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
+        console.log(selectedBackground);
     };
 
     return (
