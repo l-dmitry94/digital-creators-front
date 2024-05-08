@@ -7,12 +7,24 @@ const CustomForm = ({
     validationSchema,
     operation,
     buttonText,
+    handleSubmit,
+    onClose,
     children,
 }) => {
     const dispatch = useDispatch();
 
     const onSubmit = async values => {
-        dispatch(operation(values));
+        console.log(values);
+        if (handleSubmit) {
+            handleSubmit(values);
+            return;
+        }
+
+        const dispatchResult = dispatch(operation(values));
+
+        if (dispatchResult) {
+            onClose();
+        }
     };
 
     const formik = useFormik({

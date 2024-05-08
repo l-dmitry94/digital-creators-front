@@ -1,40 +1,8 @@
-import { useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import scss from './RadioButtons.module.scss';
 import sprite from '../../assets/icons/icons.svg';
 
-const CustomRadioGroup = () => {
-    const [selectedOption, setSelectedOption] = useState(0);
-
-    const handleOptionChange = index => {
-        setSelectedOption(index);
-        // Відправка даних на сервер (яку іконку вибрав користувач)
-        sendSelectedOptionToServer(index);
-    };
-
-    const sendSelectedOptionToServer = index => {
-        const selectedIcon = radioOptions[index];
-        console.log(index);
-        fetch('YOUR_SERVER_URL', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ icon: selectedIcon }),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Server response:', data);
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
-    };
-
+const CustomRadioGroup = ({ formik }) => {
     const radioOptions = [
         { id: 'icon-project', title: 'Project' },
         { id: 'icon-star', title: 'Star' },
@@ -46,24 +14,35 @@ const CustomRadioGroup = () => {
         { id: 'icon-hexagon', title: 'Hexagon' },
     ];
 
+    const [selectedOption, setSelectedOption] = useState(radioOptions[0].id);
+
+    useEffect(() => {
+        formik.values.icon = selectedOption;
+    }, [selectedOption, formik.values]);
+
+    const handleRadioButtons = e => {
+        setSelectedOption(e.target.value);
+    };
+
     return (
-        <div className={scss.customRadioGroup}>
-            {radioOptions.map((option, index) => (
-                <label key={index} className={scss.customRadioLabel}>
+        <div className={scss.radioGroup}>
+            {radioOptions.map(({ id }) => (
+                <Fragment key={id}>
                     <input
+                        className={scss.input}
                         type="radio"
-                        name="customRadio"
-                        value={index}
-                        checked={selectedOption === index}
-                        onChange={() => handleOptionChange(index)}
-                        className={scss.customRadioInput}
+                        id={id}
+                        name="group"
+                        value={id}
+                        onChange={e => handleRadioButtons(e)}
+                        checked={selectedOption === id}
                     />
-                    <svg
-                        className={`${scss.svgIcon} ${selectedOption === index ? scss.selectedIcon : ''}`}
-                    >
-                        <use xlinkHref={`${sprite}#${option.id}`} />
-                    </svg>
-                </label>
+                    <label htmlFor={id} className={scss.label}>
+                        <svg className={scss.icon}>
+                            <use href={`${sprite}#${id}`}></use>
+                        </svg>
+                    </label>
+                </Fragment>
             ))}
         </div>
     );
