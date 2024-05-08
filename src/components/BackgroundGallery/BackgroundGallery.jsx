@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { Formik } from 'formik';
+import { Fragment, useEffect, useState } from 'react';
 import scss from './BackgroundGallery.module.scss';
 import blockImage from '../../assets/images/block.svg';
 import axios from 'axios';
@@ -16,15 +17,15 @@ const BackgroundRadioGroup = () => {
                 const data = response.data;
                 const newBackgrounds = [blockImage, ...data.resources];
                 setBackgrounds(newBackgrounds);
-                // console.log('Received data from server:', data.resources);
             })
             .catch(error => {
                 console.error('There was an error!', error);
             });
     }, [baseURL]);
 
-    const handleOptionChange = index => {
+    const handleOptionChange = (index, setFieldValue) => {
         setSelectedOption(index);
+        setFieldValue('background', index);
         sendSelectedOptionToServer(index);
     };
 
@@ -34,39 +35,47 @@ const BackgroundRadioGroup = () => {
     };
 
     return (
-        <div className={scss.backgroundsContainer}>
-            {backgrounds.map((background, index) => (
-                <div key={index}>
-                    <label
-                        className={scss.radioLabel}
-                        onClick={() => handleOptionChange(index)}
-                    >
-                        <input
-                            type="radio"
-                            name="background"
-                            value={index}
-                            checked={selectedOption === index}
-                            onChange={() => handleOptionChange(index)}
-                            className={scss.backgroundsRadioInput}
-                        />
-                        <img
-                            src={
-                                typeof background === 'string'
-                                    ? background
-                                    : background.url
-                            }
-                            alt={
-                                typeof background === 'string'
-                                    ? 'Block'
-                                    : background.title
-                            }
-                            className={scss.radioImage}
-                            loading="lazy"
-                        />
-                    </label>
+        <Formik
+            initialValues={{ background: selectedOption }}
+            onSubmit={(values, actions) => {
+                // Код обробки подання форми, якщо потрібно
+            }}
+        >
+            {({ values, setFieldValue }) => (
+                <div className={scss.backgroundsContainer}>
+                    {backgrounds.map((background, id) => (
+                        <Fragment key={id}>
+                            <label
+                                className={scss.radioLabel}
+                                onClick={() =>
+                                    handleOptionChange(id, setFieldValue)
+                                }
+                            >
+                                <input
+                                    type="radio"
+                                    name="background"
+                                    value={id}
+                                    checked={values.background === id}
+                                    onChange={() =>
+                                        handleOptionChange(id, setFieldValue)
+                                    }
+                                    className={scss.backgroundsRadioInput}
+                                />
+                                <img
+                                    src={
+                                        typeof background === 'string'
+                                            ? background
+                                            : background.url
+                                    }
+                                    className={scss.radioImage}
+                                    loading="lazy"
+                                />
+                            </label>
+                        </Fragment>
+                    ))}
                 </div>
-            ))}
-        </div>
+            )}
+        </Formik>
     );
 };
 

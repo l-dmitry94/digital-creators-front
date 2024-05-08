@@ -15,13 +15,16 @@ const LinksListItem = ({ iconName, title, onSelect, isChecked }) => {
                 <p className={scss.linkTitle}>{title}</p>
             </div>
             {isChecked && (
-                <div className={scss.svgFlex}>
-                    <svg className={scss.svgIconControl}>
-                        <use xlinkHref={`${sprite}#icon-pencil`} />
-                    </svg>
-                    <svg className={scss.svgIconControl}>
-                        <use xlinkHref={`${sprite}#icon-trash`} />
-                    </svg>
+                <div className={scss.iconIndicatorFlex}>
+                    <div className={scss.svgFlex}>
+                        <svg className={scss.svgIconControl}>
+                            <use xlinkHref={`${sprite}#icon-pencil`} />
+                        </svg>
+                        <svg className={scss.svgIconControl}>
+                            <use xlinkHref={`${sprite}#icon-trash`} />
+                        </svg>
+                    </div>
+                    {isChecked && <div className={scss.indicator}></div>}
                 </div>
             )}
         </li>
