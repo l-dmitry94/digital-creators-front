@@ -1,5 +1,13 @@
 @import 'src/styles/mixins.scss';
 
+.container {
+  padding: 0 14px;
+  
+  @include media-rules(tablet) {
+    padding: 0 24px;
+  }
+}
+
 .helpContainer {
   display: flex;
   flex-direction: column;

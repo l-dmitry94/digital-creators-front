@@ -2,10 +2,15 @@
 
 .logoContainer {
   display: flex;
-  justify-content: space-between;
+  gap: 8px;
   align-items: center;
-  width: 104px;
-  height: 32px;
+  padding-left: 14px;
+  padding-right: 14px;
+
+  @include media-rules(tablet) {
+    padding-left: 24px;
+    padding-right: 2px;
+    }
 }
 
 .logoTitle {

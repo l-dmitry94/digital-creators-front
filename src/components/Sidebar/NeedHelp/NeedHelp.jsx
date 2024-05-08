@@ -21,30 +21,36 @@ const NeedHelp = () => {
     };
 
     return (
-        <div className={scss.helpContainer}>
-            <img className={scss.flowerpot} src={flowerpot} alt="Flowerpot" />
-            <div>
-                <p className={scss.helpText}>
-                    If you need help with{' '}
-                    <span className={scss.helpLogoText}>TaskPro</span>, check
-                    out our support resources or reach out to our customer
-                    support team.
-                </p>
-                <button className={scss.helpButton} onClick={openModal}>
-                    <div className={scss.question}>
-                        <svg className={scss.questionIcon}>
-                            <use href={`${icons}#icon-question`}></use>
-                        </svg>
-                    </div>
-                    <p className={scss.helpButtonText}>Need help?</p>
-                </button>
-                <CustomModal
-                    title={'Need help'}
-                    isOpen={modalIsOpen}
-                    onClose={closeModal}
-                >
-                    <NeedHelpsPopup onSubmit={handleSubmit} />
-                </CustomModal>
+        <div className={scss.container}>
+            <div className={scss.helpContainer}>
+                <img
+                    className={scss.flowerpot}
+                    src={flowerpot}
+                    alt="Flowerpot"
+                />
+                <div>
+                    <p className={scss.helpText}>
+                        If you need help with{' '}
+                        <span className={scss.helpLogoText}>TaskPro</span>,
+                        check out our support resources or reach out to our
+                        customer support team.
+                    </p>
+                    <button className={scss.helpButton} onClick={openModal}>
+                        <div className={scss.question}>
+                            <svg className={scss.questionIcon}>
+                                <use href={`${icons}#icon-question`}></use>
+                            </svg>
+                        </div>
+                        <p className={scss.helpButtonText}>Need help?</p>
+                    </button>
+                    <CustomModal
+                        title={'Need help'}
+                        isOpen={modalIsOpen}
+                        onClose={closeModal}
+                    >
+                        <NeedHelpsPopup onSubmit={handleSubmit} />
+                    </CustomModal>
+                </div>
             </div>
         </div>
     );
