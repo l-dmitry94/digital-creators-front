@@ -1,12 +1,17 @@
 @import 'src/styles/mixins';
 
 .wrapper {
-    display: flex;
+    @include media-rules(desktop) {
+        display: flex;
+    }
 }
 
 .appBar {
     @include transition(opacity);
-    flex: 1;
+
+    @include media-rules(desktop) {
+        flex: 1;
+    }
 }
 .active {
     composes: appBar;
