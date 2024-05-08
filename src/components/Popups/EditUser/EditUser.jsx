@@ -8,7 +8,7 @@ import icon from '../../../assets/icons/icons.svg';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
-import { selectUser } from '../../../redux/auth/auth-selectors';
+import { selectError, selectUser } from '../../../redux/auth/auth-selectors';
 import { updateUser } from '../../../redux/auth/auth-operations';
 
 const validationSchema = Yup.object().shape({
@@ -19,6 +19,7 @@ const validationSchema = Yup.object().shape({
 
 const EditUser = ({ closeModal }) => {
     const userInfo = useSelector(selectUser);
+    const error = useSelector(selectError);
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -85,7 +86,10 @@ const EditUser = ({ closeModal }) => {
 
                 try {
                     await dispatch(updateUser(formatData));
-                    closeModal(false);
+                    if (error) {
+                        return;
+                    }
+                    closeModal();
                 } catch (error) {
                     console.log(error);
                 }
