@@ -46,7 +46,11 @@ const SubmitButton = ({ buttonText, onSubmit, onClick }) => {
             );
         default:
             return (
-                <button onClick={onClick} className={scss.buttonWrapper} type="submit">
+                <button
+                    onClick={onClick}
+                    className={scss.buttonWrapper}
+                    type="submit"
+                >
                     <div className={scss.plus}>
                         <svg className={scss.plusIcon}>
                             <use href={`${icons}#icon-plus`}></use>

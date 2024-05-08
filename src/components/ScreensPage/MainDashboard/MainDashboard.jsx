@@ -1,7 +1,6 @@
 import SubmitButton from '../../SubmitButton';
 import Cart from '../Cart/Cart';
 import NameColumn from '../NameColumn/NameColumn';
-import TodoCart from '../TodoCart/TodoCart';
 import AddCard from '../../AddCard/AddCard';
 import { useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
@@ -50,15 +49,18 @@ const MainDashboard = () => {
             {column && (
                 <div className={scss.head}>
                     {columns}
-                    <SubmitButton onClick={openModal} buttonText={'Add another column'} />
+                    <SubmitButton
+                        onClick={openModal}
+                        buttonText={'Add another column'}
+                    />
                     <CustomModal
-                    isOpen={modalIsOpen}
-                    onClose={closeModal}
-                    buttonText={'Add'}
-                    title={'Add card'}
-                >
-                    <AddCard />
-                </CustomModal>
+                        isOpen={modalIsOpen}
+                        onClose={closeModal}
+                        buttonText={'Add'}
+                        title={'Add card'}
+                    >
+                        <AddCard />
+                    </CustomModal>
                 </div>
             )}
         </>
