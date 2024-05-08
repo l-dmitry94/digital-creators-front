@@ -11,7 +11,7 @@ const AppBar = () => {
     const appBarClassName = `${scss.appBar} ${isActiveSidebar ? scss.active : ''}`;
     const handleClick = prop => setIsActiveSidebar(prop);
     return (
-        <div>
+        <div className={scss.wrapper}>
             <Sidebar
                 isActiveSidebar={isActiveSidebar}
                 handleClick={handleClick}

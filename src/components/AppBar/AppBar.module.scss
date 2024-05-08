@@ -1,7 +1,12 @@
 @import 'src/styles/mixins';
 
+.wrapper {
+    display: flex;
+}
+
 .appBar {
     @include transition(opacity);
+    flex: 1;
 }
 .active {
     composes: appBar;
