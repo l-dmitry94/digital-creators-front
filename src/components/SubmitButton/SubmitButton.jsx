@@ -1,7 +1,7 @@
 import icons from '../../assets/icons/icons.svg';
 import scss from './SubmitButton.module.scss';
 
-const SubmitButton = ({ buttonText, onSubmit }) => {
+const SubmitButton = ({ buttonText, onSubmit, onClick }) => {
     switch (buttonText) {
         case 'Send':
             return (
@@ -34,7 +34,7 @@ const SubmitButton = ({ buttonText, onSubmit }) => {
                 <button
                     className={scss.buttonColumn}
                     type="button"
-                    onClick={onSubmit}
+                    onClick={onClick}
                 >
                     <div className={scss.plusColumn}>
                         <svg className={scss.plusIconColumn}>
@@ -46,7 +46,11 @@ const SubmitButton = ({ buttonText, onSubmit }) => {
             );
         default:
             return (
-                <button className={scss.buttonWrapper} type="submit">
+                <button
+                    onClick={onClick}
+                    className={scss.buttonWrapper}
+                    type="submit"
+                >
                     <div className={scss.plus}>
                         <svg className={scss.plusIcon}>
                             <use href={`${icons}#icon-plus`}></use>
