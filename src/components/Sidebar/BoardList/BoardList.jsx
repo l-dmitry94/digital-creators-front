@@ -32,7 +32,7 @@ const BoardList = () => {
                     isOpen={modalIsOpen}
                     onClose={closeModal}
                 >
-                    <CreateNewBoard />
+                    <CreateNewBoard onClose={closeModal} />
                 </CustomModal>
             </div>
         </div>
