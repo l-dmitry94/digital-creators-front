@@ -1,12 +1,11 @@
 @import 'src/styles/mixins.scss';
 
 .logoutContainer {
-
   padding: 0 14px;
   
-    @include media-rules(tablet) {
-      padding: 0 24px;
-    }
+  @include media-rules(tablet) {
+    padding: 0 24px;
+  }
 }
 
 .logoutButtonFlex {
