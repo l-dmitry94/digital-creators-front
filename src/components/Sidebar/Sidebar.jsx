@@ -4,7 +4,7 @@ import NeedHelp from './NeedHelp/NeedHelp.jsx';
 import Logout from './Logout/Logout.jsx';
 import BoardLink from './BoardLink/BoardLink.jsx';
 import scss from './Sidebar.module.scss';
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const Sidebar = ({ isActiveSidebar, handleClick }) => {
     const sidebarRef = useRef(null);
@@ -15,25 +15,20 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
         setActive(isActiveSidebar);
     }, [isActiveSidebar]);
 
-    const handleClickOutside = useCallback(
-        event => {
-            if (
-                sidebarRef.current &&
-                !sidebarRef.current.contains(event.target)
-            ) {
-                setActive(false);
-                handleClick(active);
-            }
-        },
-        [handleClick, active]
-    );
+    const handleClickOutside = event => {
+        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+            setActive(false);
+            handleClick(active);
+        }
+    };
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [handleClickOutside, active]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const sidebarActive = `${scss.sidebar} ${active ? scss.active : ''}`;
     return (
