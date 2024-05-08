@@ -1,23 +1,15 @@
-.cartList {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .head {
     display: flex;
-    gap: 34px;
-}
-
-.right {
-    display: flex;
-    overflow: auto;
-    // gap: 34px;
+    gap: 22px;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    max-width: 334px;
+    // min-width: 346px;
+}
+
+.btn {
+    // max-width: 334px;
 }

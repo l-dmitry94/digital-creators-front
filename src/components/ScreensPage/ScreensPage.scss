@@ -1,5 +1,13 @@
 @import 'src/styles/mixins';
 
+.simplebar-track.simplebar-vertical {
+    right: -4px;
+}
+
+.scroll {
+    background-color: rosybrown;
+}
+
 // .head {
 //     display: flex;
 //     justify-content: space-between;
