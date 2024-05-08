@@ -8,7 +8,7 @@ import icon from '../../../assets/icons/icons.svg';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
-import { selectUser } from '../../../redux/auth/auth-selectors';
+import { selectError, selectUser } from '../../../redux/auth/auth-selectors';
 import { updateUser } from '../../../redux/auth/auth-operations';
 
 const validationSchema = Yup.object().shape({
@@ -17,8 +17,9 @@ const validationSchema = Yup.object().shape({
     password: Yup.string().min(8, 'Password must be at least 8 characters'),
 });
 
-const EditUser = () => {
+const EditUser = ({ closeModal }) => {
     const userInfo = useSelector(selectUser);
+    const error = useSelector(selectError);
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -27,6 +28,7 @@ const EditUser = () => {
     const passwordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
     useEffect(() => {
         if (imagePreview !== defaultImage) {
             setImagePreview(imagePreview);
@@ -46,7 +48,7 @@ const EditUser = () => {
             }}
             validationSchema={validationSchema}
             async
-            onSubmit={values => {
+            onSubmit={async values => {
                 const formatData = new FormData();
                 // Перевірка чи змінювались поля
                 if (values.username !== userInfo.username) {
@@ -55,12 +57,39 @@ const EditUser = () => {
                 if (values.email !== userInfo.email) {
                     formatData.append('email', values.email);
                 }
-                if (values.password !== userInfo.password) {
+                if (values.password) {
                     formatData.append('password', values.password);
                 }
+                if (values.avatar) {
+                    formatData.append('avatar', values.avatar);
+                }
+
+                // Перевірка чи є зміни у введених даних
+                if (
+                    !values.username &&
+                    !values.email &&
+                    !values.password &&
+                    !values.avatar
+                ) {
+                    console.log('Data empty');
+                    return;
+                }
+
+                // Перевірка чи є зміни в імені або електронній пошті
+                if (
+                    values.username === userInfo.username ||
+                    values.email === userInfo.email
+                ) {
+                    console.log('Value name or email is the same');
+                    return;
+                }
+
                 try {
-                    formatData.append('avatar', values.image);
-                    dispatch(updateUser(formatData));
+                    await dispatch(updateUser(formatData));
+                    if (error) {
+                        return;
+                    }
+                    closeModal();
                 } catch (error) {
                     console.log(error);
                 }
@@ -76,16 +105,17 @@ const EditUser = () => {
                                 width: '68px',
                                 height: '68px',
                                 objectFit: 'cover',
+                                borderRadius: '8px',
                             }}
                         />
                         <label className="file-input-label">
                             <input
                                 type="file"
                                 className={scss.input}
-                                accept="images/*, .png, .jpg, .web"
+                                accept="image/*, .png, .jpg, .jpeg"
                                 onChange={event => {
                                     const file = event.currentTarget.files[0];
-                                    setFieldValue('image', file);
+                                    setFieldValue('avatar', file);
 
                                     const reader = new FileReader();
                                     reader.onload = () => {
@@ -93,7 +123,6 @@ const EditUser = () => {
                                     };
                                     if (file) {
                                         reader.readAsDataURL(file);
-                                        console.log(file);
                                     } else {
                                         setImagePreview(defaultImage);
                                     }
@@ -104,7 +133,9 @@ const EditUser = () => {
                             </svg>
                         </label>
                     </div>
-                    {touched.image && errors.image && <div>{errors.image}</div>}
+                    {touched.avatar && errors.avatar && (
+                        <div>{errors.avatar}</div>
+                    )}
                     <div className={scss.fields}>
                         <Field
                             type="text"
@@ -126,7 +157,7 @@ const EditUser = () => {
                             <Field
                                 type={showPassword ? 'text' : 'password'}
                                 name="password"
-                                placeholder="qwerty123"
+                                placeholder="Password"
                             />
                             <button
                                 type="button"

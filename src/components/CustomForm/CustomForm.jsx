@@ -8,6 +8,7 @@ const CustomForm = ({
     operation,
     buttonText,
     handleSubmit,
+    onClose,
     children,
 }) => {
     const dispatch = useDispatch();
@@ -18,7 +19,12 @@ const CustomForm = ({
             handleSubmit(values);
             return;
         }
-        dispatch(operation(values));
+
+        const dispatchResult = dispatch(operation(values));
+
+        if (dispatchResult) {
+            onClose();
+        }
     };
 
     const formik = useFormik({

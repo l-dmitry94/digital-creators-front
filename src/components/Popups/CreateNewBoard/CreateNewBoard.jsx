@@ -5,7 +5,7 @@ import CustomForm from '../../CustomForm/CustomForm.jsx';
 import * as yup from 'yup';
 import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 
-const CreateNewBoard = () => {
+const CreateNewBoard = ({ onClose }) => {
     const initialValues = {
         title: '',
         icon: 'icon-project',
@@ -22,6 +22,7 @@ const CreateNewBoard = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Create'}
+            onClose={onClose}
         >
             {formik => (
                 <div>

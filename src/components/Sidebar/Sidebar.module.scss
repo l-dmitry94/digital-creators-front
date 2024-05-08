@@ -22,6 +22,7 @@
         padding-bottom: 24px;
     }
     @include media-rules(desktop) {
+        position: static;
         transform: translateX(0);
     }
 }
