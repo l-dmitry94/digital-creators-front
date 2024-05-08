@@ -1,6 +1,7 @@
 import SubmitButton from '../../SubmitButton';
 import NameColumn from '../NameColumn/NameColumn';
 import TodoCart from '../TodoCart/TodoCart';
+import AddCard from '../../AddCard/AddCard';
 import scss from './MainDashboard.module.scss';
 
 const MainDashboard = () => {
