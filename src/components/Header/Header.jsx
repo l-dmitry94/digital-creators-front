@@ -59,7 +59,7 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                         isOpen={modalIsOpen}
                         onClose={closeModal}
                     >
-                        <EditUser />
+                        <EditUser closeModal={closeModal} />
                     </CustomModal>
                 </div>
             </Container>
