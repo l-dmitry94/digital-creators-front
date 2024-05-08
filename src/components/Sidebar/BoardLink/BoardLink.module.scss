@@ -13,6 +13,13 @@
     height: 61px;
     color: var(--dark-grey);
     cursor: pointer;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    @include media-rules(tablet) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .linkItem.checked {

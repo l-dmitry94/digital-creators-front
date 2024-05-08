@@ -12,12 +12,14 @@
     height: auto;
     background-color: var(--dark-bg-sidebar);
     width: 225px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     @include transition(transform);
-    padding: 14px;
 
     @include media-rules(tablet) {
         width: 260px;
-        padding: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     @include media-rules(desktop) {
         transform: translateX(0);
