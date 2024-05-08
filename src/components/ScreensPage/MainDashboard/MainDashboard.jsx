@@ -13,9 +13,7 @@ const MainDashboard = () => {
     const columns = column.map(({ name }, index) => (
         <div key={index} className={scss.column}>
             <NameColumn nameColumn={name} />
-            {/* <SimpleBar style={{ maxHeight: 640 }}> */}
             <Cart />
-            {/* </SimpleBar> */}
             <div className={scss.btn}>
                 <SubmitButton buttonText={'Add another cart'} />{' '}
             </div>
