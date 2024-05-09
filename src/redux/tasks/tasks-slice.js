@@ -1,11 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { initialState } from './tasks-initialState.js';
+// import { initialState } from './tasks-initialState.js';
 
 import * as boardsOperations from './tasks-operations/tasks-boards-operations.js';
 import * as columnsOperations from './tasks-operations/tasks-columns-operations.js';
 import * as cardsOperations from './tasks-operations/tasks-cards-operations.js';
 import * as status from './tasks-constants.js';
+
+const initialState = {
+    boards: {
+        items: [],
+        isLoading: false,
+        error: null,
+    },
+    columns: {
+        items: [],
+        isLoading: false,
+        error: null,
+    },
+    cards: {
+        items: [],
+        isLoading: false,
+        error: null,
+    },
+};
 
 const tasksSlice = createSlice({
     name: 'tasks',
