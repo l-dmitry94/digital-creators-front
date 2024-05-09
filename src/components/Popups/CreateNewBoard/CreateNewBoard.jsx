@@ -4,24 +4,27 @@ import BackgroundGallery from '../../BackgroundGallery/BackgroundGallery.jsx';
 import CustomForm from '../../CustomForm/CustomForm.jsx';
 import * as yup from 'yup';
 import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
+import { addBoard } from '../../../redux/tasks/tasks-operations/tasks-boards-operations.js';
 
 const CreateNewBoard = ({ onClose }) => {
     const initialValues = {
-        title: '',
+        board_name: '',
         icon: 'icon-project',
         background: 'default',
     };
 
     const validationSchema = yup.object().shape({
-        title: yup.string().required('Title is required'),
+        board_name: yup.string().required('Title is required'),
         icon: yup.string().required('Icon is required'),
         background: yup.string().required('Background is required'),
     });
+
     return (
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Create'}
+            operation={addBoard}
             onClose={onClose}
         >
             {formik => (
@@ -29,7 +32,7 @@ const CreateNewBoard = ({ onClose }) => {
                     <div className={scss.createBoardInput}>
                         <CustomInput
                             placeholder={'Title'}
-                            name="title"
+                            name="board_name"
                             value={formik.values.title}
                             type={'text'}
                             onBlur={formik.handleBlur}
