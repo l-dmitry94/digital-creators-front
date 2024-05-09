@@ -6,12 +6,11 @@ import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 
-// import axios from 'axios';
-
 const AddCard = () => {
     const initialValues = {
         title: '',
         description: '',
+        labelColor: '',
     };
 
     const validationSchema = yup.object().shape({
@@ -20,24 +19,14 @@ const AddCard = () => {
             .label('Invalid title')
             .required('Title is required'),
         description: yup.string().required('Description is required'),
+        labelColor: yup.string(),
     });
-
-    // const handleSubmit = async data => {
-    //     await axios.post(
-    //         'https://digital-creators-back.onrender.com/api/support/sendmail',
-    //         {
-    //             email: data.email,
-    //             value: data.comment,
-    //         }
-    //     );
-    // };
 
     return (
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Add'}
-            // handleSubmit={handleSubmit}
         >
             {formik => (
                 <div className={scss.inputContainer}>
@@ -68,7 +57,12 @@ const AddCard = () => {
                                 <div>{formik.errors.description}</div>
                             )}
                     </div>
-                    <ColorSelector title={'Label Color'}/>
+                    <ColorSelector
+                        title={'Label Color'}
+                        onChange={color =>
+                            formik.setFieldValue('labelColor', color)
+                        }
+                    />
                 </div>
             )}
         </CustomForm>
