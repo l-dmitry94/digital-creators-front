@@ -1,12 +1,20 @@
-import { Formik } from 'formik';
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment, useEffect, useState } from 'react';
 import scss from './BackgroundGallery.module.scss';
 import blockImage from '../../assets/images/block.svg';
 import axios from 'axios';
 
-const BackgroundRadioGroup = () => {
-    const [backgrounds, setBackgrounds] = useState([]);
-    const [selectedOption, setSelectedOption] = useState(0);
+const BackgroundRadioGroup = ({ formik }) => {
+    const defaultImage = {
+        public_id: 'default/default',
+        secure_url: blockImage,
+    };
+
+    const [backgrounds, setBackgrounds] = useState([defaultImage]);
+    const [selectedOption, setSelectedOption] = useState(
+        backgrounds[0].public_id.split('/')[1]
+    );
+    console.log(selectedOption);
 
     const baseURL = import.meta.env.VITE_BACKEND_URL;
 
@@ -15,7 +23,7 @@ const BackgroundRadioGroup = () => {
             .get(`${baseURL}/user/folders/tablet_bg`)
             .then(response => {
                 const data = response.data;
-                const newBackgrounds = [blockImage, ...data.resources];
+                const newBackgrounds = [...backgrounds, ...data.resources];
                 setBackgrounds(newBackgrounds);
             })
             .catch(error => {
@@ -23,59 +31,41 @@ const BackgroundRadioGroup = () => {
             });
     }, [baseURL]);
 
-    const handleOptionChange = (index, setFieldValue) => {
-        setSelectedOption(index);
-        setFieldValue('background', index);
-        sendSelectedOptionToServer(index);
-    };
+    useEffect(() => {
+        formik.values.background = selectedOption;
+    }, [selectedOption, formik.values]);
 
-    const sendSelectedOptionToServer = index => {
-        const selectedBackground = backgrounds[index];
-        console.log(selectedBackground);
+    const handleRadioButtons = e => {
+        setSelectedOption(e.target.value);
     };
 
     return (
-        <Formik
-            initialValues={{ background: selectedOption }}
-            // onSubmit={(values, actions) => {
-            //     // Код обробки подання форми, якщо потрібно
-            // }}
-        >
-            {({ values, setFieldValue }) => (
-                <div className={scss.backgroundsContainer}>
-                    {backgrounds.map((background, id) => (
-                        <Fragment key={id}>
-                            <label
-                                className={scss.radioLabel}
-                                onClick={() =>
-                                    handleOptionChange(id, setFieldValue)
-                                }
-                            >
-                                <input
-                                    type="radio"
-                                    name="background"
-                                    value={id}
-                                    checked={values.background === id}
-                                    onChange={() =>
-                                        handleOptionChange(id, setFieldValue)
-                                    }
-                                    className={scss.backgroundsRadioInput}
-                                />
-                                <img
-                                    src={
-                                        typeof background === 'string'
-                                            ? background
-                                            : background.url
-                                    }
-                                    className={scss.radioImage}
-                                    loading="lazy"
-                                />
-                            </label>
-                        </Fragment>
-                    ))}
-                </div>
-            )}
-        </Formik>
+        <div className={scss.radioGroup}>
+            {backgrounds?.map(({ public_id, secure_url }) => (
+                <Fragment key={public_id}>
+                    <input
+                        className={scss.input}
+                        type="radio"
+                        id={public_id.split('/')[1]}
+                        name="background"
+                        value={public_id.split('/')[1]}
+                        onChange={e => handleRadioButtons(e)}
+                        checked={selectedOption === public_id.split('/')[1]}
+                    />
+                    <label
+                        htmlFor={public_id.split('/')[1]}
+                        className={scss.label}
+                    >
+                        <img
+                            className={scss.image}
+                            src={secure_url}
+                            alt={public_id.split('/')[1]}
+                            loading="lazy"
+                        />
+                    </label>
+                </Fragment>
+            ))}
+        </div>
     );
 };
 

@@ -9,7 +9,6 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 const Sidebar = ({ isActiveSidebar, handleClick }) => {
     const sidebarRef = useRef(null);
     const [active, setActive] = useState(isActiveSidebar);
-    console.log('first');
 
     useEffect(() => {
         setActive(isActiveSidebar);
