@@ -16,6 +16,7 @@ const EditColumn = () => {
                         type={'text'}
                         name={'title'}
                         placeholder={'Title'}
+                        onBlur={formik.handleBlur}
                     />
                 </div>
             )}
