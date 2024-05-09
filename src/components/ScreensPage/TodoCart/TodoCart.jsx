@@ -1,6 +1,8 @@
 import scss from './TodoCart.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
 
+import MyDatePicker from '../MainDashboard/CardDatePicker/CardDatePicker';
+
 const TodoCart = ({ title, descr, priority, deadline }) => {
     return (
         <div className={scss.todoCart}>
@@ -16,7 +18,9 @@ const TodoCart = ({ title, descr, priority, deadline }) => {
                     </li>
                     <li>
                         <p className={scss.setName}>Deadline</p>
-                        <p className={scss.setSign}>{deadline}</p>
+                        <p className={scss.setSign}>
+                            <MyDatePicker />
+                        </p>
                     </li>
                 </ul>
                 <div className={scss.btnSetting}>

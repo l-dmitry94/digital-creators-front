@@ -1,0 +1,13 @@
+.date_picker input {
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    &:focus {
+        outline: none;
+    }
+}
