@@ -5,6 +5,7 @@ import CustomForm from '../../CustomForm/CustomForm.jsx';
 import * as yup from 'yup';
 import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 import { addBoard } from '../../../redux/tasks/tasks-operations/tasks-boards-operations.js';
+import Errors from '../../Errors/Errors.jsx';
 
 const CreateNewBoard = ({ onClose }) => {
     const initialValues = {
@@ -37,10 +38,15 @@ const CreateNewBoard = ({ onClose }) => {
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                         />
-                        {formik.errors.board_name &&
+                        <Errors
+                            error={formik.errors}
+                            touched={formik.touched}
+                            errorMessage="board_name"
+                        />
+                        {/* {formik.errors.board_name &&
                             formik.touched.board_name && (
                                 <div>{formik.errors.board_name}</div>
-                            )}
+                            )} */}
                     </div>
                     <p className={scss.iconsTitle}>Icons</p>
                     <div className={scss.createRadioGroup}>
