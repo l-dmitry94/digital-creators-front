@@ -14,7 +14,6 @@ const BackgroundRadioGroup = ({ formik }) => {
     const [selectedOption, setSelectedOption] = useState(
         backgrounds[0].public_id.split('/')[1]
     );
-    console.log(selectedOption);
 
     const baseURL = import.meta.env.VITE_BACKEND_URL;
 
@@ -23,11 +22,11 @@ const BackgroundRadioGroup = ({ formik }) => {
             .get(`${baseURL}/user/folders/tablet_bg`)
             .then(response => {
                 const data = response.data;
-                const newBackgrounds = [...backgrounds, ...data.resources];
+                const newBackgrounds = [defaultImage, ...data.resources];
                 setBackgrounds(newBackgrounds);
             })
             .catch(error => {
-                console.error('There was an error!', error);
+                console.error(error);
             });
     }, [baseURL]);
 
