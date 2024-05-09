@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as tasksInstance from '../../api/api-tasks.js';
+// import * as tasksInstance from '../../api/api-tasks.js';
 
 const baseURL = import.meta.env.VITE_BACKEND_URL;
 

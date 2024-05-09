@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as tasksInstance from '../../api/api-tasks.js';
+// import * as tasksInstance from '../../api/api-tasks.js';
 
 import axios from 'axios';
 
@@ -43,6 +43,7 @@ export const removeColumn = createAsyncThunk(
             const { data } = await axios.delete(
                 `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`
             );
+            return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
