@@ -6,6 +6,8 @@ import { useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
 import scss from './MainDashboard.module.scss';
 
+import AddColumn from '../../Popups/Column/AddColumn/AddColumn';
+
 const MainDashboard = () => {
     const column = [
         { name: 'To do' },
@@ -13,14 +15,24 @@ const MainDashboard = () => {
         { name: 'Done' },
     ];
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
 
-    const openModal = () => {
-        setModalIsOpen(true);
+    const [columnModalIsOpen, setColumnModalIsOpen] = useState(false);
+
+    const columnModalOpen = () => {
+        setColumnModalIsOpen(true);
     };
 
-    const closeModal = () => {
-        setModalIsOpen(false);
+    const columnModalClose = () => {
+        setColumnModalIsOpen(false);
+    };
+
+    const cardOpenModal = () => {
+        setCardModalIsOpen(true);
+    };
+
+    const cardCloseModal = () => {
+        setCardModalIsOpen(false);
     };
 
     const columns = column.map(({ name }, index) => (
@@ -29,12 +41,12 @@ const MainDashboard = () => {
             <Cart />
             <div className={scss.btn}>
                 <SubmitButton
-                    onClick={openModal}
+                    onClick={cardOpenModal}
                     buttonText={'Add another cart'}
-                />{' '}
+                />
                 <CustomModal
-                    isOpen={modalIsOpen}
-                    onClose={closeModal}
+                    isOpen={cardModalIsOpen}
+                    onClose={cardCloseModal}
                     buttonText={'Add'}
                     title={'Add card'}
                 >
@@ -50,16 +62,15 @@ const MainDashboard = () => {
                 <div className={scss.head}>
                     {columns}
                     <SubmitButton
-                        onClick={openModal}
+                        onClick={columnModalOpen}
                         buttonText={'Add another column'}
                     />
                     <CustomModal
-                        isOpen={modalIsOpen}
-                        onClose={closeModal}
-                        buttonText={'Add'}
-                        title={'Add card'}
+                        isOpen={columnModalIsOpen}
+                        onClose={columnModalClose}
+                        title={'Add column'}
                     >
-                        <AddCard />
+                        <AddColumn />
                     </CustomModal>
                 </div>
             )}
