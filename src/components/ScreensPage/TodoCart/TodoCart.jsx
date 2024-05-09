@@ -3,7 +3,7 @@ import TodoBtn from '../TodoBtn/TodoBtn';
 
 import MyDatePicker from '../MainDashboard/CardDatePicker/CardDatePicker';
 
-const TodoCart = ({ title, descr, priority, deadline }) => {
+const TodoCart = ({ title, descr, priority }) => {
     return (
         <div className={scss.todoCart}>
             <div className={scss.cartTask}>
