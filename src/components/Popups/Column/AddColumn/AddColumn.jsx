@@ -1,6 +1,8 @@
 import CustomForm from '../../../CustomForm/CustomForm';
 import CustomInput from '../../../CustomInput/CustomInput';
 
+import scss from './add-column.module.scss';
+
 const initialValues = {
     title: '',
 };
@@ -8,7 +10,11 @@ const initialValues = {
 const AddColumn = () => {
     return (
         <CustomForm initialValues={initialValues} buttonText={'Add'}>
-            {formik => <CustomInput name={'title'} placeholder={'Title'} />}
+            {formik => (
+                <div className={scss.addColumn}>
+                    <CustomInput name={'title'} placeholder={'Title'} />
+                </div>
+            )}
         </CustomForm>
     );
 };
