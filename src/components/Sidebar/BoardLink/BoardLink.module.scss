@@ -14,11 +14,9 @@
     color: var(--dark-grey);
     cursor: pointer;
     padding-left: 14px;
-    padding-right: 14px;
 
     @include media-rules(tablet) {
         padding-left: 24px;
-        padding-right: 24px;
     }
 }
 
@@ -32,6 +30,11 @@
     display: flex;
     gap: 4px;
     align-items: center;
+}
+
+.iconIndicatorFlex {
+    display: flex;
+    gap: 14px;
 }
 
 .svgFlex {
@@ -66,4 +69,11 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     opacity: 0.4;
+}
+
+.indicator {
+    border-radius: 4px 0 0 4px;
+    width: 4px;
+    height: 61px;
+    background: #bedbb0;
 }
