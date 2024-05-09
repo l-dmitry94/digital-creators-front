@@ -12,7 +12,11 @@ const EditColumn = () => {
         <CustomForm buttonText={'Edit'} initialValues={initialValues}>
             {formik => (
                 <div className={scss.editColumn}>
-                    <CustomInput placeholder={'Title'} />
+                    <CustomInput
+                        type={'text'}
+                        name={'title'}
+                        placeholder={'Title'}
+                    />
                 </div>
             )}
         </CustomForm>
