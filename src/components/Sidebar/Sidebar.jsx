@@ -17,6 +17,10 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
 
     const handleClickOutside = event => {
         if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+            const modalElement = document.querySelector('.ReactModalPortal');
+            if (modalElement && modalElement.contains(event.target)) {
+                return;
+            }
             setActive(false);
             handleClick(active);
         }
