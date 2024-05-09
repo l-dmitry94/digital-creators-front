@@ -9,13 +9,13 @@ const CreateNewBoard = ({ onClose }) => {
     const initialValues = {
         title: '',
         icon: 'icon-project',
-        // background: '',
+        background: 'default',
     };
 
     const validationSchema = yup.object().shape({
         title: yup.string().required('Title is required'),
         icon: yup.string().required('Icon is required'),
-        // background: yup.string().required('Background is required'),
+        background: yup.string().required('Background is required'),
     });
     return (
         <CustomForm

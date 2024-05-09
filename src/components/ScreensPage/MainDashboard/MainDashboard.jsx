@@ -6,7 +6,7 @@ import { useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
 import scss from './MainDashboard.module.scss';
 
-// import AddColumn from '../../Popups/Column/AddColumn/AddColumn';
+import AddColumn from '../../Popups/Column/AddColumn/AddColumn';
 
 const MainDashboard = () => {
     const column = [
@@ -47,7 +47,7 @@ const MainDashboard = () => {
                 <CustomModal
                     isOpen={cardModalIsOpen}
                     onClose={cardCloseModal}
-                    // buttonText={'Add'}
+                    buttonText={'Add'}
                     title={'Add card'}
                 >
                     <AddCard />
@@ -70,7 +70,7 @@ const MainDashboard = () => {
                         onClose={columnModalClose}
                         title={'Add column'}
                     >
-                        <AddCard />
+                        <AddColumn />
                     </CustomModal>
                 </div>
             )}
