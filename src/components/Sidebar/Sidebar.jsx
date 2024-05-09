@@ -9,7 +9,6 @@ import { useRef, useState, useEffect } from 'react';
 const Sidebar = ({ isActiveSidebar, handleClick }) => {
     const sidebarRef = useRef(null);
     const [active, setActive] = useState(isActiveSidebar);
-    console.log('first');
 
     useEffect(() => {
         setActive(isActiveSidebar);
@@ -17,6 +16,10 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
 
     const handleClickOutside = event => {
         if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+            const modalElement = document.querySelector('.ReactModalPortal');
+            if (modalElement && modalElement.contains(event.target)) {
+                return;
+            }
             setActive(false);
             handleClick(active);
         }

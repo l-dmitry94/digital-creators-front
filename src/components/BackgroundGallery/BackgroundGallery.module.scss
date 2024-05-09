@@ -1,25 +1,33 @@
 @import 'src/styles/mixins.scss';
 
-.backgroundsContainer {
-  width: 252px;
-  height: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 40px;
+.radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.backgroundsRadioInput {
-  display: none;
+.input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-.radioLabel input:checked+.radioImage {
-  border: 1px solid var(--dark-green);
+.image {
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
-.radioImage {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  cursor: pointer;
+.input:checked + .label .image {
+    border-color: var(--light-green);
 }
