@@ -38,7 +38,7 @@ const AddCard = () => {
                             value={formik.values.title}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className={scss.emailInput}
+                            // className={scss.emailInput}
                         />
                         {formik.errors.title && formik.touched.title && (
                             <div>{formik.errors.title}</div>
