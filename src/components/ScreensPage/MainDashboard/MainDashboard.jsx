@@ -39,6 +39,7 @@ const MainDashboard = () => {
         <div key={index} className={scss.column}>
             <NameColumn nameColumn={name} />
             <Cart />
+              
             <div className={scss.btn}>
                 <SubmitButton
                     onClick={cardOpenModal}

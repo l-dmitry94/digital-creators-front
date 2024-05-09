@@ -3,7 +3,6 @@ import Header from '../Header';
 import { useState } from 'react';
 import scss from './AppBar.module.scss';
 import ScreensPage from '../ScreensPage/ScreensPage';
-import Container from '../Container';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
@@ -24,9 +23,7 @@ const AppBar = () => {
                 />
 
                 <main>
-                    <Container>
-                        <ScreensPage />
-                    </Container>
+                    <ScreensPage />
                 </main>
             </div>
         </div>

@@ -1,15 +1,11 @@
 .head {
     display: flex;
-    gap: 22px;
+    gap: 34px;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    // min-width: 346px;
-}
-
-.btn {
-    // max-width: 334px;
+    min-width: 334px;
 }
