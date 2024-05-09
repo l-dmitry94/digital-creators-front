@@ -5,18 +5,21 @@ import HeaderDashboard from './HeaderDashboard/HeaderDashboard';
 import MainDashboard from './MainDashboard/MainDashboard';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
+import Container from '../Container';
 
 const ScreensPage = () => {
     // const screenWidth = [{ mod: 375 }, { tab: 768 }];
 
     return (
-        <div>
-            <HeaderDashboard boardName={'Project office'} />
-            <SimpleBar className="scroll" style={{ maxWidth: 1132 }}>
-                <MainDashboard />
-            </SimpleBar>
-            {/* <StartPage /> */}
-        </div>
+        <Container>
+            <div className="screen">
+                <HeaderDashboard boardName={'Project office'} />
+                <SimpleBar>
+                    <MainDashboard />
+                </SimpleBar>
+                {/* <StartPage /> */}
+            </div>
+        </Container>
     );
 };
 
