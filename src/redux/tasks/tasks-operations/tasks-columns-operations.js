@@ -1,12 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as tasksInstance from '../../api/api-tasks.js';
+// import * as tasksInstance from '../../api/api-tasks.js';
+
+import axios from 'axios';
+
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export const fetchColumns = createAsyncThunk(
     'tasks/fetchColumns',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.getColumns(data.boardId);
+            const { data } = await axios.get(
+                `${baseURL}/boards/${body.boardId}/columns`
+            );
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -16,12 +22,13 @@ export const fetchColumns = createAsyncThunk(
 
 export const addColumn = createAsyncThunk(
     'tasks/addColumn',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.addColumn(
-                data.boardId,
-                data.body
+            const { data } = await axios.post(
+                `${baseURL}/boards/${body.boardId}/columns`,
+                body.data
             );
+
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -31,12 +38,12 @@ export const addColumn = createAsyncThunk(
 
 export const removeColumn = createAsyncThunk(
     'tasks/removeColumn',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.removeColumn(
-                data.boardId,
-                data.columnId
+            const { data } = await axios.delete(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`
             );
+            return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
         }
@@ -45,12 +52,11 @@ export const removeColumn = createAsyncThunk(
 
 export const editColumn = createAsyncThunk(
     'tasks/editColumn',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.editColumn(
-                data.boardId,
-                data.columnId,
-                data.body
+            const { data } = await axios.patch(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`,
+                body.data
             );
             return data;
         } catch (error) {

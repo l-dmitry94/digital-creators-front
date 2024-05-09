@@ -39,19 +39,20 @@ const MainDashboard = () => {
         <div key={index} className={scss.column}>
             <NameColumn nameColumn={name} />
             <Cart />
-
-            <SubmitButton
-                onClick={cardOpenModal}
-                buttonText={'Add another cart'}
-            />
-            <CustomModal
-                isOpen={cardModalIsOpen}
-                onClose={cardCloseModal}
-                buttonText={'Add'}
-                title={'Add card'}
-            >
-                <AddCard />
-            </CustomModal>
+              
+            <div className={scss.btn}>
+                <SubmitButton
+                    onClick={cardOpenModal}
+                    buttonText={'Add another cart'}
+                />
+                <CustomModal
+                    isOpen={cardModalIsOpen}
+                    onClose={cardCloseModal}
+                    title={'Add card'}
+                >
+                    <AddCard />
+                </CustomModal>
+            </div>
         </div>
     ));
 

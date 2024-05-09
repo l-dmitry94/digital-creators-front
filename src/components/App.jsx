@@ -11,6 +11,7 @@ import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchBoards } from '../redux/tasks/tasks-operations/tasks-boards-operations.js';
 
 const App = () => {
     const { isRefreshing } = useAuth();
@@ -18,6 +19,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(current());
+        dispatch(fetchBoards());
     }, [dispatch]);
 
     return (
@@ -50,7 +52,6 @@ const App = () => {
                                 component={
                                     <>
                                         <AppBar />
-                                        {/* <HomePage /> */}
                                     </>
                                 }
                             />
