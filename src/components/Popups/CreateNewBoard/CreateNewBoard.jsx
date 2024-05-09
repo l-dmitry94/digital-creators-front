@@ -27,7 +27,6 @@ const CreateNewBoard = ({ onClose }) => {
             buttonText={'Create'}
             operation={addBoard}
             onClose={onClose}
-            operation={addBoard}
         >
             {formik => (
                 <div>
