@@ -47,7 +47,6 @@ const MainDashboard = () => {
                 <CustomModal
                     isOpen={cardModalIsOpen}
                     onClose={cardCloseModal}
-                    buttonText={'Add'}
                     title={'Add card'}
                 >
                     <AddCard />

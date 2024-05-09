@@ -1,0 +1,47 @@
+.colorSelector {
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-bottom: 5px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.buttonsContainer {
+    display: flex;
+}
+
+.radioBtn {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.radioBtn:hover::before {
+    border: 2px solid black;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + .radioBtn::before {
+    content: "";
+    width: 8px; 
+    height: 8px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
