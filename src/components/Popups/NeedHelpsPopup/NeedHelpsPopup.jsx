@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import scss from './NeedHelpsPopup.module.scss';
 import CustomTextarea from '../../CustomTextarea/CustomTextarea';
 import axios from 'axios';
+import Errors from '../../Errors/Errors';
 
 const NeedHelpsPopup = () => {
     const initialValues = {
@@ -49,9 +50,14 @@ const NeedHelpsPopup = () => {
                             onBlur={formik.handleBlur}
                             className={scss.emailInput}
                         />
-                        {formik.errors.email && formik.touched.email && (
+                        <Errors
+                            error={formik.errors}
+                            touched={formik.touched}
+                            errorMessage="email"
+                        />
+                        {/* {formik.errors.email && formik.touched.email && (
                             <div>{formik.errors.email}</div>
-                        )}
+                        )} */}
                     </div>
                     <div className={scss.textareaBlock}>
                         <CustomTextarea
@@ -61,9 +67,11 @@ const NeedHelpsPopup = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.errors.comment && formik.touched.comment && (
-                            <div>{formik.errors.comment}</div>
-                        )}
+                        <Errors
+                            error={formik.errors}
+                            touched={formik.touched}
+                            errorMessage="comment"
+                        />
                     </div>
                 </div>
             )}

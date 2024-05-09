@@ -20,6 +20,12 @@
     }
 }
 
+.linkWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .linkItem.checked {
     height: 61px;
     background: var(--dark-bg);

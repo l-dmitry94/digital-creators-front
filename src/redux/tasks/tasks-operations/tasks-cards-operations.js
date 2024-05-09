@@ -1,14 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as tasksInstance from '../../api/api-tasks.js';
+import axios from 'axios';
+
+// import * as tasksInstance from '../../api/api-tasks.js';
+
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export const fetchCards = createAsyncThunk(
     'tasks/fetchCards',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.getCards(
-                data.boardId,
-                data.columnId
+            const { data } = await axios.get(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`
             );
             return data;
         } catch (error) {
@@ -19,12 +22,11 @@ export const fetchCards = createAsyncThunk(
 
 export const addCard = createAsyncThunk(
     'tasks/addCard',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.addCard(
-                data.boardId,
-                data.columnId,
-                data.body
+            const { data } = await axios.post(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`,
+                body.data
             );
             return data;
         } catch (error) {
@@ -35,12 +37,10 @@ export const addCard = createAsyncThunk(
 
 export const removeCard = createAsyncThunk(
     'tasks/removeCard',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.removeCard(
-                data.boardId,
-                data.columnId,
-                data.cardId
+            const { data } = await axios.delete(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards/${body.cardId}`
             );
             return data;
         } catch (error) {
@@ -51,14 +51,13 @@ export const removeCard = createAsyncThunk(
 
 export const editCard = createAsyncThunk(
     'tasks/editCard',
-    async (data, { rejectWithValue }) => {
+    async (body, { rejectWithValue }) => {
         try {
-            const { data } = await tasksInstance.editCard(
-                data.boardId,
-                data.columnId,
-                data.cardId,
-                data.body
+            const { data } = await axios.patch(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards/${body.cardId}`,
+                body.data
             );
+
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
