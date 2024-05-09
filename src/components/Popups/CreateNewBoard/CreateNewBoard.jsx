@@ -19,11 +19,13 @@ const CreateNewBoard = ({ onClose }) => {
         icon: yup.string().required('Icon is required'),
         background: yup.string().required('Background is required'),
     });
+
     return (
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Create'}
+            operation={addBoard}
             onClose={onClose}
             operation={addBoard}
         >
