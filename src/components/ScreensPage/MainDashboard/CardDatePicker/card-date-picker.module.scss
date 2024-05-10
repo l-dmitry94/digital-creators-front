@@ -11,3 +11,36 @@
         outline: none;
     }
 }
+
+.customLabel {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #bedbb0;
+}
+
+.customInput {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.arrowDown {
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    fill: none;
+    stroke: #bedbb0;
+    stroke-width: 2px;
+}
+
+.title {
+    margin-bottom: 5px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+}

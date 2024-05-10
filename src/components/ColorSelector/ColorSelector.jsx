@@ -50,6 +50,7 @@ const ColorSelector = ({ title, onChange }) => {
                         type="radio"
                         name="color"
                         value="rgba(255, 255, 255, 0.3)"
+                        checked
                         onChange={handleColorChange}
                     />
                     <span

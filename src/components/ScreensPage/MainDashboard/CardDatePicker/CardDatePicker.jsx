@@ -1,23 +1,88 @@
 import DatePicker from 'react-datepicker';
-
 import 'react-datepicker/dist/react-datepicker.css';
 import scss from './card-date-picker.module.scss';
-
 import { useState } from 'react';
 
-export const MyDatePicker = () => {
+export const MyDatePicker = ({ title }) => {
     const [startDate, setStartDate] = useState(new Date());
-
     const today = new Date();
 
+    const getMonthName = date => {
+        const monthNames = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+        ];
+        return monthNames[date.getMonth()];
+    };
+
+    const formatDate = date => {
+        const monthName = getMonthName(date);
+        const day = date.getDate();
+        return `${monthName} ${day}`;
+    };
+
+    const getDateText = date => {
+        if (
+            date.getDate() === today.getDate() &&
+            date.getMonth() === today.getMonth() &&
+            date.getFullYear() === today.getFullYear()
+        ) {
+            return 'Today, ';
+        } else {
+            return '';
+        }
+    };
+    const CustomDatePickerInput = ({ onClick }) => (
+        <div
+            className={`${scss.date_picker_input} ${scss.customInput}`}
+            onClick={onClick}
+        >
+            <svg
+                className={scss.arrowDown}
+                width="18"
+                height="19"
+                viewBox="0 0 18 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M4.5 7.25L9 11.75L13.5 7.25"
+                    stroke="#BEDBB0"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+            <label className={scss.customLabel}>
+                {getDateText(startDate)} {formatDate(startDate)}
+            </label>
+        </div>
+    );
+
     return (
-        <DatePicker
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            className={scss.date_picker_input}
-            wrapperClassName={scss.date_picker}
-            minDate={today}
-        />
+        <div className={scss.datePickerContainer}>
+            <div className={scss.title}>
+                <label>{title}</label>
+            </div>
+            <DatePicker
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+                customInput={<CustomDatePickerInput />}
+                className={scss.date_picker}
+                minDate={today}
+                dateFormat="MM/dd/yyyy"
+            />
+        </div>
     );
 };
 

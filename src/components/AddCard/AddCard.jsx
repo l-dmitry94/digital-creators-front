@@ -2,6 +2,7 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
+import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
@@ -11,6 +12,7 @@ const AddCard = () => {
         title: '',
         description: '',
         labelColor: '',
+        startDate: new Date(),
     };
 
     const validationSchema = yup.object().shape({
@@ -20,6 +22,7 @@ const AddCard = () => {
             .required('Title is required'),
         description: yup.string().required('Description is required'),
         labelColor: yup.string(),
+        startDate: yup.date(),
     });
 
     return (
@@ -63,6 +66,15 @@ const AddCard = () => {
                             formik.setFieldValue('labelColor', color)
                         }
                     />
+                    <div className={scss.datePickerBlock}>
+                        <MyDatePicker
+                            title={'Deadline'}
+                            selected={formik.values.startDate}
+                            onChange={date =>
+                                formik.setFieldValue('startDate', date)
+                            }
+                        />
+                    </div>
                 </div>
             )}
         </CustomForm>
