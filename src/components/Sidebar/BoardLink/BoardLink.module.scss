@@ -7,79 +7,74 @@
 }
 
 .linkItem {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 61px;
-    color: var(--dark-grey);
-    cursor: pointer;
-    padding-left: 14px;
+    padding: 20px 24px;
 
-    @include media-rules(tablet) {
-        padding-left: 24px;
+    &:global(.active) {
+        background-color: rgba(#1f1f1f, 0.4);
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-color: var(--light-green);
+            border-radius: 4px 0 0 4px;
+        }
+
+        & .linkTitle {
+            color: var(--white);
+        }
+
+        & .svgIcon {
+            stroke: var(--white);
+        }
+
+        & .control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
     }
 }
 
 .linkWrapper {
     display: flex;
     align-items: center;
-    gap: 4px;
-}
-
-.linkItem.checked {
-    height: 61px;
-    background: var(--dark-bg);
-    color: var(--white);
-}
-
-.iconTitleFlex {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.iconIndicatorFlex {
-    display: flex;
-    gap: 14px;
-}
-
-.svgFlex {
-    display: flex;
     gap: 8px;
-    align-items: center;
 }
 
 .svgIcon {
-    stroke: var(--white);
-    opacity: 0.4;
     width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.5);
 }
 
-.checked .svgIcon {
-    opacity: 1;
-}
-
-.svgIconControl {
-    stroke: var(--white);
-    fill: none;
-    opacity: 0.4;
-    width: 16px;
-}
-
-.checked .svgIconControl {
-    opacity: 1;
-}
-
-.linkTiitle {
+.linkTitle {
+    font-family: var(--font-family);
     font-weight: 500;
-    font-size: 14px;
     letter-spacing: -0.02em;
-    opacity: 0.4;
+    color: rgba(255, 255, 255, 0.5);
 }
 
-.indicator {
-    border-radius: 4px 0 0 4px;
-    width: 4px;
-    height: 61px;
-    background: #bedbb0;
+.control {
+    display: none;
+}
+
+.controlButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controlIcon {
+    width: 16px;
+    height: 16px;
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.5);
 }

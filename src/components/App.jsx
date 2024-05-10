@@ -14,8 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { fetchBoards } from '../redux/tasks/tasks-operations/tasks-boards-operations.js';
 
 const App = () => {
-    const { isRefreshing } = useAuth();
-    const { isLogin } = useAuth();
+    const { isRefreshing, isLogin } = useAuth();
     const dispatch = useDispatch();
 
     useEffect(() => {
