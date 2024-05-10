@@ -24,10 +24,10 @@ const AppBar = () => {
                 />
 
                 <main>
-                <Routes>
-                <Route path="/" element={<ScreensPage />} />
-                <Route path=":boardName/*" element={<ScreensPage />} />
-            </Routes>
+                    <Routes>
+                        <Route path="/" element={<ScreensPage />} />
+                        <Route path=":boardName/*" element={<ScreensPage />} />
+                    </Routes>
                 </main>
             </div>
         </div>
