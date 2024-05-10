@@ -32,11 +32,9 @@ export const addBoard = createAsyncThunk(
 
 export const removeBoard = createAsyncThunk(
     'tasks/removeBoard',
-    async (body, { rejectWithValue }) => {
+    async (id, { rejectWithValue }) => {
         try {
-            const { data } = await axios.delete(
-                `${baseURL}/boards/${body._id}`
-            );
+            const { data } = await axios.delete(`${baseURL}/boards/${id}`);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -46,12 +44,10 @@ export const removeBoard = createAsyncThunk(
 
 export const editBoard = createAsyncThunk(
     'tasks/editBoard',
-    async (body, { rejectWithValue }) => {
+    async ({ id, body }, { rejectWithValue }) => {
+        console.log(body);
         try {
-            const { data } = await axios.patch(
-                `${baseURL}/boards/${body._id}`,
-                body
-            );
+            const { data } = await axios.patch(`${baseURL}/boards/${id}`, body);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);

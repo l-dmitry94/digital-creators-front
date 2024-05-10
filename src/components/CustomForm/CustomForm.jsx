@@ -9,6 +9,7 @@ const CustomForm = ({
     buttonText,
     handleSubmit,
     onClose,
+    id,
     children,
 }) => {
     const dispatch = useDispatch();
@@ -17,6 +18,14 @@ const CustomForm = ({
         console.log(values);
         if (handleSubmit) {
             handleSubmit(values);
+            return;
+        }
+
+        if (id) {
+            const dispatchResult = dispatch(operation({ id, values }));
+            if (dispatchResult) {
+                onClose();
+            }
             return;
         }
 
