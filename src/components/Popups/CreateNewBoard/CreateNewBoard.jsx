@@ -6,12 +6,18 @@ import * as yup from 'yup';
 import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 import { addBoard } from '../../../redux/tasks/tasks-operations/tasks-boards-operations.js';
 import Errors from '../../Errors/Errors.jsx';
+import { useSelector } from 'react-redux';
+import { selectBoardItems } from '../../../redux/tasks/tasks-selectors.js';
 
 const CreateNewBoard = ({ onClose, editBoard, id }) => {
+    const boards = useSelector(selectBoardItems);
+
+    const boardById = boards.find(({ _id }) => id === _id);
+
     const initialValues = {
-        board_name: '',
-        icon: 'icon-project',
-        background: 'default',
+        board_name: editBoard ? boardById.board_name : '',
+        icon: editBoard ? boardById.icon : 'icon-project',
+        background: editBoard ? boardById.background : 'default',
     };
 
     const validationSchema = yup.object().shape({
@@ -43,7 +49,7 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
                         <CustomInput
                             placeholder={'Title'}
                             name="board_name"
-                            value={formik.values.title}
+                            value={formik.values.board_name}
                             type={'text'}
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
@@ -56,11 +62,17 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
                     </div>
                     <p className={scss.iconsTitle}>Icons</p>
                     <div className={scss.createRadioGroup}>
-                        <CustomRadioGroup formik={formik} />
+                        <CustomRadioGroup
+                            formik={formik}
+                            editBoard={editBoard}
+                        />
                     </div>
                     <p className={scss.backgroundTitle}>Background</p>
                     <div className={scss.createGallery}>
-                        <BackgroundGallery formik={formik} />
+                        <BackgroundGallery
+                            formik={formik}
+                            editBoard={editBoard}
+                        />
                     </div>
                 </div>
             )}
