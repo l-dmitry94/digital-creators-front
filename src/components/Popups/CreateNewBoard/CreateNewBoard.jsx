@@ -7,7 +7,7 @@ import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 import { addBoard } from '../../../redux/tasks/tasks-operations/tasks-boards-operations.js';
 import Errors from '../../Errors/Errors.jsx';
 
-const CreateNewBoard = ({ onClose }) => {
+const CreateNewBoard = ({ onClose, editBoard }) => {
     const initialValues = {
         board_name: '',
         icon: 'icon-project',
@@ -20,11 +20,19 @@ const CreateNewBoard = ({ onClose }) => {
         background: yup.string().required('Background is required'),
     });
 
+    const editValidationSchema = yup.object().shape({
+        board_name: yup.string(),
+        icon: yup.string(),
+        background: yup.string(),
+    });
+
     return (
         <CustomForm
             initialValues={initialValues}
-            validationSchema={validationSchema}
-            buttonText={'Create'}
+            validationSchema={
+                editBoard ? editValidationSchema : validationSchema
+            }
+            buttonText={editBoard ? 'Edit' : 'Create'}
             operation={addBoard}
             onClose={onClose}
         >
@@ -44,10 +52,6 @@ const CreateNewBoard = ({ onClose }) => {
                             touched={formik.touched}
                             errorMessage="board_name"
                         />
-                        {/* {formik.errors.board_name &&
-                            formik.touched.board_name && (
-                                <div>{formik.errors.board_name}</div>
-                            )} */}
                     </div>
                     <p className={scss.iconsTitle}>Icons</p>
                     <div className={scss.createRadioGroup}>
