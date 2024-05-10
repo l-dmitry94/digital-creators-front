@@ -23,8 +23,13 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
             if (
                 (modalElement && modalElement.contains(event.target)) ||
                 (modalElementChildren &&
-                    modalElementChildren.contains(event.target))
+                    modalElementChildren.contains(event.target)) ||
+                !modalElement.contains(event.target)
             ) {
+                if (modalElement && !modalElementChildren) {
+                    setActive(false);
+                    handleClick(active);
+                }
                 return;
             }
             setActive(false);
