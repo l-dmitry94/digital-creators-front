@@ -23,8 +23,13 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
             if (
                 (modalElement && modalElement.contains(event.target)) ||
                 (modalElementChildren &&
-                    modalElementChildren.contains(event.target))
+                    modalElementChildren.contains(event.target)) ||
+                !modalElement.contains(event.target)
             ) {
+                if (modalElement && !modalElementChildren) {
+                    setActive(false);
+                    handleClick(active);
+                }
                 return;
             }
             setActive(false);
@@ -42,19 +47,17 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
 
     const sidebarActive = `${scss.sidebar} ${active ? scss.active : ''}`;
     return (
-        <div className={sidebarActive} ref={sidebarRef} tabIndex={0}>
+        <aside className={sidebarActive} ref={sidebarRef} tabIndex={0}>
             <div className={scss.logoBordFlex}>
                 <Logo />
                 <BoardList />
-            </div>
-            <div>
                 <BoardLink />
             </div>
             <div className={scss.helpLogoutFlex}>
                 <NeedHelp />
                 <Logout />
             </div>
-        </div>
+        </aside>
     );
 };
 

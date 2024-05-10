@@ -2,7 +2,7 @@ import scss from './BoardLink.module.scss';
 import sprite from '../../../assets/icons/icons.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBoardItems } from '../../../redux/tasks/tasks-selectors';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
 import CreateNewBoard from '../../Popups/CreateNewBoard/CreateNewBoard';
@@ -19,6 +19,7 @@ const BoardLink = () => {
     const [id, setId] = useState(null);
     const dispatch = useDispatch();
     const { isLogin } = useAuth();
+    const navigate = useNavigate();
 
     const openModal = id => {
         setModalIsOpen(true);
@@ -41,11 +42,27 @@ const BoardLink = () => {
         }
     }, [isLogin, dispatch]);
 
+    useEffect(() => {
+        if (isLogin) {
+            if (boards.length) {
+                navigate(`/home/${boards[0]?.board_name.toLowerCase()}`);
+            }
+            if (!boards.length) {
+                navigate('/home');
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [boards]);
+
     return (
         <>
             <ul className={scss.linkFlex}>
                 {boards.map(({ _id, board_name, icon }) => (
-                    <NavLink key={_id} to={_id} className={scss.linkItem}>
+                    <NavLink
+                        key={_id}
+                        to={board_name.toLowerCase()}
+                        className={scss.linkItem}
+                    >
                         <div className={scss.linkWrapper}>
                             <svg className={scss.svgIcon}>
                                 <use href={`${sprite}#${icon}`}></use>

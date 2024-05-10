@@ -1,21 +1,39 @@
 import CustomForm from '../../../CustomForm/CustomForm';
 import CustomInput from '../../../CustomInput/CustomInput';
-
+import Errors from '../../../Errors/Errors';
+import * as yup from 'yup';
 import scss from './add-column.module.scss';
+import { addColumn } from '../../../../redux/tasks/tasks-operations/tasks-columns-operations';
 
 const initialValues = {
-    title: '',
+    column_name: '',
 };
 
-const AddColumn = () => {
+const validationSchema = yup.object().shape({
+    column_name: yup.string().required('Title required'),
+});
+
+const AddColumn = ({ id }) => {
     return (
-        <CustomForm initialValues={initialValues} buttonText={'Add'}>
+        <CustomForm
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            buttonText={'Add'}
+            operation={addColumn}
+            id={id}
+        >
             {formik => (
                 <div className={scss.addColumn}>
                     <CustomInput
-                        name={'title'}
+                        name={'column_name'}
                         placeholder={'Title'}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                    />
+                    <Errors
+                        error={formik.errors}
+                        touched={formik.touched}
+                        errorMessage={'column_name'}
                     />
                 </div>
             )}

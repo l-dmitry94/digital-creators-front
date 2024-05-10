@@ -15,6 +15,7 @@ const ColorSelector = ({ title, onChange }) => {
                         name="color"
                         value="#8FA1D0"
                         onChange={handleColorChange}
+                        required
                     />
                     <span
                         className={scss.radioBtn}
