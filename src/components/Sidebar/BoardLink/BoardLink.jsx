@@ -1,7 +1,7 @@
 import scss from './BoardLink.module.scss';
 import sprite from '../../../assets/icons/icons.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBoards } from '../../../redux/tasks/tasks-selectors';
+import { selectBoardItems } from '../../../redux/tasks/tasks-selectors';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
@@ -14,7 +14,7 @@ import {
 import { useAuth } from '../../../hooks/useAuth';
 
 const BoardLink = () => {
-    const boards = useSelector(selectBoards);
+    const boards = useSelector(selectBoardItems);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [id, setId] = useState(null);
     const dispatch = useDispatch();
