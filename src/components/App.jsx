@@ -66,7 +66,7 @@ const App = () => {
                     <Route path="/auth/:id" element={<AuthPage />} />
                 </Routes>
             )}
-            <ToastContainer />
+            <ToastContainer position="top-center" />
         </>
     );
 };
