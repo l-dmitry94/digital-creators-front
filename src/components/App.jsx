@@ -11,22 +11,15 @@ import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { fetchBoards } from '../redux/tasks/tasks-operations/tasks-boards-operations.js';
+// import { fetchBoards } from '../redux/tasks/tasks-operations/tasks-boards-operations.js';
 
 const App = () => {
-    const { isRefreshing, isLogin } = useAuth();
+    const { isRefreshing } = useAuth();
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(current());
     }, [dispatch]);
-
-    useEffect(() => {
-        if (isLogin) {
-            dispatch(fetchBoards());
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isLogin]);
 
     return (
         <>

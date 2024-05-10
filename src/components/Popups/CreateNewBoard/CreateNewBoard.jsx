@@ -7,7 +7,7 @@ import scss from '../../Popups/CreateNewBoard/CreateNewBoard.module.scss';
 import { addBoard } from '../../../redux/tasks/tasks-operations/tasks-boards-operations.js';
 import Errors from '../../Errors/Errors.jsx';
 
-const CreateNewBoard = ({ onClose, editBoard }) => {
+const CreateNewBoard = ({ onClose, editBoard, id }) => {
     const initialValues = {
         board_name: '',
         icon: 'icon-project',
@@ -33,8 +33,9 @@ const CreateNewBoard = ({ onClose, editBoard }) => {
                 editBoard ? editValidationSchema : validationSchema
             }
             buttonText={editBoard ? 'Edit' : 'Create'}
-            operation={addBoard}
+            operation={editBoard ? editBoard : addBoard}
             onClose={onClose}
+            id={id}
         >
             {formik => (
                 <div>
