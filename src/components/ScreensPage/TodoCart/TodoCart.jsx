@@ -18,9 +18,9 @@ const TodoCart = ({ title, descr, priority }) => {
                     </li>
                     <li>
                         <p className={scss.setName}>Deadline</p>
-                        <p className={scss.setSign}>
+                        <div className={scss.setSign}>
                             <MyDatePicker />
-                        </p>
+                        </div>
                     </li>
                 </ul>
                 <div className={scss.btnSetting}>

@@ -3,6 +3,7 @@ import Header from '../Header';
 import { useState } from 'react';
 import scss from './AppBar.module.scss';
 import ScreensPage from '../ScreensPage/ScreensPage';
+import { Routes, Route } from 'react-router-dom';
 
 const AppBar = () => {
     const [isActiveSidebar, setIsActiveSidebar] = useState(false);
@@ -23,7 +24,10 @@ const AppBar = () => {
                 />
 
                 <main>
-                    <ScreensPage />
+                <Routes>
+                <Route path="/" element={<ScreensPage />} />
+                <Route path=":boardName/*" element={<ScreensPage />} />
+            </Routes>
                 </main>
             </div>
         </div>
