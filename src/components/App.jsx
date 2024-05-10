@@ -15,12 +15,19 @@ import { fetchBoards } from '../redux/tasks/tasks-operations/tasks-boards-operat
 
 const App = () => {
     const { isRefreshing } = useAuth();
+    const { isLogin } = useAuth();
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(current());
-        dispatch(fetchBoards());
     }, [dispatch]);
+
+    useEffect(() => {
+        if (isLogin) {
+            dispatch(fetchBoards());
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLogin]);
 
     return (
         <>
@@ -45,7 +52,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="home"
+                        path="home/*"
                         element={
                             <PrivateRoute
                                 redirectTo="/welcome"
