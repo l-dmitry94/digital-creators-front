@@ -35,7 +35,7 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
 
     const sidebarActive = `${scss.sidebar} ${active ? scss.active : ''}`;
     return (
-        <div className={sidebarActive} ref={sidebarRef} tabIndex={0}>
+        <aside className={sidebarActive} ref={sidebarRef} tabIndex={0}>
             <div className={scss.logoBordFlex}>
                 <Logo />
                 <BoardList />
@@ -47,7 +47,7 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
                 <NeedHelp />
                 <Logout />
             </div>
-        </div>
+        </aside>
     );
 };
 
