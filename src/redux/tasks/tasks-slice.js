@@ -55,6 +55,10 @@ const tasksSlice = createSlice({
                     state.boards.items = payload;
                 }
             )
+            .addCase(
+                boardsOperations.fetchBoardById.rejected,
+                status.rejectedBoard
+            )
             .addCase(boardsOperations.addBoard.pending, status.pendingBoard)
             .addCase(
                 boardsOperations.addBoard.fulfilled,
