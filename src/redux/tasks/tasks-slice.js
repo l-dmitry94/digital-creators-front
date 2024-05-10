@@ -43,6 +43,22 @@ const tasksSlice = createSlice({
                 boardsOperations.fetchBoards.rejected,
                 status.rejectedBoard
             )
+            .addCase(
+                boardsOperations.fetchBoardById.pending,
+                status.pendingBoard
+            )
+            .addCase(
+                boardsOperations.fetchBoardById.fulfilled,
+                (state, { payload }) => {
+                    state.boards.error = null;
+                    state.boards.isLoading = false;
+                    state.boards.items = payload;
+                }
+            )
+            .addCase(
+                boardsOperations.fetchBoardById.rejected,
+                status.rejectedBoard
+            )
             .addCase(boardsOperations.addBoard.pending, status.pendingBoard)
             .addCase(
                 boardsOperations.addBoard.fulfilled,

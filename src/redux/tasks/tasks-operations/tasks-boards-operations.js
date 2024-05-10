@@ -18,6 +18,20 @@ export const fetchBoards = createAsyncThunk(
     }
 );
 
+export const fetchBoardById = createAsyncThunk(
+    'tasks/getBoardById',
+    async (body, { rejectWithValue }) => {
+        try {
+            const { data } = await axios.get(
+                `${baseURL}/boards/${body.boardId}`
+            );
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.response.data.message);
+        }
+    }
+);
+
 export const addBoard = createAsyncThunk(
     'tasks/addBoard',
     async (body, { rejectWithValue }) => {
