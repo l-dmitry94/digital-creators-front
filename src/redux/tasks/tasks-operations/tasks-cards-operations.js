@@ -8,10 +8,11 @@ const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export const fetchCards = createAsyncThunk(
     'tasks/fetchCards',
-    async (body, { rejectWithValue }) => {
+    async ({ boardId, columnId }, { rejectWithValue }) => {
+        console.log(boardId);
         try {
             const { data } = await axios.get(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`
+                `${baseURL}/boards/${boardId}/columns/${columnId}/cards`
             );
             return data;
         } catch (error) {
@@ -22,11 +23,11 @@ export const fetchCards = createAsyncThunk(
 
 export const addCard = createAsyncThunk(
     'tasks/addCard',
-    async (body, { rejectWithValue }) => {
+    async ({ id, columnId, values }, { rejectWithValue }) => {
         try {
             const { data } = await axios.post(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`,
-                body.data
+                `${baseURL}/boards/${id}/columns/${columnId}/cards`,
+                values
             );
             return data;
         } catch (error) {

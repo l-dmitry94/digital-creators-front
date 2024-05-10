@@ -10,6 +10,7 @@ const CustomForm = ({
     handleSubmit,
     onClose,
     id,
+    columnId,
     children,
 }) => {
     const dispatch = useDispatch();
@@ -18,6 +19,16 @@ const CustomForm = ({
         console.log(values);
         if (handleSubmit) {
             handleSubmit(values);
+            return;
+        }
+
+        if (columnId && id) {
+            const dispatchResult = dispatch(
+                operation({ id, columnId, values })
+            );
+            if (dispatchResult) {
+                onClose();
+            }
             return;
         }
 

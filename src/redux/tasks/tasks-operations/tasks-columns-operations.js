@@ -8,11 +8,9 @@ const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export const fetchColumns = createAsyncThunk(
     'tasks/fetchColumns',
-    async (body, { rejectWithValue }) => {
+    async (id, { rejectWithValue }) => {
         try {
-            const { data } = await axios.get(
-                `${baseURL}/boards/${body.boardId}/columns`
-            );
+            const { data } = await axios.get(`${baseURL}/boards/${id}/columns`);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -22,11 +20,11 @@ export const fetchColumns = createAsyncThunk(
 
 export const addColumn = createAsyncThunk(
     'tasks/addColumn',
-    async (body, { rejectWithValue }) => {
+    async ({ id, values }, { rejectWithValue }) => {
         try {
             const { data } = await axios.post(
-                `${baseURL}/boards/${body.boardId}/columns`,
-                body.data
+                `${baseURL}/boards/${id}/columns`,
+                values
             );
 
             return data;

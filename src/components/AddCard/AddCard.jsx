@@ -5,21 +5,27 @@ import ColorSelector from '../ColorSelector/ColorSelector';
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
+import { addCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
 
-const AddCard = () => {
+const AddCard = ({ boardId: id, columnId }) => {
     const initialValues = {
-        title: '',
+        card_name: '',
         description: '',
-        labelColor: '',
+        priority: '',
+        deadline: '12/05/2023',
     };
 
+    console.log(id);
+    console.log(columnId);
+
     const validationSchema = yup.object().shape({
-        title: yup
+        card_name: yup
             .string()
             .label('Invalid title')
             .required('Title is required'),
         description: yup.string().required('Description is required'),
-        labelColor: yup.string(),
+        priority: yup.string(),
+        deadline: yup.string().required('Deadline is required'),
     });
 
     return (
@@ -27,18 +33,20 @@ const AddCard = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             buttonText={'Add'}
+            operation={addCard}
+            id={id}
+            columnId={columnId}
         >
             {formik => (
                 <div className={scss.inputContainer}>
                     <div>
                         <CustomInput
-                            type="title"
-                            name="title"
+                            type="text"
+                            name="card_name"
                             placeholder="Title"
                             value={formik.values.title}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            // className={scss.emailInput}
                         />
                         {formik.errors.title && formik.touched.title && (
                             <div>{formik.errors.title}</div>
@@ -60,7 +68,7 @@ const AddCard = () => {
                     <ColorSelector
                         title={'Label Color'}
                         onChange={color =>
-                            formik.setFieldValue('labelColor', color)
+                            formik.setFieldValue('priority', color)
                         }
                     />
                 </div>

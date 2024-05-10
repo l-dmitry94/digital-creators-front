@@ -46,8 +46,6 @@ const Sidebar = ({ isActiveSidebar, handleClick }) => {
             <div className={scss.logoBordFlex}>
                 <Logo />
                 <BoardList />
-            </div>
-            <div>
                 <BoardLink />
             </div>
             <div className={scss.helpLogoutFlex}>

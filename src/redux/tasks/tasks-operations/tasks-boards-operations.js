@@ -20,11 +20,10 @@ export const fetchBoards = createAsyncThunk(
 
 export const fetchBoardById = createAsyncThunk(
     'tasks/getBoardById',
-    async (body, { rejectWithValue }) => {
+    async (id, { rejectWithValue }) => {
+        console.log(id);
         try {
-            const { data } = await axios.get(
-                `${baseURL}/boards/${body.boardId}`
-            );
+            const { data } = await axios.get(`${baseURL}/boards/${id}`);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -35,8 +34,10 @@ export const fetchBoardById = createAsyncThunk(
 export const addBoard = createAsyncThunk(
     'tasks/addBoard',
     async (body, { rejectWithValue }) => {
+        console.log(body);
         try {
             const { data } = await axios.post(`${baseURL}/boards`, body);
+            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -58,10 +59,12 @@ export const removeBoard = createAsyncThunk(
 
 export const editBoard = createAsyncThunk(
     'tasks/editBoard',
-    async ({ id, body }, { rejectWithValue }) => {
-        console.log(body);
+    async ({ id, values }, { rejectWithValue }) => {
         try {
-            const { data } = await axios.patch(`${baseURL}/boards/${id}`, body);
+            const { data } = await axios.patch(
+                `${baseURL}/boards/${id}`,
+                values
+            );
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);

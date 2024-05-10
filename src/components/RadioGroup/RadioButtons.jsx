@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import scss from './RadioButtons.module.scss';
 import sprite from '../../assets/icons/icons.svg';
 
-const CustomRadioGroup = ({ formik }) => {
+const CustomRadioGroup = ({ formik, editBoard }) => {
     const radioOptions = [
         { id: 'icon-project', title: 'Project' },
         { id: 'icon-star', title: 'Star' },
@@ -14,7 +14,9 @@ const CustomRadioGroup = ({ formik }) => {
         { id: 'icon-hexagon', title: 'Hexagon' },
     ];
 
-    const [selectedOption, setSelectedOption] = useState(radioOptions[0].id);
+    const [selectedOption, setSelectedOption] = useState(
+        editBoard ? formik.values.icon : radioOptions[0].id
+    );
 
     useEffect(() => {
         formik.values.icon = selectedOption;
