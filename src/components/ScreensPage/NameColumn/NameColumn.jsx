@@ -1,9 +1,7 @@
 import scss from './NameColumn.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
-
 import EditColumn from '../../Popups/Column/EditColumn/EditColumn';
 import CustomModal from '../../CustomModal/CustomModal';
-
 import { useState } from 'react';
 
 const NameColumn = ({ nameColumn }) => {
