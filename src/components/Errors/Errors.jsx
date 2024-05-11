@@ -1,6 +1,6 @@
 import scss from '../Errors/Errors.module.scss';
 
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const Errors = ({ error, touched, errorMessage }) => {
     return (
