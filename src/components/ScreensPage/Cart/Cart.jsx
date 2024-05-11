@@ -26,7 +26,7 @@ const Cart = ({ boardId, columnId }) => {
                 dispatch(fetchCards({ boardId, columnId }));
             }
         }
-    }, [boardId, dispatch]);
+    }, [columnId, dispatch]);
 
     const cartsList = filteredCards.map(
         ({ card_name, description, priority, date }, index) => (
