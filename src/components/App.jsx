@@ -5,6 +5,7 @@ import AppBar from './AppBar';
 import WelcomePage from '../pages/WelcomePage.jsx';
 import AuthPage from '../pages/AuthPage';
 // import HomePage from '../pages/HomePage';
+import NotFound from '../components/NotFound/NotFound.jsx';
 import { current } from '../redux/auth/auth-operations.js';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './PrivetRoute/PrivetRoute.jsx';
@@ -64,6 +65,7 @@ const App = () => {
                     <Route path="/welcome" element={<WelcomePage />} />
 
                     <Route path="/auth/:id" element={<AuthPage />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             )}
             <ToastContainer position="top-center" />

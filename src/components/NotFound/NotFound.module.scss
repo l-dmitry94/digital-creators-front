@@ -1,0 +1,72 @@
+@import 'src/styles/mixins.scss';
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.notFoundTitle {
+  font-size: 30px;
+}
+
+.iconsFlex {
+  display: flex;
+  gap: 4px;
+}
+
+.iconBlue {
+  color: var(--blue);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.iconRose {
+  color: var(--rose);
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.iconGreen {
+  color: var(--light-green);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.iconGrey {
+  color: var(--light-grey);
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.button {
+  height: 49px;
+  border-radius: 8px;
+  width: 280px;
+  height: 49px;
+  background-color: var(--light-green);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  @include transition(background-color);
+
+  &:is(:hover, :focus) {
+    background-color: var(--dark-green);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
