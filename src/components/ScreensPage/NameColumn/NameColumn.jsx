@@ -36,7 +36,11 @@ const NameColumn = ({ nameColumn, boardId, columnId }) => {
                     onClose={columnModalClose}
                     title={'Edit column'}
                 >
-                    <EditColumn />
+                    <EditColumn
+                        boardId={boardId}
+                        columnId={columnId}
+                        onClose={columnModalClose}
+                    />
                 </CustomModal>
             </div>
         </div>

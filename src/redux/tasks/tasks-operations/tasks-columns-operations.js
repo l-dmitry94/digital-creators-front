@@ -54,10 +54,13 @@ export const editColumn = createAsyncThunk(
     'tasks/editColumn',
     async (body, { rejectWithValue }) => {
         try {
+            console.log(body);
+
             const { data } = await axios.patch(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`,
-                body.data
+                `${baseURL}/boards/${body.id}/columns/${body.columnId}`,
+                body.values
             );
+            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
