@@ -1,0 +1,140 @@
+@import 'src/styles/mixins';
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 999;
+    @include transition(opacity);
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.modal__content {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid rgba(190, 219, 176, 0.5);
+    border-radius: 8px;
+    background-color: var(--black);
+    transform: translateY(50px);
+    @include transition(transform);
+    padding: 24px;
+}
+
+.ReactModal__Content--after-open {
+    transform: translateY(0);
+}
+
+.ReactModal__Content--before-close {
+    transform: translateY(50px);
+}
+
+.close {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+}
+
+.close__icon {
+    width: 18px;
+    height: 18px;
+    stroke: var(--white);
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--dark-grey-line);
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+}
+
+.show {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--dark-grey);
+}
+
+.colorSelector {
+    margin-bottom: 20px;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radioBtn {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.radioBtn:hover::before {
+    border: 2px solid black;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+input[type='radio']:checked + .radioBtn::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, -48%);
+}
+
+.radioText {
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+}
+
+.radioText input[type='radio']:checked + .radioBtn + .radioLabel {
+    color: var(--white);
+}

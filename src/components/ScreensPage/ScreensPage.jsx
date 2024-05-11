@@ -1,11 +1,9 @@
 import StartPage from './StartPage/StartPage';
 import './ScreensPage.scss';
-// import SubmitButton from '../SubmitButton';
 import HeaderDashboard from './HeaderDashboard/HeaderDashboard';
 import MainDashboard from './MainDashboard/MainDashboard';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import Container from '../Container';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectBoardItems } from '../../redux/tasks/tasks-selectors';
@@ -19,19 +17,17 @@ const ScreensPage = () => {
     );
 
     return (
-        <Container>
-            <div>
-                <HeaderDashboard boardName={board?.board_name} />
+        <div>
+            <HeaderDashboard boardName={board?.board_name} />
 
-                {!boards.length ? (
-                    <StartPage />
-                ) : (
-                    <SimpleBar>
-                        <MainDashboard board={board} />
-                    </SimpleBar>
-                )}
-            </div>
-        </Container>
+            {!boards.length ? (
+                <StartPage />
+            ) : (
+                <SimpleBar>
+                    <MainDashboard board={board} />
+                </SimpleBar>
+            )}
+        </div>
     );
 };
 
