@@ -11,46 +11,11 @@ const Cart = ({ boardId, columnId }) => {
     const carts = useSelector(selectCardItems);
     const dispatch = useDispatch();
 
-    console.log(boardId);
-    console.log(columnId);
-
     useEffect(() => {
         if (boardId && columnId) {
             dispatch(fetchCards({ boardId, columnId }));
         }
     }, [boardId, columnId, dispatch]);
-    // const carts = [
-    // {
-    //     title: 'The Watch Spot Design',
-    //     text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
-    //     prior: 'Low',
-    //     date: '12/05/2023',
-    // },
-    // {
-    //     title: 'The Watch Spot ',
-    //     text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
-    //     prior: 'Low',
-    //     date: '12/05/2023',
-    // },
-    // {
-    //     title: 'The Watch Spot ',
-    //     text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
-    //     prior: 'Low',
-    //     date: '12/05/2023',
-    // },
-    // {
-    //     title: 'The Watch Spot ',
-    //     text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
-    //     prior: 'Low',
-    //     date: '12/05/2023',
-    // },
-    // {
-    //     title: 'The Watch Spot ',
-    //     text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
-    //     prior: 'Low',
-    //     date: '12/05/2023',
-    // },
-    // ];
 
     const cartsList = carts.map(({ title, text, prior, date }, index) => (
         <TodoCart

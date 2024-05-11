@@ -17,9 +17,6 @@ const AddCard = ({ boardId: id, columnId }) => {
         deadline: '12/05/2023',
     };
 
-    console.log(id);
-    console.log(columnId);
-
     const validationSchema = yup.object().shape({
         card_name: yup
             .string()

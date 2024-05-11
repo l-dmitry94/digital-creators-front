@@ -9,7 +9,6 @@ const baseURL = import.meta.env.VITE_BACKEND_URL;
 export const fetchCards = createAsyncThunk(
     'tasks/fetchCards',
     async ({ boardId, columnId }, { rejectWithValue }) => {
-        console.log(boardId);
         try {
             const { data } = await axios.get(
                 `${baseURL}/boards/${boardId}/columns/${columnId}/cards`
