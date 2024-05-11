@@ -114,6 +114,7 @@ const tasksSlice = createSlice({
             .addCase(
                 columnsOperations.addColumn.fulfilled,
                 (state, { payload }) => {
+                    console.log(payload);
                     state.columns.isLoading = false;
                     state.columns.error = null;
                     state.columns.items.push(payload);
@@ -130,6 +131,7 @@ const tasksSlice = createSlice({
             .addCase(
                 columnsOperations.removeColumn.fulfilled,
                 (state, { payload }) => {
+                    console.log(payload);
                     state.columns.isLoading = false;
                     state.columns.error = null;
                     state.columns.items.filter(({ _id }) => _id !== payload);
@@ -169,6 +171,7 @@ const tasksSlice = createSlice({
             .addCase(
                 cardsOperations.addCard.fulfilled,
                 (state, { payload }) => {
+                    console.log(payload);
                     state.cards.items.push(payload);
                     state.cards.isLoading = false;
                     state.cards.error = null;

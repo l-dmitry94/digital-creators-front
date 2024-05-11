@@ -3,19 +3,30 @@ import TodoCart from '../TodoCart/TodoCart';
 import scss from './Cart.module.scss';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import { selectCardItems } from '../../../redux/tasks/tasks-selectors';
+import {
+    selectCardItems,
+    selectColumnItems,
+} from '../../../redux/tasks/tasks-selectors';
 import { useEffect } from 'react';
 import { fetchCards } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
 
 const Cart = ({ boardId, columnId }) => {
-    const carts = useSelector(selectCardItems);
+    const cards = useSelector(selectCardItems);
+    const columns = useSelector(selectColumnItems);
+    const filteredCards = cards.filter(
+        ({ ref_column }) => ref_column === columnId
+    );
+    console.log(filteredCards);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (boardId && columnId) {
-            dispatch(fetchCards({ boardId, columnId }));
+        if (filteredCards) {
+            if (cards) {
+                dispatch(fetchCards({ boardId, columnId }));
+            }
         }
-    }, [boardId, columnId, dispatch]);
+    }, [boardId, dispatch]);
     // const carts = [
     //     {
     //         title: 'The Watch Spot Design',
@@ -49,15 +60,17 @@ const Cart = ({ boardId, columnId }) => {
     //     },
     // ];
 
-    const cartsList = carts.map(({ title, text, prior, date }, index) => (
-        <TodoCart
-            key={index}
-            title={title}
-            descr={text}
-            priority={prior}
-            deadline={date}
-        />
-    ));
+    const cartsList = filteredCards.map(
+        ({ card_name, description, priority, date }, index) => (
+            <TodoCart
+                key={index}
+                title={card_name}
+                descr={description}
+                priority={priority}
+                deadline={date}
+            />
+        )
+    );
 
     return (
         <SimpleBar style={{ maxHeight: 470 }}>

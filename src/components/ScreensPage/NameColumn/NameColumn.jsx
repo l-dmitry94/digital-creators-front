@@ -16,7 +16,9 @@ const NameColumn = ({ nameColumn, boardId, columnId }) => {
     const dispatch = useDispatch();
 
     const handleDelete = () => {
-        dispatch(removeColumn({ boardId, columnId }));
+        dispatch(removeColumn({ boardId, columnId })).then(
+            dispatch(fetchColumns(boardId))
+        );
     };
     const columnModalOpen = () => {
         setColumnModalIsOpen(true);
@@ -25,10 +27,6 @@ const NameColumn = ({ nameColumn, boardId, columnId }) => {
     const columnModalClose = () => {
         setColumnModalIsOpen(false);
     };
-
-    useEffect(() => {
-        dispatch(fetchColumns(boardId));
-    }, [columns, boardId, dispatch]);
 
     return (
         <div className={scss.nameColumn}>

@@ -12,7 +12,7 @@ const AddCard = ({ boardId: id, columnId }) => {
     const initialValues = {
         card_name: '',
         description: '',
-        startDate: new Date(),
+        // startDate: new Date(),
         priority: '',
         deadline: '12/05/2023',
     };
@@ -23,7 +23,7 @@ const AddCard = ({ boardId: id, columnId }) => {
             .label('Invalid title')
             .required('Title is required'),
         description: yup.string().required('Description is required'),
-        startDate: yup.date(),
+        // startDate: yup.date(),
         priority: yup.string(),
         deadline: yup.string().required('Deadline is required'),
     });
@@ -36,6 +36,7 @@ const AddCard = ({ boardId: id, columnId }) => {
             operation={addCard}
             id={id}
             columnId={columnId}
+            onClose={() => {}}
         >
             {formik => (
                 <div className={scss.inputContainer}>
@@ -74,10 +75,10 @@ const AddCard = ({ boardId: id, columnId }) => {
                     <div className={scss.datePickerBlock}>
                         <MyDatePicker
                             title={'Deadline'}
-                            selected={formik.values.startDate}
-                            onChange={date =>
-                                formik.setFieldValue('startDate', date)
-                            }
+                            // selected={formik.values.startDate}
+                            // onChange={date =>
+                            //     formik.setFieldValue('startDate', date)
+                            // }
                         />
                     </div>
                 </div>

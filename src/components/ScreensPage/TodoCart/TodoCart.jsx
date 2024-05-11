@@ -3,8 +3,6 @@ import TodoBtn from '../TodoBtn/TodoBtn';
 // import MyDatePicker from '../MainDashboard/CardDatePicker/CardDatePicker';
 
 const TodoCart = ({ title, descr, priority, deadline, priorityColor }) => {
-    console.log(deadline);
-    console.log(priorityColor); // run lint
     const pric = '#8fa1d0'; // pric = priorityColor
     const date = '11/05/24'; // date = deadline
     return (
@@ -20,7 +18,7 @@ const TodoCart = ({ title, descr, priority, deadline, priorityColor }) => {
                         <p className={scss.priorityContainer}>
                             <span
                                 className={scss.priorityDot}
-                                style={{ backgroundColor: pric }}
+                                style={{ backgroundColor: priority }}
                             ></span>
                             {priority}
                         </p>

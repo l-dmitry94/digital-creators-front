@@ -38,7 +38,6 @@ export const removeColumn = createAsyncThunk(
     'tasks/removeColumn',
     async ({ boardId, columnId }, { rejectWithValue }) => {
         try {
-            console.log(boardId, columnId);
             const { data } = await axios.delete(
                 `${baseURL}/boards/${boardId}/columns/${columnId}`
             );
@@ -54,13 +53,10 @@ export const editColumn = createAsyncThunk(
     'tasks/editColumn',
     async (body, { rejectWithValue }) => {
         try {
-            console.log(body);
-
             const { data } = await axios.patch(
                 `${baseURL}/boards/${body.id}/columns/${body.columnId}`,
                 body.values
             );
-            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
