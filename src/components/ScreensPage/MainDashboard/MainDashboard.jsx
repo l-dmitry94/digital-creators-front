@@ -42,9 +42,13 @@ const MainDashboard = ({ board }) => {
         setCardModalIsOpen(false);
     };
 
-    const columns = column.map(({ column_name, _id }) => (
+    const columns = column.map(({ column_name, _id, ref_board }) => (
         <div key={_id} className={scss.column}>
-            <NameColumn nameColumn={column_name} />
+            <NameColumn
+                nameColumn={column_name}
+                columnId={_id}
+                boardId={ref_board}
+            />
             <Cart boardId={board._id} columnId={_id} />
 
             <div className={scss.btn}>

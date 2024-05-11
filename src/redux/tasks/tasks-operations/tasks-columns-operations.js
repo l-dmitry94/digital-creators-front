@@ -36,11 +36,13 @@ export const addColumn = createAsyncThunk(
 
 export const removeColumn = createAsyncThunk(
     'tasks/removeColumn',
-    async (body, { rejectWithValue }) => {
+    async ({ boardId, columnId }, { rejectWithValue }) => {
         try {
+            console.log(boardId, columnId);
             const { data } = await axios.delete(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`
+                `${baseURL}/boards/${boardId}/columns/${columnId}`
             );
+
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
