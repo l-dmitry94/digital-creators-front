@@ -5,7 +5,6 @@ import AddCard from '../../AddCard/AddCard';
 import { useEffect, useState } from 'react';
 import CustomModal from '../../CustomModal/CustomModal';
 import scss from './MainDashboard.module.scss';
-
 import AddColumn from '../../Popups/Column/AddColumn/AddColumn';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectColumnItems } from '../../../redux/tasks/tasks-selectors';

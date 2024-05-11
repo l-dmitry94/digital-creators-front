@@ -3,7 +3,6 @@
     padding: 0px 20px;
     background-color: var(--dark-bg-sidebar);
     border-left: 4px solid #8fa1d0;
-    width: 334px;
 }
 
 .title {
@@ -18,12 +17,12 @@
     letter-spacing: -0.02em;
     color: var(--dark-grey);
     display: -webkit-box;
-    display: box; /* Fallback для браузерів, які не підтримують -webkit-box */
-    -webkit-line-clamp: 2; /* Обмежуємо кількість рядків тексту */
-    -moz-box-orient: vertical; /* Для Firefox */
-    -webkit-box-orient: vertical; /* Для Safari та Chrome */
-    box-orient: vertical; /* Fallback для браузерів, які не підтримують -webkit-box-orient */
-    overflow: hidden; /* Приховуємо текст, який не вміщується */
+    display: box;
+    -webkit-line-clamp: 2;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
 }
 
 .cartTask {
@@ -76,12 +75,26 @@
     gap: 8px;
 }
 
-ul.listSetting li:nth-child(1) .setSign::before {
-    content: '';
-    display: inline-block;
+.btnBell {
+    display: flex;
+    gap: 12px;
+}
+
+.priorityContainer {
+    font-size: 10px;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 16px;
+}
+
+.priorityDot {
+    position: absolute;
+    top: 1px;
+    left: 0;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #8fa1d0;
-    margin-right: 4px;
 }

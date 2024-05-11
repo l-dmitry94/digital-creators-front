@@ -1,11 +1,23 @@
+@import 'src/styles/mixins.scss';
+
 .head {
     display: flex;
     gap: 34px;
+    padding: 0 20px;
+    @include media-rules(tablet) {
+        padding: 0 32px;
+    }
+    @include media-rules(desktop) {
+        padding: 0 24px;
+    }
 }
 
 .column {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    min-width: 334px;
+    min-width: 280px;
+    @include media-rules(mobile) {
+        min-width: 334px;
+    }
 }

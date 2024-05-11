@@ -9,6 +9,10 @@
         @media screen and (min-width: $desktop) {
             @content;
         }
+    } @else if $screen == mobile {
+        @media screen and (min-width: $mobile) {
+            @content;
+        }
     }
 }
 

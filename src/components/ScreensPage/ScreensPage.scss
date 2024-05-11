@@ -12,6 +12,13 @@
     bottom: -36px;
     border-radius: 12px;
     background-color: var(--dark-grey-line);
+
+    @include media-rules(tablet) {
+        bottom: -64px;
+    }
+    @include media-rules(desktop) {
+        bottom: -28px;
+    }
 }
 
 .simplebar-scrollbar {

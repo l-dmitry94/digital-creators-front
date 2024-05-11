@@ -16,6 +16,38 @@ const Cart = ({ boardId, columnId }) => {
             dispatch(fetchCards({ boardId, columnId }));
         }
     }, [boardId, columnId, dispatch]);
+    // const carts = [
+    //     {
+    //         title: 'The Watch Spot Design',
+    //         text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
+    //         prior: 'Low',
+    //         date: '12/05/2023',
+    //     },
+    //     {
+    //         title: 'The Watch Spot ',
+    //         text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
+    //         prior: 'Low',
+    //         date: '12/05/2023',
+    //     },
+    //     {
+    //         title: 'The Watch Spot ',
+    //         text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
+    //         prior: 'Low',
+    //         date: '12/05/2023',
+    //     },
+    //     {
+    //         title: 'The Watch Spot ',
+    //         text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
+    //         prior: 'Low',
+    //         date: '12/05/2023',
+    //     },
+    //     {
+    //         title: 'The Watch Spot ',
+    //         text: 'Create a visually stunning and eye-catching watch dial design that embodies our brands essence of sleek aesthetics and modern elegance.',
+    //         prior: 'Low',
+    //         date: '12/05/2023',
+    //     },
+    // ];
 
     const cartsList = carts.map(({ title, text, prior, date }, index) => (
         <TodoCart
@@ -28,7 +60,7 @@ const Cart = ({ boardId, columnId }) => {
     ));
 
     return (
-        <SimpleBar style={{ maxHeight: 640 }}>
+        <SimpleBar style={{ maxHeight: 470 }}>
             <ul className={scss.cartList}>{cartsList}</ul>
         </SimpleBar>
     );
