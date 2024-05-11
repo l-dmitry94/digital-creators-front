@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import flowerpot from '../Sidebar/images/flowerpot.svg';
 import scss from '../NotFound/NotFound.module.scss';
 
 import { BiSolidCircle } from 'react-icons/bi';
@@ -6,7 +7,12 @@ import { BiSolidCircle } from 'react-icons/bi';
 const NotFound = () => {
     return (
         <div className={scss.notFoundContainer}>
-            <div>
+            <div className={scss.center}>
+                <img
+                    className={scss.flowerpot}
+                    src={flowerpot}
+                    alt="Flowerpot"
+                />
                 <h1 className={scss.notFoundTitle}>404 - Page Not Found</h1>
                 <p>Sorry, the page you are looking for could not be found</p>
             </div>

@@ -10,6 +10,18 @@
   height: 100vh;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flowerpot {
+  width: 84px;
+  height: 108px;
+  margin-bottom: 14px;
+}
+
 .notFoundTitle {
   font-size: 30px;
 }
@@ -43,7 +55,6 @@
   height: 49px;
   border-radius: 8px;
   width: 280px;
-  height: 49px;
   background-color: var(--light-green);
   font-family: var(--font-family);
   font-weight: 500;
@@ -52,7 +63,8 @@
   color: var(--black);
   @include transition(background-color);
 
-  &:is(:hover, :focus) {
+  &:hover,
+  &:focus {
     background-color: var(--dark-green);
   }
 }
