@@ -46,7 +46,7 @@ const MainDashboard = ({ board }) => {
     const columns = column.map(({ column_name, _id }) => (
         <div key={_id} className={scss.column}>
             <NameColumn nameColumn={column_name} />
-            <Cart boardId={board?._id} columnId={_id} />
+            <Cart boardId={board._id} columnId={_id} />
 
             <div className={scss.btn}>
                 <SubmitButton

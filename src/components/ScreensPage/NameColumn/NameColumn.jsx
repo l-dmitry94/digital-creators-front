@@ -8,7 +8,6 @@ import { useState } from 'react';
 
 const NameColumn = ({ nameColumn }) => {
     const [columnModalIsOpen, setColumnModalIsOpen] = useState(false);
-
     const columnModalOpen = () => {
         setColumnModalIsOpen(true);
     };
@@ -21,7 +20,7 @@ const NameColumn = ({ nameColumn }) => {
             <p className={scss.name}>{nameColumn}</p>
             <div className={scss.nameColumnBtn}>
                 <TodoBtn onClick={columnModalOpen} iconName={'icon-pencil'} />
-                <TodoBtn iconName={'icon-trash'} />
+                <TodoBtn onClick={columnModalOpen} iconName={'icon-trash'} />
                 <CustomModal
                     isOpen={columnModalIsOpen}
                     onClose={columnModalClose}
