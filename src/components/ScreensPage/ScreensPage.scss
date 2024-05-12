@@ -25,3 +25,12 @@
     background-color: var(--dark-bg-sidebar);
     border-radius: 12px;
 }
+
+.wrapper {
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    z-index: -1;
+}
