@@ -38,7 +38,6 @@ export const addCard = createAsyncThunk(
 export const removeCard = createAsyncThunk(
     'tasks/removeCard',
     async (body, { rejectWithValue }) => {
-        console.log(body);
         try {
             const { data } = await axios.delete(
                 `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards/${body.cardId}`
@@ -52,13 +51,14 @@ export const removeCard = createAsyncThunk(
 
 export const editCard = createAsyncThunk(
     'tasks/editCard',
-    async (body, { rejectWithValue }) => {
+    async ({ body }, { rejectWithValue }) => {
+        console.log(`BODY: ${body}`);
         try {
             const { data } = await axios.patch(
                 `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards/${body.cardId}`,
                 body.data
             );
-
+            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);

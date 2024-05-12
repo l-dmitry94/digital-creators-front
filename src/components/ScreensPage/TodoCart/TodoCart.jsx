@@ -1,11 +1,14 @@
 import scss from './TodoCart.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
 import { useDispatch } from 'react-redux';
+import CustomModal from '../../CustomModal/CustomModal';
+import EditCard from '../../EditCard/EditCard';
 import {
     fetchCards,
     removeCard,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
+import { useState } from 'react';
 //*, priorityColor
 const TodoCart = ({
     title,
@@ -16,12 +19,24 @@ const TodoCart = ({
     boardId,
     cardId,
 }) => {
+    const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
+
+    const cardOpenModal = () => {
+        setCardModalIsOpen(true);
+    };
+
+    const cardCloseModal = () => {
+        setCardModalIsOpen(false);
+    };
+
     const dispatch = useDispatch();
     const handleDelete = async () => {
         await dispatch(removeCard({ boardId, columnId, cardId }));
         dispatch(fetchCards({ boardId, columnId }));
     };
-
+    console.log(
+        `BoardID: ${boardId} , ColumnID: ${columnId}, CardID: ${cardId} `
+    );
     return (
         <div className={scss.todoCart}>
             <div className={scss.cartTask}>
@@ -52,11 +67,25 @@ const TodoCart = ({
                     <TodoBtn iconName={'icon-bell'} />
                     <div className={scss.btnSetting}>
                         <TodoBtn iconName={'icon-arrow'} />
-                        <TodoBtn iconName={'icon-pencil'} />
+                        <TodoBtn
+                            onClick={cardOpenModal}
+                            iconName={'icon-pencil'}
+                        />
                         <TodoBtn
                             onClick={handleDelete}
                             iconName={'icon-trash'}
                         />
+                        <CustomModal
+                            isOpen={cardModalIsOpen}
+                            onClose={cardCloseModal}
+                            title={'Edit card'}
+                        >
+                            <EditCard
+                                boardId={boardId}
+                                columnId={columnId}
+                                cardId={cardId}
+                            />
+                        </CustomModal>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ const CustomForm = ({
     id,
     columnId,
     children,
+    cardId,
 }) => {
     const dispatch = useDispatch();
 
@@ -31,7 +32,15 @@ const CustomForm = ({
             }
             return;
         }
-
+        if (columnId && id && cardId) {
+            const dispatchResult = dispatch(
+                operation({ id, columnId, cardId })
+            );
+            if (dispatchResult) {
+                onClose();
+            }
+            return;
+        }
         if (id) {
             const dispatchResult = dispatch(operation({ id, values }));
             if (dispatchResult) {
