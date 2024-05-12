@@ -2,7 +2,7 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
-import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
+// import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
@@ -12,7 +12,6 @@ const AddCard = ({ boardId: id, columnId }) => {
     const initialValues = {
         card_name: '',
         description: '',
-        // startDate: new Date(),
         priority: '',
         deadline: '12/05/2023',
     };
@@ -73,13 +72,13 @@ const AddCard = ({ boardId: id, columnId }) => {
                         }
                     />
                     <div className={scss.datePickerBlock}>
-                        <MyDatePicker
+                        {/* <MyDatePicker
                             title={'Deadline'}
-                            // selected={formik.values.startDate}
-                            // onChange={date =>
-                            //     formik.setFieldValue('startDate', date)
-                            // }
-                        />
+                            selected={formik.values.startDate}
+                            onChange={date =>
+                                formik.setFieldValue('deadline', date)
+                            }
+                        /> */}
                     </div>
                 </div>
             )}

@@ -2,13 +2,8 @@ import CustomForm from '../../../CustomForm/CustomForm';
 import CustomInput from '../../../CustomInput/CustomInput';
 import scss from './edit-column.module.scss';
 import * as yup from 'yup';
-import { useSelector, useDispatch } from 'react-redux';
 
-import {
-    fetchColumns,
-    editColumn,
-} from '../../../../redux/tasks/tasks-operations/tasks-columns-operations';
-import { selectColumnItems } from '../../../../redux/tasks/tasks-selectors';
+import { editColumn } from '../../../../redux/tasks/tasks-operations/tasks-columns-operations';
 
 const EditColumn = ({ boardId, columnId }, onClose) => {
     const initialValues = {

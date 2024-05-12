@@ -2,17 +2,15 @@ import scss from './NameColumn.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
 import EditColumn from '../../Popups/Column/EditColumn/EditColumn';
 import CustomModal from '../../CustomModal/CustomModal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
     fetchColumns,
     removeColumn,
 } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
-import { selectColumnItems } from '../../../redux/tasks/tasks-selectors';
 const NameColumn = ({ nameColumn, boardId, columnId }) => {
     const [columnModalIsOpen, setColumnModalIsOpen] = useState(false);
-    const columns = useSelector(selectColumnItems);
     const dispatch = useDispatch();
 
     const handleDelete = () => {

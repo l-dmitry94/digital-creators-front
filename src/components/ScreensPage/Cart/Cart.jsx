@@ -1,32 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import TodoCart from '../TodoCart/TodoCart';
 import scss from './Cart.module.scss';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import {
-    selectCardItems,
-    selectColumnItems,
-} from '../../../redux/tasks/tasks-selectors';
-import { useEffect } from 'react';
-import { fetchCards } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
-import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
+import { selectCardItems } from '../../../redux/tasks/tasks-selectors';
 
-const Cart = ({ boardId, columnId }) => {
+const Cart = ({ columnId }) => {
     const cards = useSelector(selectCardItems);
-    const columns = useSelector(selectColumnItems);
     const filteredCards = cards.filter(
         ({ ref_column }) => ref_column === columnId
     );
-    console.log(filteredCards);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (filteredCards.length) {
-            if (cards.length) {
-                dispatch(fetchCards({ boardId, columnId }));
-            }
-        }
-    }, [columnId, dispatch]);
+    // console.log(filteredCards);
+    // const dispatch = useDispatch();
+    // useEffect(() => {
+    //     if (columns) {
+    //         dispatch(fetchCards({ boardId, columnId }));
+    //     }
+    // }, [boardId, columnId, columns, dispatch]);
 
     const cartsList = filteredCards.map(
         ({ card_name, description, priority, date }, index) => (
@@ -39,7 +29,7 @@ const Cart = ({ boardId, columnId }) => {
             />
         )
     );
-
+    console.log();
     return (
         <SimpleBar style={{ maxHeight: 470 }}>
             <ul className={scss.cartList}>{cartsList}</ul>
