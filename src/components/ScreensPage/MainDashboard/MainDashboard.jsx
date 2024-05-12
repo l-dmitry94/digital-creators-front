@@ -50,7 +50,6 @@ const MainDashboard = ({ board }) => {
     const cardCloseModal = () => {
         setCardModalIsOpen(false);
     };
-
     const column = columns?.map(({ column_name, _id, ref_board }) => (
         <div key={_id} className={scss.column}>
             <NameColumn
@@ -58,7 +57,7 @@ const MainDashboard = ({ board }) => {
                 columnId={_id}
                 boardId={ref_board}
             />
-            <Cart boardId={board._id} columnId={_id} />
+            <Cart boardId={board?._id} columnId={_id} />
 
             <div className={scss.btn}>
                 <SubmitButton
@@ -68,6 +67,8 @@ const MainDashboard = ({ board }) => {
             </div>
         </div>
     ));
+
+    console.log(columns);
 
     return (
         <>
