@@ -14,8 +14,8 @@
   border-radius: 8px;
   width: 197px;
   height: 238px;
-  background: #1f1f1f;
   padding: 14px 14px 14px 15px;
+  background-color: var(--theme-default-needhelp-bg);
 
   @include media-rules(tablet) {
   width: 212px;
@@ -49,7 +49,7 @@
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: var(--white);
+  color: var(--theme-default-sidebar-text);
   margin-bottom: 18px;
 
   @include media-rules(tablet) {
@@ -72,7 +72,7 @@
 }
 
 .questionIcon {
-  stroke: var(--white);
+  stroke: var(--theme-default-sidebar-text);
   fill: transparent;
 }
 
@@ -81,5 +81,5 @@
   font-weight: 500;
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: var(--white);
+  color: var(--theme-default-sidebar-text);
 }
