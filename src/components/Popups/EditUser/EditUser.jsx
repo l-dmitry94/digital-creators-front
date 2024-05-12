@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import SubmitButton from '../../SubmitButton/SubmitButton';
 import scss from './EditUser.module.scss';
 import icon from '../../../assets/icons/icons.svg';
+import { toast } from 'react-toastify';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
@@ -90,7 +91,7 @@ const EditUser = ({ closeModal }) => {
                     !values.password &&
                     !values.avatar
                 ) {
-                    console.log('Data empty');
+                    toast.error('Data empty');
                     return;
                 }
 
@@ -99,7 +100,7 @@ const EditUser = ({ closeModal }) => {
                     values.username === userInfo.username ||
                     values.email === userInfo.email
                 ) {
-                    console.log('Value name or email is the same');
+                    toast.error('Value name or email is the same');
                     return;
                 }
 
