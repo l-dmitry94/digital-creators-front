@@ -3,16 +3,28 @@ import icons from '../../../assets/icons/icons.svg';
 import scss from './FilterModal.module.scss';
 import { useState } from 'react';
 
-const FilterModal = ({ isOpen, onClose, children }) => {
-    const [, setSelectedColor] = useState('');
+const FilterModal = ({ isOpen, onClose, onFilterChange }) => {
+    // const [, setSelectedColor] = useState('');
+    const [selectedPriority, setSelectedPriority] = useState('');
+    // const handleColorChange = event => {
+    //     setSelectedColor(event.target.value);
+    // };
 
-    const handleColorChange = event => {
-        setSelectedColor(event.target.value);
+    // const handleReset = () => {
+    //     setSelectedColor('');
+    // };
+
+    const handlePriorityChange = priority => {
+        setSelectedPriority(priority);
+        onFilterChange(priority);
     };
 
     const handleReset = () => {
-        setSelectedColor('');
+        setSelectedPriority('');
+        onFilterChange('');
     };
+
+    console.log(selectedPriority);
 
     return (
         <Modal
@@ -44,7 +56,13 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         type="radio"
                         name="color"
                         value="rgba(255, 255, 255, 0.3)"
-                        onChange={handleColorChange}
+                        // onChange={handleColorChange}
+                        onChange={() =>
+                            handlePriorityChange('rgba(255, 255, 255, 0.3)')
+                        }
+                        checked={
+                            selectedPriority === 'rgba(255, 255, 255, 0.3)'
+                        }
                     />
                     <span
                         className={scss.radioBtn}
@@ -59,7 +77,9 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         type="radio"
                         name="color"
                         value="#8FA1D0"
-                        onChange={handleColorChange}
+                        // onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('#8FA1D0')}
+                        checked={selectedPriority === '#8FA1D0'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -72,7 +92,9 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         type="radio"
                         name="color"
                         value="#E09CB5"
-                        onChange={handleColorChange}
+                        // onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('#E09CB5')}
+                        checked={selectedPriority === '#E09CB5'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -85,7 +107,9 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         type="radio"
                         name="color"
                         value="#BEDBB0"
-                        onChange={handleColorChange}
+                        // onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('#BEDBB0')}
+                        checked={selectedPriority === '#BEDBB0'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -94,8 +118,6 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                     <span className={scss.radioLabel}>High</span>
                 </label>
             </div>
-
-            {children}
         </Modal>
     );
 };
