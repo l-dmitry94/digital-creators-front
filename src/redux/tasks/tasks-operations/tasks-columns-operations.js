@@ -36,11 +36,12 @@ export const addColumn = createAsyncThunk(
 
 export const removeColumn = createAsyncThunk(
     'tasks/removeColumn',
-    async (body, { rejectWithValue }) => {
+    async ({ boardId, columnId }, { rejectWithValue }) => {
         try {
             const { data } = await axios.delete(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`
+                `${baseURL}/boards/${boardId}/columns/${columnId}`
             );
+
             return data;
         } catch (error) {
             return rejectWithValue(error.response.data.message);
@@ -53,8 +54,8 @@ export const editColumn = createAsyncThunk(
     async (body, { rejectWithValue }) => {
         try {
             const { data } = await axios.patch(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}`,
-                body.data
+                `${baseURL}/boards/${body.id}/columns/${body.columnId}`,
+                body.values
             );
             return data;
         } catch (error) {

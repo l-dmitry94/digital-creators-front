@@ -1,13 +1,6 @@
 //! BOARDS
 
-import { createSelector } from '@reduxjs/toolkit';
-
 export const selectBoardItems = state => state.tasks.boards.items;
-
-export const selectBoardById = createSelector(
-    [selectBoardItems, _id => _id],
-    (items, _id) => items.find(item => item._id === _id)
-);
 
 export const selectBoardIsLoading = state => state.tasks.boards.isLoading;
 

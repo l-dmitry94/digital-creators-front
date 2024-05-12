@@ -7,7 +7,6 @@ export const pending = state => {
 
 export const rejected = (state, { payload }) => {
     toast.error(`${payload}`);
-    console.log(payload);
     state.error = payload;
     state.isLoading = false;
 };

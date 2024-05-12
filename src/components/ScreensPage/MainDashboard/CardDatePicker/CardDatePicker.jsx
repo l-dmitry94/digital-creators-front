@@ -2,6 +2,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import scss from './card-date-picker.module.scss';
 import { useState } from 'react';
+//*, selected, onChange
 
 export const MyDatePicker = ({ title }) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -30,7 +31,6 @@ export const MyDatePicker = ({ title }) => {
         const day = date.getDate();
         return `${monthName} ${day}`;
     };
-
     const getDateText = date => {
         if (
             date.getDate() === today.getDate() &&
