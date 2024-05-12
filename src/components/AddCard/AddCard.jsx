@@ -2,6 +2,7 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
+import Errors from '../Errors/Errors.jsx';
 // import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
 
@@ -44,13 +45,18 @@ const AddCard = ({ boardId: id, columnId }) => {
                             type="text"
                             name="card_name"
                             placeholder="Title"
-                            value={formik.values.title}
+                            value={formik.values.card_name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.errors.title && formik.touched.title && (
+                        {/* {formik.errors.title && formik.touched.title && (
                             <div>{formik.errors.title}</div>
-                        )}
+                        )} */}
+                        <Errors
+                            error={formik.errors}
+                            touched={formik.touched}
+                            errorMessage="card_name"
+                        />
                     </div>
                     <div className={scss.textareaBlock}>
                         <CustomTextarea
@@ -60,10 +66,11 @@ const AddCard = ({ boardId: id, columnId }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.errors.description &&
-                            formik.touched.description && (
-                                <div>{formik.errors.description}</div>
-                            )}
+                        <Errors
+                            error={formik.errors}
+                            touched={formik.touched}
+                            errorMessage="description"
+                        />
                     </div>
                     <ColorSelector
                         title={'Label Color'}
