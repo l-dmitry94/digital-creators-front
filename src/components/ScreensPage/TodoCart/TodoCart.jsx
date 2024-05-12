@@ -1,7 +1,27 @@
 import scss from './TodoCart.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
+import { useDispatch } from 'react-redux';
+import {
+    fetchCards,
+    removeCard,
+} from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
 //*, priorityColor
-const TodoCart = ({ title, descr, priority, deadline }) => {
+const TodoCart = ({
+    title,
+    descr,
+    priority,
+    deadline,
+    columnId,
+    boardId,
+    cardId,
+}) => {
+    const dispatch = useDispatch();
+    const handleDelete = async () => {
+        await dispatch(removeCard({ boardId, columnId, cardId }));
+        dispatch(fetchCards({ boardId, columnId }));
+    };
+
     return (
         <div className={scss.todoCart}>
             <div className={scss.cartTask}>
@@ -33,7 +53,10 @@ const TodoCart = ({ title, descr, priority, deadline }) => {
                     <div className={scss.btnSetting}>
                         <TodoBtn iconName={'icon-arrow'} />
                         <TodoBtn iconName={'icon-pencil'} />
-                        <TodoBtn iconName={'icon-trash'} />
+                        <TodoBtn
+                            onClick={handleDelete}
+                            iconName={'icon-trash'}
+                        />
                     </div>
                 </div>
             </div>

@@ -38,6 +38,7 @@ export const addCard = createAsyncThunk(
 export const removeCard = createAsyncThunk(
     'tasks/removeCard',
     async (body, { rejectWithValue }) => {
+        console.log(body);
         try {
             const { data } = await axios.delete(
                 `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards/${body.cardId}`

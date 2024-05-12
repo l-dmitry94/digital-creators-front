@@ -13,11 +13,11 @@ const NameColumn = ({ nameColumn, boardId, columnId }) => {
     const [columnModalIsOpen, setColumnModalIsOpen] = useState(false);
     const dispatch = useDispatch();
 
-    const handleDelete = () => {
-        dispatch(removeColumn({ boardId, columnId })).then(
-            dispatch(fetchColumns(boardId))
-        );
+    const handleDelete = async () => {
+        await dispatch(removeColumn({ boardId, columnId }));
+        dispatch(fetchColumns(boardId));
     };
+
     const columnModalOpen = () => {
         setColumnModalIsOpen(true);
     };

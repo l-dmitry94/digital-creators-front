@@ -19,17 +19,31 @@ const Cart = ({ columnId }) => {
     // }, [boardId, columnId, columns, dispatch]);
 
     const cartsList = filteredCards.map(
-        ({ card_name, description, priority, date }, index) => (
+        (
+            {
+                card_name,
+                description,
+                priority,
+                date,
+                ref_board,
+                ref_column,
+                _id,
+            },
+            index
+        ) => (
             <TodoCart
                 key={index}
                 title={card_name}
                 descr={description}
                 priority={priority}
                 deadline={date}
+                boardId={ref_board}
+                columnId={ref_column}
+                cardId={_id}
             />
         )
     );
-    console.log();
+    console.log(filteredCards);
     return (
         <SimpleBar style={{ maxHeight: 470 }}>
             <ul className={scss.cartList}>{cartsList}</ul>
