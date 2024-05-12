@@ -12,12 +12,25 @@ const CustomForm = ({
     id,
     columnId,
     children,
+    cardId,
 }) => {
     const dispatch = useDispatch();
 
     const onSubmit = async values => {
+        console.log(values);
         if (handleSubmit) {
             handleSubmit(values);
+            return;
+        }
+
+        if (columnId && id && cardId) {
+            const dispatchResult = dispatch(
+                operation({ id, columnId, cardId, values })
+            );
+            console.log(`id: ${id}, columnId; ${columnId}, ${cardId}`);
+            if (dispatchResult) {
+                onClose();
+            }
             return;
         }
 

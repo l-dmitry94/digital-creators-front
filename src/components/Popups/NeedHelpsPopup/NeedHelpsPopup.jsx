@@ -7,7 +7,7 @@ import CustomTextarea from '../../CustomTextarea/CustomTextarea';
 import axios from 'axios';
 import Errors from '../../Errors/Errors';
 
-const NeedHelpsPopup = () => {
+const NeedHelpsPopup = ({ onClose }) => {
     const initialValues = {
         email: '',
         comment: '',
@@ -22,13 +22,16 @@ const NeedHelpsPopup = () => {
     });
 
     const handleSubmit = async data => {
-        await axios.post(
+        const response = await axios.post(
             'https://digital-creators-back.onrender.com/api/support/sendmail',
             {
                 email: data.email,
                 value: data.comment,
             }
         );
+        if (response) {
+            onClose();
+        }
     };
 
     return (
@@ -37,6 +40,7 @@ const NeedHelpsPopup = () => {
             validationSchema={validationSchema}
             buttonText={'Send'}
             handleSubmit={handleSubmit}
+            onClose={onClose}
         >
             {formik => (
                 <div className={scss.inputContainer}>

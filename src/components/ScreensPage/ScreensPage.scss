@@ -25,3 +25,34 @@
     background-color: var(--dark-bg-sidebar);
     border-radius: 12px;
 }
+
+.wrapper {
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+}
+
+.cont {
+    max-width: 320px;
+    margin: 0 auto;
+    // padding-right: 20px;
+    @include media-rules(mobile) {
+        max-width: 375px;
+    }
+    @include media-rules(tablet) {
+        max-width: 768px;
+        // padding-right: 32px;
+    }
+    @include media-rules(desktop) {
+        max-width: 1440px;
+        // padding-right: 24px;
+    }
+}

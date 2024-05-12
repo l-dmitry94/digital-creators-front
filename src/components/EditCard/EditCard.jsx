@@ -2,18 +2,24 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
-import Errors from '../Errors/Errors.jsx';
-import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
+// import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
-import { addCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { editCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { useSelector } from 'react-redux';
+import { selectCardItems } from '../../redux/tasks/tasks-selectors';
 
-const AddCard = ({ boardId: id, columnId, onClose }) => {
+const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
+    const cards = useSelector(selectCardItems);
+    const card = cards.find(({ _id }) => _id === cardId);
+
+    console.log(card);
+
     const initialValues = {
         card_name: '',
         description: '',
-        priority: 'rgba(255, 255, 255, 0.3)',
+        priority: '',
         deadline: '12/05/2023',
     };
 
@@ -32,10 +38,11 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
-            buttonText={'Add'}
-            operation={addCard}
+            buttonText={'Edit'}
+            operation={editCard}
             id={id}
             columnId={columnId}
+            cardId={cardId}
             onClose={onClose}
         >
             {formik => (
@@ -49,14 +56,9 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {/* {formik.errors.title && formik.touched.title && (
+                        {formik.errors.title && formik.touched.card_name && (
                             <div>{formik.errors.title}</div>
-                        )} */}
-                        <Errors
-                            error={formik.errors}
-                            touched={formik.touched}
-                            errorMessage="card_name"
-                        />
+                        )}
                     </div>
                     <div className={scss.textareaBlock}>
                         <CustomTextarea
@@ -66,27 +68,25 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        <Errors
-                            error={formik.errors}
-                            touched={formik.touched}
-                            errorMessage="description"
-                        />
+                        {formik.errors.description &&
+                            formik.touched.description && (
+                                <div>{formik.errors.description}</div>
+                            )}
                     </div>
                     <ColorSelector
                         title={'Label Color'}
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
-                        defaultValue={'rgba(255, 255, 255, 0.3)'}
                     />
                     <div className={scss.datePickerBlock}>
-                        <MyDatePicker
+                        {/* <MyDatePicker
                             title={'Deadline'}
                             selected={formik.values.startDate}
                             onChange={date =>
                                 formik.setFieldValue('deadline', date)
                             }
-                        />
+                        /> */}
                     </div>
                 </div>
             )}
@@ -94,4 +94,4 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
     );
 };
 
-export default AddCard;
+export default EditCard;
