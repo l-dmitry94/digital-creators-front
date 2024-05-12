@@ -7,8 +7,15 @@ import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 import { editCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { useSelector } from 'react-redux';
+import { selectCardItems } from '../../redux/tasks/tasks-selectors';
 
-const EditCard = ({ boardId: id, columnId, cardId }) => {
+const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
+    const cards = useSelector(selectCardItems);
+    const card = cards.find(({ _id }) => _id === cardId);
+
+    console.log(card);
+
     const initialValues = {
         card_name: '',
         description: '',
@@ -26,7 +33,6 @@ const EditCard = ({ boardId: id, columnId, cardId }) => {
         priority: yup.string(),
         deadline: yup.string().required('Deadline is required'),
     });
-    console.log(`ID: ${id}, COLUMNID: ${columnId}, CARDID: ${cardId}`);
 
     return (
         <CustomForm
@@ -37,7 +43,7 @@ const EditCard = ({ boardId: id, columnId, cardId }) => {
             id={id}
             columnId={columnId}
             cardId={cardId}
-            onClose={() => {}}
+            onClose={onClose}
         >
             {formik => (
                 <div className={scss.inputContainer}>
@@ -46,11 +52,11 @@ const EditCard = ({ boardId: id, columnId, cardId }) => {
                             type="text"
                             name="card_name"
                             placeholder="Title"
-                            value={formik.values.title}
+                            value={formik.values.card_name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.errors.title && formik.touched.title && (
+                        {formik.errors.title && formik.touched.card_name && (
                             <div>{formik.errors.title}</div>
                         )}
                     </div>

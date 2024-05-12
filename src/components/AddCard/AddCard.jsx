@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 import { addCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
 
-const AddCard = ({ boardId: id, columnId }) => {
+const AddCard = ({ boardId: id, columnId, onClose }) => {
     const initialValues = {
         card_name: '',
         description: '',
@@ -35,7 +35,7 @@ const AddCard = ({ boardId: id, columnId }) => {
             operation={addCard}
             id={id}
             columnId={columnId}
-            onClose={() => {}}
+            onClose={onClose}
         >
             {formik => (
                 <div className={scss.inputContainer}>

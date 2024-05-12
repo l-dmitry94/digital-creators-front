@@ -48,7 +48,10 @@ const NeedHelp = () => {
                         isOpen={modalIsOpen}
                         onClose={closeModal}
                     >
-                        <NeedHelpsPopup onSubmit={handleSubmit} />
+                        <NeedHelpsPopup
+                            onSubmit={handleSubmit}
+                            onClose={closeModal}
+                        />
                     </CustomModal>
                 </div>
             </div>

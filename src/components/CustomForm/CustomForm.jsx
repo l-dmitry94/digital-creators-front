@@ -23,6 +23,17 @@ const CustomForm = ({
             return;
         }
 
+        if (columnId && id && cardId) {
+            const dispatchResult = dispatch(
+                operation({ id, columnId, cardId, values })
+            );
+            console.log(`id: ${id}, columnId; ${columnId}, ${cardId}`);
+            if (dispatchResult) {
+                onClose();
+            }
+            return;
+        }
+
         if (columnId && id) {
             const dispatchResult = dispatch(
                 operation({ id, columnId, values })
@@ -32,15 +43,7 @@ const CustomForm = ({
             }
             return;
         }
-        if (columnId && id && cardId) {
-            const dispatchResult = dispatch(
-                operation({ id, columnId, cardId })
-            );
-            if (dispatchResult) {
-                onClose();
-            }
-            return;
-        }
+
         if (id) {
             const dispatchResult = dispatch(operation({ id, values }));
             if (dispatchResult) {

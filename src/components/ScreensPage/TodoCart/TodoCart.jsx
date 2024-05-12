@@ -84,6 +84,7 @@ const TodoCart = ({
                                 boardId={boardId}
                                 columnId={columnId}
                                 cardId={cardId}
+                                onClose={cardCloseModal}
                             />
                         </CustomModal>
                     </div>
