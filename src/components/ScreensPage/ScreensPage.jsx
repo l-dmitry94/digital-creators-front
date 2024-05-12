@@ -8,7 +8,6 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectBoardItems } from '../../redux/tasks/tasks-selectors';
 import './ScreensPage.scss';
-import Container from '../Container';
 
 const ScreensPage = () => {
     const boards = useSelector(selectBoardItems);
@@ -19,7 +18,7 @@ const ScreensPage = () => {
     );
 
     return (
-        <Container>
+        <>
             <div className="wrapper">
                 <picture>
                     <source
@@ -45,12 +44,14 @@ const ScreensPage = () => {
                 {!boards.length ? (
                     <StartPage />
                 ) : (
-                    <SimpleBar>
-                        <MainDashboard board={board} />
-                    </SimpleBar>
+                    <div className="cont">
+                        <SimpleBar>
+                            <MainDashboard board={board} />
+                        </SimpleBar>
+                    </div>
                 )}
             </div>
-        </Container>
+        </>
     );
 };
 

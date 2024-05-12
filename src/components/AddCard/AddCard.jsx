@@ -12,7 +12,7 @@ const AddCard = ({ boardId: id, columnId }) => {
     const initialValues = {
         card_name: '',
         description: '',
-        priority: '',
+        priority: 'rgba(255, 255, 255, 0.3)',
         deadline: '12/05/2023',
     };
 
@@ -70,6 +70,7 @@ const AddCard = ({ boardId: id, columnId }) => {
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
+                        defaultValue={'rgba(255, 255, 255, 0.3)'}
                     />
                     <div className={scss.datePickerBlock}>
                         {/* <MyDatePicker

@@ -74,10 +74,12 @@ const MainDashboard = ({ board }) => {
             {columns && (
                 <div className={scss.head}>
                     {column}
-                    <SubmitButton
-                        onClick={columnModalOpen}
-                        buttonText={'Add another column'}
-                    />
+                    <div className={scss.subbtn}>
+                        <SubmitButton
+                            onClick={columnModalOpen}
+                            buttonText={'Add another column'}
+                        />
+                    </div>
                     <CustomModal
                         isOpen={columnModalIsOpen}
                         onClose={columnModalClose}
