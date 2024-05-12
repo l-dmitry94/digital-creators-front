@@ -2,7 +2,7 @@ import scss from './ColorSelector.module.scss';
 
 const ColorSelector = ({ title, onChange }) => {
     const handleColorChange = event => {
-        onChange(event.target.value);
+        onChange(event.target.value || 'rgba(255, 255, 255, 0.3)');
     };
 
     return (
@@ -12,7 +12,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name="color"
+                        name={name}
                         value="#8FA1D0"
                         onChange={handleColorChange}
                         required
@@ -25,7 +25,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name="color"
+                        name={name}
                         value="#E09CB5"
                         onChange={handleColorChange}
                     />
@@ -37,7 +37,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name="color"
+                        name={name}
                         value="#BEDBB0"
                         onChange={handleColorChange}
                     />
@@ -49,9 +49,8 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name="color"
+                        name={name}
                         value="rgba(255, 255, 255, 0.3)"
-                        checked
                         onChange={handleColorChange}
                     />
                     <span

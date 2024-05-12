@@ -18,6 +18,27 @@ const TodoCart = ({
     boardId,
     cardId,
 }) => {
+    let priorityText;
+
+    switch (priority) {
+        case '#8FA1D0':
+            priorityText = 'Low';
+            break;
+        case '#E09CB5':
+            priorityText = 'Medium';
+            break;
+        case '#BEDBB0':
+            priorityText = 'High';
+            break;
+        case 'rgba(255, 255, 255, 0.3)':
+            priorityText = 'Without priority';
+            break;
+        default:
+            priority = 'rgba(255, 255, 255, 0.3)';
+            priorityText = 'Without priority';
+            break;
+    }
+
     const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
 
     const cardOpenModal = () => {
@@ -36,8 +57,12 @@ const TodoCart = ({
     console.log(
         `BoardID: ${boardId} , ColumnID: ${columnId}, CardID: ${cardId} `
     );
+
     return (
-        <div className={scss.todoCart}>
+        <div
+            className={scss.todoCart}
+            style={{ borderLeft: `4px solid ${priority}` }}
+        >
             <div className={scss.cartTask}>
                 <h4 className={scss.title}>{title}</h4>
                 <p className={scss.text}>{descr} </p>
@@ -51,15 +76,12 @@ const TodoCart = ({
                                 className={scss.priorityDot}
                                 style={{ backgroundColor: priority }}
                             ></span>
-                            {priority}
+                            {priorityText}
                         </p>
                     </li>
                     <li>
                         <p className={scss.setName}>Deadline</p>
                         <p className={scss.setSign}>{deadline}</p>
-                        {/* <div className={scss.setSign}>
-                            <MyDatePicker />
-                        </div> */}
                     </li>
                 </ul>
                 <div className={scss.btnBell}>
