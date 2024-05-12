@@ -85,7 +85,7 @@ const MainDashboard = ({ board }) => {
                         onClose={columnModalClose}
                         title={'Add column'}
                     >
-                        <AddColumn id={board?._id} />
+                        <AddColumn id={board?._id} onClose={columnModalClose} />
                     </CustomModal>
                 </div>
             )}
@@ -95,7 +95,11 @@ const MainDashboard = ({ board }) => {
                 onClose={cardCloseModal}
                 title={'Add card'}
             >
-                <AddCard boardId={board?._id} columnId={columnById} />
+                <AddCard
+                    boardId={board?._id}
+                    columnId={columnById}
+                    onClose={cardCloseModal}
+                />
             </CustomModal>
         </>
     );

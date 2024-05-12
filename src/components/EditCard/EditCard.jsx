@@ -6,13 +6,20 @@ import ColorSelector from '../ColorSelector/ColorSelector';
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
-import { addCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { editCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
+import { useSelector } from 'react-redux';
+import { selectCardItems } from '../../redux/tasks/tasks-selectors';
 
-const AddCard = ({ boardId: id, columnId, onClose }) => {
+const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
+    const cards = useSelector(selectCardItems);
+    const card = cards.find(({ _id }) => _id === cardId);
+
+    console.log(card);
+
     const initialValues = {
         card_name: '',
         description: '',
-        priority: 'rgba(255, 255, 255, 0.3)',
+        priority: '',
         deadline: '12/05/2023',
     };
 
@@ -31,10 +38,11 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
         <CustomForm
             initialValues={initialValues}
             validationSchema={validationSchema}
-            buttonText={'Add'}
-            operation={addCard}
+            buttonText={'Edit'}
+            operation={editCard}
             id={id}
             columnId={columnId}
+            cardId={cardId}
             onClose={onClose}
         >
             {formik => (
@@ -44,11 +52,11 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                             type="text"
                             name="card_name"
                             placeholder="Title"
-                            value={formik.values.title}
+                            value={formik.values.card_name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.errors.title && formik.touched.title && (
+                        {formik.errors.title && formik.touched.card_name && (
                             <div>{formik.errors.title}</div>
                         )}
                     </div>
@@ -70,7 +78,6 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
-                        defaultValue={'rgba(255, 255, 255, 0.3)'}
                     />
                     <div className={scss.datePickerBlock}>
                         {/* <MyDatePicker
@@ -87,4 +94,4 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
     );
 };
 
-export default AddCard;
+export default EditCard;

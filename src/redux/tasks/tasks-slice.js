@@ -194,7 +194,7 @@ const tasksSlice = createSlice({
                     const index = state.cards.items.findIndex(
                         card => card._id === payload._id
                     );
-                    state.cards.items.splice(index, 1, payload);
+                    state.cards.items[index] = payload;
                 }
             );
     },
