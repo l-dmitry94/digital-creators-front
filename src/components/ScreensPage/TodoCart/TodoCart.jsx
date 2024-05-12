@@ -7,7 +7,6 @@ import {
     fetchCards,
     removeCard,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
-import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
 import { useState } from 'react';
 //*, priorityColor
 const TodoCart = ({
