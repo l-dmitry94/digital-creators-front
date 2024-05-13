@@ -33,7 +33,7 @@ header {
     align-items: baseline;
     gap: 14px;
     margin-left: auto;
-    & img{
+    & img {
         width: 32px;
         height: 32px;
         border-radius: 8px;
@@ -44,7 +44,7 @@ header {
         display: none;
     }
     & svg {
-        stroke: var(--white);
+        stroke: var(--thema-default-filter-title-cl);
         width: 24px;
         height: 24px;
         @include media-rules(tablet) {

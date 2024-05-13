@@ -38,7 +38,7 @@ const Cart = ({ columnId }) => {
         )
     );
     return (
-        <SimpleBar style={{ maxHeight: 470 }}>
+        <SimpleBar style={{ maxHeight: 435 }}>
             <ul className={scss.cartList}>{cartsList}</ul>
         </SimpleBar>
     );

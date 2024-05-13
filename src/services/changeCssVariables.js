@@ -149,14 +149,20 @@ export const changeCssVariables = theme => {
         '--theme-default-card-board',
         `var(--theme-${theme}-card-board)`
     );
-
     root.style.setProperty(
         '--theme-default-scroll',
         `var(--theme-${theme}-scroll)`
     );
-
     root.style.setProperty(
         '--theme-default-scroll-bg',
         `var(--theme-${theme}-scroll-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-edit-user',
+        `var(--theme-${theme}-edit-user)`
+    );
+    root.style.setProperty(
+        '--theme-default-column-plus',
+        `var(--theme-${theme}-column-plus)`
     );
 };
