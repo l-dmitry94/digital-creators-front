@@ -78,6 +78,7 @@ const MyDatePicker = ({ title, formik }) => {
             <div className={scss.title}>
                 <label>{title}</label>
             </div>
+
             <DatePicker
                 selected={startDate}
                 onChange={date => setStartDate(date)}
@@ -87,7 +88,7 @@ const MyDatePicker = ({ title, formik }) => {
                 dateFormat="MM/dd/yyyy"
                 calendarClassName="react-calendar"
             />
-        </div>
+            </div>
     );
 };
 
