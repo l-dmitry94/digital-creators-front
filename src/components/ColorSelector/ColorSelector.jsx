@@ -12,7 +12,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
+                        name={title}
                         value="#8FA1D0"
                         onChange={handleColorChange}
                         required
@@ -25,7 +25,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
+                        name={title}
                         value="#E09CB5"
                         onChange={handleColorChange}
                     />
@@ -37,7 +37,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
+                        name={title}
                         value="#BEDBB0"
                         onChange={handleColorChange}
                     />
@@ -49,7 +49,7 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
+                        name={title}
                         value="rgba(255, 255, 255, 0.3)"
                         onChange={handleColorChange}
                     />
