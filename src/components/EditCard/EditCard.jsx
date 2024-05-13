@@ -7,13 +7,8 @@ import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 import { editCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
-import { useSelector } from 'react-redux';
-import { selectCardItems } from '../../redux/tasks/tasks-selectors';
 
 const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
-    const cards = useSelector(selectCardItems);
-    const card = cards.find(({ _id }) => _id === cardId);
-
     const initialValues = {
         card_name: '',
         description: '',
