@@ -15,11 +15,10 @@ const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
 
     const card = cards.find(({ _id }) => cardId === _id);
 
-    console.log(card);
     const initialValues = {
         card_name: card.card_name,
         description: card.description,
-        priority: '',
+        priority: card.priority,
         deadline: '',
     };
 

@@ -55,7 +55,7 @@ const Header = ({ handleClick, isOpenSidebar }) => {
                         </button>
                     </div>
                     <CustomModal
-                        title="Edit  profile"
+                        title="Edit profile"
                         isOpen={modalIsOpen}
                         onClose={closeModal}
                     >

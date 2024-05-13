@@ -210,7 +210,7 @@ const tasksSlice = createSlice({
                 (state, { payload }) => {
                     state.cards.isLoading = false;
                     state.cards.error = null;
-                    state.cards.items = payload;
+                    state.cards.items.push(payload);
                 }
             );
     },
