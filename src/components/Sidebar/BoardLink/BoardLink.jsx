@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import scss from './BoardLink.module.scss';
 import sprite from '../../../assets/icons/icons.svg';
 import { useDispatch, useSelector } from 'react-redux';
@@ -51,7 +52,6 @@ const BoardLink = () => {
                 navigate('/home');
             }
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [boards]);
 
     return (
