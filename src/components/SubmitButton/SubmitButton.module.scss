@@ -10,7 +10,7 @@
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: var(--theme-default-sidebar-text);
+    color: var(--theme-default-button-text);
     @include transition(background-color);
 
     &:is(:hover, :focus) {

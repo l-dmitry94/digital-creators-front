@@ -77,6 +77,16 @@
     --theme-violet-logo-bg: var(--white);
     --theme-default-logo-bg: var(--theme-dark-logo-bg);
 
+    --theme-light-link-bg: var(--light-bg);
+    --theme-dark-link-bg: var(--dark-bg);
+    --theme-violet-link-bg: var(--dark-grey);
+    --theme-default-link-bg: var(--theme-dark-link-bg);
+
+    --theme-light-link-text: var(--black);
+    --theme-dark-link-text: var(--white);
+    --theme-violet-link-text: var(--white);
+    --theme-default-link-text: var(--theme-dark-link-text);
+
     --theme-light-indicator-color: var(--light-green);
     --theme-dark-indicator-color: var(--light-green);
     --theme-violet-indicator-color: var(--white);
@@ -124,6 +134,11 @@
     --theme-dark-button-bg: var(--light-green);
     --theme-violet-button-bg: var(--dark-violet);
     --theme-default-button-bg: var(--theme-dark-input-bg);
+
+    --theme-light-button-text: var(--black);
+    --theme-dark-button-text: var(--black);
+    --theme-violet-button-text: var(--white);
+    --theme-default-button-text: var(--theme-dark-button-text);
 
     //Filter
     --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);
