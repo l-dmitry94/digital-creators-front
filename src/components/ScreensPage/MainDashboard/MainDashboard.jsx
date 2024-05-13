@@ -68,8 +68,6 @@ const MainDashboard = ({ board }) => {
         </div>
     ));
 
-    console.log(columns);
-
     return (
         <>
             {columns && (

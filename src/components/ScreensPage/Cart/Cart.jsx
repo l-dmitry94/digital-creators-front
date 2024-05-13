@@ -48,7 +48,6 @@ const Cart = ({ columnId }) => {
             />
         )
     );
-    console.log(filteredCards);
     return (
         <SimpleBar style={{ maxHeight: 470 }}>
             <ul className={scss.cartList}>{cartsList}</ul>

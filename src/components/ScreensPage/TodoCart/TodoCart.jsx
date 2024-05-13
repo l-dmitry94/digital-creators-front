@@ -54,9 +54,6 @@ const TodoCart = ({
         await dispatch(removeCard({ boardId, columnId, cardId }));
         dispatch(fetchCards({ boardId, columnId }));
     };
-    console.log(
-        `BoardID: ${boardId} , ColumnID: ${columnId}, CardID: ${cardId} `
-    );
 
     return (
         <div
