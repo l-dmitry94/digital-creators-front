@@ -8,7 +8,7 @@ import { selectFilteredCards } from '../../../redux/tasks/tasks-selectors';
 const Cart = ({ columnId }) => {
     const items = useSelector(selectFilteredCards);
 
-    const filteredCards = items.filter(
+    const filteredCards = items?.filter(
         ({ ref_column }) => ref_column === columnId
     );
 
