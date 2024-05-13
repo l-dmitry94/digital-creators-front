@@ -15,11 +15,10 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
     const boardById = boards.find(({ _id }) => id === _id);
 
     const initialValues = {
-        board_name: editBoard ? boardById.board_name : '',
+        board_name: '',
         icon: editBoard ? boardById.icon : 'icon-project',
         background: editBoard ? boardById.background : 'default',
     };
-
     const validationSchema = yup.object().shape({
         board_name: yup.string().required('Title is required'),
         icon: yup.string().required('Icon is required'),
@@ -39,7 +38,11 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
                 editBoard ? editValidationSchema : validationSchema
             }
             buttonText={editBoard ? 'Edit' : 'Create'}
-            operation={editBoard ? editBoard : addBoard}
+            operation={
+                editBoard && initialValues.board_name !== boardById.board_name
+                    ? editBoard
+                    : addBoard
+            }
             onClose={onClose}
             id={id}
         >
@@ -47,7 +50,9 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
                 <div>
                     <div className={scss.createBoardInput}>
                         <CustomInput
-                            placeholder={'Title'}
+                            placeholder={
+                                editBoard ? boardById.board_name : 'Title'
+                            }
                             name="board_name"
                             value={formik.values.board_name}
                             type={'text'}

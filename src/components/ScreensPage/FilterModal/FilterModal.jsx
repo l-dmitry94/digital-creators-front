@@ -2,17 +2,24 @@ import Modal from 'react-modal';
 import icons from '../../../assets/icons/icons.svg';
 import scss from './FilterModal.module.scss';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeFitler } from '../../../redux/tasks/filter-slice';
 
-const FilterModal = ({ isOpen, onClose, children }) => {
-    const [, setSelectedColor] = useState('');
-
+const FilterModal = ({ isOpen, onClose }) => {
+    const [selectedPriority, setSelectedPriority] = useState('');
+    const dispatch = useDispatch();
+    const handlePriorityChange = priority => {
+        setSelectedPriority(priority);
+    };
     const handleColorChange = event => {
-        setSelectedColor(event.target.value);
+        handlePriorityChange(event.target.value);
     };
-
     const handleReset = () => {
-        setSelectedColor('');
+        setSelectedPriority('');
     };
+    const toChangeFitler = () => dispatch(changeFitler(selectedPriority));
+    console.log(toChangeFitler());
+    // console.log(items);
 
     return (
         <Modal
@@ -45,6 +52,9 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         name="color"
                         value="rgba(255, 255, 255, 0.3)"
                         onChange={handleColorChange}
+                        checked={
+                            selectedPriority === 'rgba(255, 255, 255, 0.3)'
+                        }
                     />
                     <span
                         className={scss.radioBtn}
@@ -60,6 +70,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         name="color"
                         value="#8FA1D0"
                         onChange={handleColorChange}
+                        checked={selectedPriority === '#8FA1D0'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -73,6 +84,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         name="color"
                         value="#E09CB5"
                         onChange={handleColorChange}
+                        checked={selectedPriority === '#E09CB5'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -86,6 +98,7 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                         name="color"
                         value="#BEDBB0"
                         onChange={handleColorChange}
+                        checked={selectedPriority === '#BEDBB0'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -94,8 +107,6 @@ const FilterModal = ({ isOpen, onClose, children }) => {
                     <span className={scss.radioLabel}>High</span>
                 </label>
             </div>
-
-            {children}
         </Modal>
     );
 };

@@ -7,7 +7,7 @@ import {
     fetchCards,
     removeCard,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //*, priorityColor
 const TodoCart = ({
     title,
@@ -40,6 +40,16 @@ const TodoCart = ({
     }
 
     const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
+    const [isDeadlineToday, setIsDeadlineToday] = useState(false);
+
+    useEffect(() => {
+        const today = new Date();
+        const monthNumber = (today.getMonth() + 1).toString().padStart(2, '0');
+        const day = today.getDate().toString().padStart(2, '0');
+        const year = today.getFullYear();
+        const formattedToday = `${day}/${monthNumber}/${year}`;
+        setIsDeadlineToday(deadline === formattedToday);
+    }, [deadline]);
 
     const cardOpenModal = () => {
         setCardModalIsOpen(true);
@@ -54,9 +64,6 @@ const TodoCart = ({
         await dispatch(removeCard({ boardId, columnId, cardId }));
         dispatch(fetchCards({ boardId, columnId }));
     };
-    console.log(
-        `BoardID: ${boardId} , ColumnID: ${columnId}, CardID: ${cardId} `
-    );
 
     return (
         <div
@@ -85,7 +92,11 @@ const TodoCart = ({
                     </li>
                 </ul>
                 <div className={scss.btnBell}>
-                    <TodoBtn iconName={'icon-bell'} />
+                    {isDeadlineToday && (
+                        <div className={scss.btnBell}>
+                            <TodoBtn iconName={'icon-bell'} />
+                        </div>
+                    )}
                     <div className={scss.btnSetting}>
                         <TodoBtn iconName={'icon-arrow'} />
                         <TodoBtn
