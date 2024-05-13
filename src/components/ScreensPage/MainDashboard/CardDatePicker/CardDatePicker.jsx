@@ -1,6 +1,7 @@
-import DatePicker from 'react-datepicker';
+import DatePicker, { CalendarContainer } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import scss from './card-date-picker.module.scss';
+import './card-date.scss';
 import { useState } from 'react';
 //*, selected, onChange
 
@@ -84,6 +85,7 @@ const MyDatePicker = ({ title, formik }) => {
                 className={scss.date_picker}
                 minDate={today}
                 dateFormat="MM/dd/yyyy"
+                calendarClassName="react-calendar"
             />
         </div>
     );
