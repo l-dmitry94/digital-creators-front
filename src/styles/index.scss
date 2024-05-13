@@ -246,6 +246,21 @@
     --theme-dark-scroll-bg: var(--black);
     --theme-violet-scroll-bg: var(--white);
     --theme-default-scroll-bg: var(--theme-dark-scroll-bg);
+
+    --theme-light-edit-user: rgba(190, 219, 176, 0.4);
+    --theme-dark-edit-user: rgba(190, 219, 176, 0.4);
+    --theme-violet-edit-user: rgba(82, 85, 188, 0.4);
+    --theme-default-edit-user: var(--theme-dark-edit-user);
+
+    --theme-light-column-btn: var(--white);
+    --theme-dark-column-btn: var(--black);
+    --theme-violet-column-btn: var(--white);
+    --theme-default-column-btn: var(--theme-dark-scroll-bg);
+
+    --theme-light-column-plus: var(--black);
+    --theme-dark-column-plus: var(--white);
+    --theme-violet-column-plus: var(--dark-violet);
+    --theme-default-column-plus: var(--theme-dark-column-plus);
 }
 
 body {

@@ -28,8 +28,8 @@
 }
 
 .buttonColumn {
-    background-color: var(--dark-bg-sidebar);
-    color: var(--white);
+    background-color: var(--theme-default-modal-bg);
+    color: var(--theme-default-modal-color);
     min-width: 280px;
     &:is(:hover, :focus) {
         background-color: var(--dark-grey-line);
@@ -64,11 +64,11 @@
 }
 
 .plusColumn {
-    background-color: var(--white);
+    background-color: var(--theme-default-column-plus);
     composes: plus;
 }
 
 .plusIconColumn {
-    stroke: var(--black);
+    stroke: var(--theme-default-modal-bg);
     composes: plusIcon;
 }
