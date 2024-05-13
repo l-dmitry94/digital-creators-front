@@ -1,4 +1,4 @@
-import DatePicker, { CalendarContainer } from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import scss from './card-date-picker.module.scss';
 import './card-date.scss';
