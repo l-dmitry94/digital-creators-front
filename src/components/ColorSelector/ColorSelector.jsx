@@ -2,7 +2,7 @@ import scss from './ColorSelector.module.scss';
 
 const ColorSelector = ({ title, onChange }) => {
     const handleColorChange = event => {
-        onChange(event.target.value || 'rgba(255, 255, 255, 0.3)');
+        onChange(event.target.value || 'Without');
     };
 
     return (
@@ -12,10 +12,9 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
-                        value="#8FA1D0"
+                        name="priority"
+                        value="Low"
                         onChange={handleColorChange}
-                        required
                     />
                     <span
                         className={scss.radioBtn}
@@ -25,8 +24,8 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
-                        value="#E09CB5"
+                        name="priority"
+                        value="Medium"
                         onChange={handleColorChange}
                     />
                     <span
@@ -37,8 +36,8 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
-                        value="#BEDBB0"
+                        name="priority"
+                        value="High"
                         onChange={handleColorChange}
                     />
                     <span
@@ -49,13 +48,15 @@ const ColorSelector = ({ title, onChange }) => {
                 <label>
                     <input
                         type="radio"
-                        name={name}
-                        value="rgba(255, 255, 255, 0.3)"
+                        name="priority"
+                        value="Without"
                         onChange={handleColorChange}
                     />
                     <span
                         className={scss.radioBtn}
-                        style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+                        style={{
+                            backgroundColor: 'var( --theme-default-card-board)',
+                        }}
                     ></span>
                 </label>
             </div>

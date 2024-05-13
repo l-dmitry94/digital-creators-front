@@ -42,7 +42,7 @@
 
     //Thema select
     --theme-light-select-bg: #fcfcfc;
-    --theme-dark-select-bg: var(var(--black-form));
+    --theme-dark-select-bg: var(--black-form);
     --theme-violet-select-bg: #fcfcfc;
     --theme-default-select-bg: var(--theme-dark-select-bg);
 
@@ -221,6 +221,31 @@
     --thema-default-filter-modal-radio-text-checked-cl: var(
         --thema-dark-filter-modal-radio-text-checked-cl
     );
+    //ScreensPage
+    --theme-light-card-bg: var(--white);
+    --theme-dark-card-bg: var(--dark-bg-sidebar);
+    --theme-violet-card-bg: var(--white);
+    --theme-default-card-bg: var(--theme-dark-card-bg);
+
+    --theme-light-card-descr: rgba(22, 22, 22, 0.7);
+    --theme-dark-card-descr: var(--dark-grey);
+    --theme-violet-card-descr: rgba(22, 22, 22, 0.7);
+    --theme-default-card-descr: var(--theme-dark-card-descr);
+
+    --theme-light-card-board: rgba(22, 22, 22, 0.3);
+    --theme-dark-card-board: var(--light-grey);
+    --theme-violet-card-board: rgba(22, 22, 22, 0.3);
+    --theme-default-card-board: var(--theme-dark-card-board);
+
+    --theme-light-scroll: #e8e8e8;
+    --theme-dark-scroll: var(--dark-grey-line);
+    --theme-violet-scroll: #b8bcfd;
+    --theme-default-scroll: var(--theme-dark-scroll);
+
+    --theme-light-scroll-bg: var(--white);
+    --theme-dark-scroll-bg: var(--black);
+    --theme-violet-scroll-bg: var(--white);
+    --theme-default-scroll-bg: var(--theme-dark-scroll-bg);
 }
 
 body {
