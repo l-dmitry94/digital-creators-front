@@ -10,8 +10,16 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-header-bg)`
     );
     root.style.setProperty(
-        '--theme-default-select-header',
-        `var(--theme-${theme}-select-header)`
+        '--theme-default-select-bg',
+        `var(--theme-${theme}-select-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-select-border',
+        `var(--theme-${theme}-select-border)`
+    );
+    root.style.setProperty(
+        '--thema-default-option-hover-cl',
+        `var(--thema-${theme}-option-hover-cl)`
     );
     root.style.setProperty(
         '--theme-default-sidebar-bg',
