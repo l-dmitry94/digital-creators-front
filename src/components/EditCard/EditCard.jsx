@@ -2,20 +2,13 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
-// import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
+import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
 
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 import { editCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
-import { useSelector } from 'react-redux';
-import { selectCardItems } from '../../redux/tasks/tasks-selectors';
 
 const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
-    const cards = useSelector(selectCardItems);
-    const card = cards.find(({ _id }) => _id === cardId);
-
-    console.log(card);
-
     const initialValues = {
         card_name: '',
         description: '',
@@ -29,7 +22,7 @@ const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
             .label('Invalid title')
             .required('Title is required'),
         description: yup.string().required('Description is required'),
-        // startDate: yup.date(),
+        startDate: yup.date(),
         priority: yup.string(),
         deadline: yup.string().required('Deadline is required'),
     });
@@ -80,13 +73,7 @@ const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
                         }
                     />
                     <div className={scss.datePickerBlock}>
-                        {/* <MyDatePicker
-                            title={'Deadline'}
-                            selected={formik.values.startDate}
-                            onChange={date =>
-                                formik.setFieldValue('deadline', date)
-                            }
-                        /> */}
+                        <MyDatePicker title={'Deadline'} formik={formik} />
                     </div>
                 </div>
             )}
