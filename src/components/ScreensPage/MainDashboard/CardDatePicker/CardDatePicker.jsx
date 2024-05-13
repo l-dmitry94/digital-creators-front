@@ -4,7 +4,7 @@ import scss from './card-date-picker.module.scss';
 import { useState } from 'react';
 //*, selected, onChange
 
-const MyDatePicker = ({ title }) => {
+const MyDatePicker = ({ title, formik }) => {
     const [startDate, setStartDate] = useState(new Date());
     const today = new Date();
 
@@ -28,7 +28,10 @@ const MyDatePicker = ({ title }) => {
 
     const formatDate = date => {
         const monthName = getMonthName(date);
-        const day = date.getDate();
+        const monthNumber = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        const year = date.getFullYear();
+        formik.values.deadline = `${day}/${monthNumber}/${year}`;
         return `${monthName} ${day}`;
     };
     const getDateText = date => {
