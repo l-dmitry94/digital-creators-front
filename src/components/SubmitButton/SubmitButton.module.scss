@@ -30,10 +30,13 @@
 .buttonColumn {
     background-color: var(--dark-bg-sidebar);
     color: var(--white);
-    min-width: 334px;
-    max-width: 335px;
+    min-width: 280px;
     &:is(:hover, :focus) {
         background-color: var(--dark-grey-line);
+    }
+    @include media-rules(mobile) {
+        min-width: 334px;
+        max-width: 335px;
     }
     composes: buttonWrapper;
 }

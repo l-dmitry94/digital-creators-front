@@ -13,7 +13,7 @@ const validationSchema = yup.object().shape({
     column_name: yup.string().required('Title required'),
 });
 
-const AddColumn = ({ id }) => {
+const AddColumn = ({ id, onClose }) => {
     return (
         <CustomForm
             initialValues={initialValues}
@@ -21,6 +21,7 @@ const AddColumn = ({ id }) => {
             buttonText={'Add'}
             operation={addColumn}
             id={id}
+            onClose={onClose}
         >
             {formik => (
                 <div className={scss.addColumn}>

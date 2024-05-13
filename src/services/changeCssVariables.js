@@ -13,4 +13,16 @@ export const changeCssVariables = theme => {
         '--theme-default-select-header',
         `var(--theme-${theme}-select-header)`
     );
+    root.style.setProperty(
+        '--theme-default-sidebar-bg',
+        `var(--theme-${theme}-sidebar-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-sidebar-text',
+        `var(--theme-${theme}-sidebar-text)`
+    );
+    root.style.setProperty(
+        '--theme-default-needhelp-bg',
+        `var(--theme-${theme}-needhelp-bg)`
+    );
 };

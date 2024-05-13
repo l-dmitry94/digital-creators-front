@@ -17,7 +17,7 @@
 .logoutIcon {
   width: 32px;
   height: 32px;
-  stroke: var(--white);
+  stroke: var(--theme-default-sidebar-text);
 }
 
 .logoutIcon:hover,
@@ -25,9 +25,9 @@
   stroke: var(--light-green);
 }
 
-.helpButtonText {
+.textButtonLogout {
   display: flex;
   font-weight: 500;
-  font-size: 16px;
-  color: var(--white);
+  font-size: 14px;
+  color: var(--theme-default-sidebar-text);
 }

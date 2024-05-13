@@ -5,7 +5,7 @@ import * as yup from 'yup';
 
 import { editColumn } from '../../../../redux/tasks/tasks-operations/tasks-columns-operations';
 
-const EditColumn = ({ boardId, columnId }, onClose) => {
+const EditColumn = ({ boardId, columnId, onClose }) => {
     const initialValues = {
         column_name: '',
     };

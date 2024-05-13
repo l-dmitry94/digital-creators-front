@@ -209,6 +209,7 @@ const tasksSlice = createSlice({
                     );
                     state.cards.items.splice(index, 1, payload);
                     toast.success(`Operation success`);
+                    state.cards.items[index] = payload;
                 }
             );
     },
