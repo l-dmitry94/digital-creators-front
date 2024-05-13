@@ -31,7 +31,8 @@
     width: 100%;
     border: 1px solid rgba(190, 219, 176, 0.5);
     border-radius: 8px;
-    background-color: var(--black);
+    background-color: var(--theme-default-modal-bg);
+    color: var(--theme-default-modal-color);
     transform: translateY(50px);
     @include transition(transform);
     padding: 24px;
@@ -54,11 +55,12 @@
 .close__icon {
     width: 18px;
     height: 18px;
-    stroke: var(--white);
+    stroke: var(--theme-default-modal-color);
 }
 
 .title {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.02em;
+    color: var(--theme-default-modal-color);
 }

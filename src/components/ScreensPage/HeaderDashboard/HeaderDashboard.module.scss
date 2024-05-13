@@ -21,7 +21,7 @@
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--thema-default-filter-btn-cl);
     align-items: center;
     gap: 8px;
 }
@@ -29,8 +29,8 @@
 .filterIcon {
     width: 16px;
     height: 16px;
-    stroke: rgba(255, 255, 255, 0.8);
-    fill: var(--black);
+    stroke: var(--thema-default-filter-icon-cl);
+    fill: transparent;
 }
 
 .boardName {
