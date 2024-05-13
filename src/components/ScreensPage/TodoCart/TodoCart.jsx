@@ -8,6 +8,7 @@ import {
     removeCard,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { useEffect, useState } from 'react';
+import ChangeCardColumn from '../../Popups/ChangeCardColumn/ChangeCardColumn';
 //*, priorityColor
 const TodoCart = ({
     title,
@@ -40,6 +41,7 @@ const TodoCart = ({
     }
 
     const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
+    const [changeCardModalIsOpen, setChangeCardModalIsOpen] = useState(false);
     const [isDeadlineToday, setIsDeadlineToday] = useState(false);
 
     useEffect(() => {
@@ -57,6 +59,14 @@ const TodoCart = ({
 
     const cardCloseModal = () => {
         setCardModalIsOpen(false);
+    };
+
+    const changeCardOpenModal = () => {
+        setChangeCardModalIsOpen(true);
+    };
+
+    const changeCardCloseModal = () => {
+        setChangeCardModalIsOpen(false);
     };
 
     const dispatch = useDispatch();
@@ -98,7 +108,10 @@ const TodoCart = ({
                         </div>
                     )}
                     <div className={scss.btnSetting}>
-                        <TodoBtn iconName={'icon-arrow'} />
+                        <TodoBtn
+                            iconName={'icon-arrow'}
+                            onClick={changeCardOpenModal}
+                        />
                         <TodoBtn
                             onClick={cardOpenModal}
                             iconName={'icon-pencil'}
@@ -117,6 +130,17 @@ const TodoCart = ({
                                 columnId={columnId}
                                 cardId={cardId}
                                 onClose={cardCloseModal}
+                            />
+                        </CustomModal>
+                        <CustomModal
+                            isOpen={changeCardModalIsOpen}
+                            onClose={changeCardCloseModal}
+                        >
+                            <ChangeCardColumn
+                                boardId={boardId}
+                                columnId={columnId}
+                                cardId={cardId}
+                                onClose={changeCardCloseModal}
                             />
                         </CustomModal>
                     </div>

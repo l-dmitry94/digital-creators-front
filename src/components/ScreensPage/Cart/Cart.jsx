@@ -9,19 +9,11 @@ import {
 } from '../../../redux/tasks/tasks-selectors';
 
 const Cart = ({ columnId }) => {
-    // const cards = useSelector(selectCardItems);
     const items = useSelector(selectFilteredCards);
 
-    const filteredCards = items.filter(
+    const filteredCards = items?.filter(
         ({ ref_column }) => ref_column === columnId
     );
-
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     if (columns) {
-    //         dispatch(fetchCards({ boardId, columnId }));
-    //     }
-    // }, [boardId, columnId, columns, dispatch]);
 
     const cartsList = filteredCards.map(
         (
