@@ -14,8 +14,7 @@
     padding: 20px 24px;
 
     &:global(.active) {
-        background-color: var(--theme-default-link-bg ,
-            0.4);
+        background-color: var(--theme-default-link-bg, 0.4);
 
         &::after {
             content: '';
@@ -78,4 +77,9 @@
     height: 16px;
     fill: transparent;
     stroke: var(--theme-default-controlicon-color);
+    @include transition(all);
+}
+
+.controlIcon:hover {
+    stroke: var(--theme-default-button-bg);
 }
