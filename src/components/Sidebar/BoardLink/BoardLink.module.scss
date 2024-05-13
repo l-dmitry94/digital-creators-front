@@ -23,16 +23,16 @@
             height: 100%;
             right: 0;
             top: 0;
-            background-color: var(--light-green);
+            background-color: var(--theme-default-indicator-color);
             border-radius: 4px 0 0 4px;
         }
 
         & .linkTitle {
-            color: var(--white);
+            color: var(--theme-default-sidebar-text);
         }
 
         & .svgIcon {
-            stroke: var(--white);
+            stroke: var(--theme-default-sidebar-text);
         }
 
         & .control {

@@ -1,10 +1,14 @@
-import favicon from '/favicon.svg';
+import icons from '../../../assets/icons/icons.svg';
 import scss from './Logo.module.scss';
 
 const Logo = () => {
     return (
         <nav className={scss.logoContainer}>
-            <img className={scss.logo} src={favicon} alt="Favicon" />
+            <div className={scss.logo}>
+                <svg className={scss.logoIcon}>
+                    <use href={`${icons}#icon-logo`} />
+                </svg>
+            </div>
             <h1 className={scss.logoTitle}>Task Pro</h1>
         </nav>
     );

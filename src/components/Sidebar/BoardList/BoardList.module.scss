@@ -4,7 +4,7 @@
   border-radius: 6px;
   width: 40px;
   height: 36px;
-  background-color: var(--light-green);
+  background-color: var(--theme-default-createbutton-bg);
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -12,7 +12,7 @@
   @include transition(background-color);
 
   &:is(:hover, :focus) {
-    background-color: var(--dark-green);
+    background-color: var(--theme-default-createbutton-focusbg);
   }
 }
 
@@ -32,7 +32,7 @@
 .plusIcon {
   width: 20px;
   height: 20px;
-  stroke: var(--dark-bg-sidebar);
+  stroke: var(--theme-default-createbutton-color);
 }
 
 .boardsContainer {

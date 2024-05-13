@@ -52,24 +52,49 @@
     --thema-default-option-hover-cl: var(--thema-dark-option-hover-cl);
 
     //Sidebar
-    --theme-light-sidebar-bg: var(--theme-light-header-bg);
+    --theme-light-sidebar-bg: var(--white);
     --theme-dark-sidebar-bg: var(--dark-bg-sidebar);
     --theme-violet-sidebar-bg: var(--dark-violet);
     --theme-default-sidebar-bg: var(--theme-dark-sidebar-bg);
 
-    --theme-light-sidebar-text: var(--dark-bg-sidebar);
-    --theme-dark-sidebar-text: var(--theme-light-header-bg);
-    --theme-violet-sidebar-text: var(--theme-light-header-bg);
+    --theme-light-sidebar-text: var(--black);
+    --theme-dark-sidebar-text: var(--white);
+    --theme-violet-sidebar-text: var(--white);
     --theme-default-sidebar-text: var(--theme-dark-sidebar-text);
 
-    // --theme-light-indicator-color: var(--light-bg);
-    // --theme-dark-indicator-color: #1f1f1f;
-    // --theme-violet-indicator-color: var(--light-violet);
-    // --theme-default-indicator-color: var(--theme-dark-indicator-color);
+    --theme-light-logo-color: var(--white);
+    --theme-dark-logo-color: var(--white);
+    --theme-violet-logo-color: var(--dark-violet);
+    --theme-default-logo-color: var(--theme-dark-logo-color);
+
+    --theme-light-logo-bg: var(--black);
+    --theme-dark-logo-bg: var(--dark-bg);
+    --theme-violet-logo-bg: var(--white);
+    --theme-default-logo-bg: var(--theme-dark-logo-bg);
+
+    --theme-light-indicator-color: var(--light-green);
+    --theme-dark-indicator-color: var(--light-green);
+    --theme-violet-indicator-color: var(--white);
+    --theme-default-indicator-color: var(--theme-dark-indicator-color);
+
+    --theme-light-createbutton-color: var(--black);
+    --theme-dark-createbutton-color: var(--black);
+    --theme-violet-createbutton-color: var(--white);
+    --theme-default-createbutton-color: var(--theme-dark-createbutton-color);
+
+    --theme-light-createbutton-bg: var(--light-green);
+    --theme-dark-createbutton-bg: var(--light-green);
+    --theme-violet-createbutton-bg: #b8bcfd;
+    --theme-default-createbutton-bg: var(--theme-dark-createbutton-bg);
+
+    --theme-light-createbutton-focusbg: var(--dark-green);
+    --theme-dark-createbutton-focusbg: var(--dark-green);
+    --theme-violet-createbutton-focusbg: #979cea;
+    --theme-default-createbutton-focusbg: var(--theme-dark-createbutton-focusbg);
 
     --theme-light-needhelp-bg: var(--light-bg);
-    --theme-dark-needhelp-bg: #1f1f1f;
-    --theme-violet-needhelp-bg: var(--light-violet);
+    --theme-dark-needhelp-bg: var(--dark-bg);
+    --theme-violet-needhelp-bg: rgba(236, 237, 253, 0.4);
     --theme-default-needhelp-bg: var(--theme-dark-needhelp-bg);
 }
 
