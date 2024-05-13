@@ -38,6 +38,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-indicator-color)`
     );
     root.style.setProperty(
+        '--theme-default-line-color',
+        `var(--theme-${theme}-line-color)`
+    );
+    root.style.setProperty(
         '--theme-default-logo-color',
         `var(--theme-${theme}-logo-color)`
     );
@@ -92,6 +96,22 @@ export const changeCssVariables = theme => {
     root.style.setProperty(
         '--theme-default-button-text',
         `var(--theme-${theme}-button-text)`
+    );
+    root.style.setProperty(
+        '--theme-default-bgicon-color',
+        `var(--theme-${theme}-bgicon-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-bgicon-checkcolor',
+        `var(--theme-${theme}-bgicon-checkcolor)`
+    );
+    root.style.setProperty(
+        '--theme-default-plus-bg',
+        `var(--theme-${theme}-plus-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-plus-color',
+        `var(--theme-${theme}-plus-color)`
     );
     root.style.setProperty(
         '--thema-default-filter-btn-cl',

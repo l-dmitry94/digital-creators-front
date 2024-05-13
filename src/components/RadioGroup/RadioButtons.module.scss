@@ -22,10 +22,10 @@
 .icon {
     width: 18px;
     height: 18px;
-    stroke: rgba(255, 255, 255, 0.5);
+    stroke: var(--theme-default-bgicon-color);
     cursor: pointer;
 }
 
 .input:checked + .label .icon {
-    stroke: rgba(255, 255, 255, 1);
+    stroke: var(--theme-default-bgicon-checkcolor);
 }
