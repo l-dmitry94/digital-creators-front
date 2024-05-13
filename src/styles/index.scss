@@ -96,6 +96,27 @@
     --theme-dark-needhelp-bg: var(--dark-bg);
     --theme-violet-needhelp-bg: rgba(236, 237, 253, 0.4);
     --theme-default-needhelp-bg: var(--theme-dark-needhelp-bg);
+
+    //Modal
+    --theme-light-modal-bg: var(--white);
+    --theme-dark-modal-bg: var(--black);
+    --theme-violet-modal-bg: var(--white);
+    --theme-default-modal-bg: var(--theme-dark-modal-bg);
+
+    --theme-light-modal-color: var(--black);
+    --theme-dark-modal-color: var(--white);
+    --theme-violet-modal-color: var(--black);
+    --theme-default-modal-color: var(--theme-dark-modal-color);
+
+    --theme-light-input-bg: var(--white);
+    --theme-dark-input-bg: var(--dark-bg);
+    --theme-violet-input-bg: var(--white);
+    --theme-default-input-bg: var(--theme-dark-input-bg);
+
+    --theme-light-button-bg: var(--light-green);
+    --theme-dark-button-bg: var(--light-green);
+    --theme-violet-button-bg: var(--dark-violet);
+    --theme-default-button-bg: var(--theme-dark-input-bg);
 }
 
 body {

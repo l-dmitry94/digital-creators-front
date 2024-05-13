@@ -57,4 +57,20 @@ export const changeCssVariables = theme => {
         '--theme-default-needhelp-bg',
         `var(--theme-${theme}-needhelp-bg)`
     );
+    root.style.setProperty(
+        '--theme-default-modal-bg',
+        `var(--theme-${theme}-modal-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-modal-color',
+        `var(--theme-${theme}-modal-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-input-bg',
+        `var(--theme-${theme}-input-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-button-bg',
+        `var(--theme-${theme}-button-bg)`
+    );
 };
