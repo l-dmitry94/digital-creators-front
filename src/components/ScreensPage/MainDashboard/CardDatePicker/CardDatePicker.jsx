@@ -4,7 +4,7 @@ import scss from './card-date-picker.module.scss';
 import { useState } from 'react';
 //*, selected, onChange
 
-export const MyDatePicker = ({ title }) => {
+const MyDatePicker = ({ title }) => {
     const [startDate, setStartDate] = useState(new Date());
     const today = new Date();
 

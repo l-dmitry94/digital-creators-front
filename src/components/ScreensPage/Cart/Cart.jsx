@@ -29,7 +29,7 @@ const Cart = ({ columnId }) => {
                 card_name,
                 description,
                 priority,
-                date,
+                deadline,
                 ref_board,
                 ref_column,
                 _id,
@@ -41,7 +41,7 @@ const Cart = ({ columnId }) => {
                 title={card_name}
                 descr={description}
                 priority={priority}
-                deadline={date}
+                deadline={deadline}
                 boardId={ref_board}
                 columnId={ref_column}
                 cardId={_id}

@@ -3,9 +3,8 @@ import CustomForm from '../CustomForm/CustomForm';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import ColorSelector from '../ColorSelector/ColorSelector';
 import Errors from '../Errors/Errors.jsx';
-import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker'; // Шлях до вашого компонента MyDatePicker
 import * as yup from 'yup';
-
+import MyDatePicker from '../ScreensPage/MainDashboard/CardDatePicker/CardDatePicker.jsx';
 import scss from '../Popups/NeedHelpsPopup/NeedHelpsPopup.module.scss';
 import { addCard } from '../../redux/tasks/tasks-operations/tasks-cards-operations';
 
@@ -14,7 +13,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
         card_name: '',
         description: '',
         priority: 'rgba(255, 255, 255, 0.3)',
-        deadline: '12/05/2023',
+        deadline: '',
     };
 
     const validationSchema = yup.object().shape({
@@ -49,9 +48,6 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {/* {formik.errors.title && formik.touched.title && (
-                            <div>{formik.errors.title}</div>
-                        )} */}
                         <Errors
                             error={formik.errors}
                             touched={formik.touched}
@@ -82,7 +78,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                     <div className={scss.datePickerBlock}>
                         <MyDatePicker
                             title={'Deadline'}
-                            selected={formik.values.startDate}
+                            selected={formik.values.deadline}
                             onChange={date =>
                                 formik.setFieldValue('deadline', date)
                             }

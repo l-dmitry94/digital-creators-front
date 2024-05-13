@@ -7,8 +7,8 @@
     --light-green: #bedbb0;
     --dark-green: #9dc888;
     --black: #161616;
-    --blue: #8FA1D0;
-    --rose: #E09CB5;
+    --blue: #8fa1d0;
+    --rose: #e09cb5;
     --black-form: #151515;
     --dark-bg: #1f1f1f;
     --dark-bg-sidebar: #121212;
@@ -67,4 +67,5 @@ body {
     font-size: 14px;
     color: var(--theme-default-body);
     background-color: var(--dark-bg);
+    overflow-x: hidden;
 }
