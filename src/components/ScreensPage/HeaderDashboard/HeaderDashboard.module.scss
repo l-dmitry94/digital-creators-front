@@ -36,6 +36,7 @@
 .boardName {
     font-weight: 500;
     letter-spacing: -0.02em;
+    color: var(--theme-default-modal-color);
     @include media-rules(tablet) {
         font-size: 18px;
     }

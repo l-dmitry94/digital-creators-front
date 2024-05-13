@@ -53,14 +53,14 @@
 .svgIcon {
     width: 18px;
     height: 18px;
-    stroke: rgba(255, 255, 255, 0.5);
+    stroke: var(--theme-default-controlicon-color);
 }
 
 .linkTitle {
     font-family: var(--font-family);
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: rgba(22, 22, 22, 0.5);
+    color: var(--theme-default-controlicon-color);
 }
 
 .control {
@@ -77,5 +77,5 @@
     width: 16px;
     height: 16px;
     fill: transparent;
-    stroke: var(--theme-default-link-text);
+    stroke: var(--theme-default-controlicon-color);
 }

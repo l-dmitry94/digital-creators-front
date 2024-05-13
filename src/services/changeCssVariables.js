@@ -62,6 +62,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-createbutton-focusbg)`
     );
     root.style.setProperty(
+        '--theme-default-controlicon-color',
+        `var(--theme-${theme}-controlicon-color)`
+    );
+    root.style.setProperty(
         '--theme-default-createbutton-color',
         `var(--theme-${theme}-createbutton-color)`
     );
@@ -131,6 +135,28 @@ export const changeCssVariables = theme => {
     );
     root.style.setProperty(
         '--thema-default-filter-modal-radio-text-checked-cl',
-        `var--thema-${theme}-filter-modal-radio-text-checked-cl)`
+        `var(--thema-${theme}-filter-modal-radio-text-checked-cl)`
+    );
+    root.style.setProperty(
+        '--theme-default-card-bg',
+        `var(--theme-${theme}-card-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-card-descr',
+        `var(--theme-${theme}-card-descr)`
+    );
+    root.style.setProperty(
+        '--theme-default-card-board',
+        `var(--theme-${theme}-card-board)`
+    );
+
+    root.style.setProperty(
+        '--theme-default-scroll',
+        `var(--theme-${theme}-scroll)`
+    );
+
+    root.style.setProperty(
+        '--theme-default-scroll-bg',
+        `var(--theme-${theme}-scroll-bg)`
     );
 };

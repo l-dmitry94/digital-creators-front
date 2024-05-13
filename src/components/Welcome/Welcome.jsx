@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 
 import image from '../../assets/images/welcome-developer.png';
+import image2x from '../../assets/images/welcome-developer@2x.png';
 import icons from '../../assets/icons/icons.svg';
 import css from './welcome.module.scss';
 
@@ -23,7 +24,7 @@ const Welcome = () => {
                 <div className={css.wrapper}>
                     <img
                         className={css.welcome_image}
-                        src={image}
+                        srcSet={`${image} 1x, ${image2x} 2x`}
                         alt="Welcome-developer"
                     />
                     <div className={css.welcome_title_wrapper}>
