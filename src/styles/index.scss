@@ -148,6 +148,13 @@
     --thema-violet-filter-title-cl: var(--black);
     --thema-default-filter-title-cl: var(--thema-dark-filter-title-cl);
 
+    --thema-light-filter-title-border-cl: rgba(22, 22, 22, 0.1);
+    --thema-dark-filter-title-border-cl: var(--dark-grey-line);
+    --thema-violet-filter-title-border-cl: rgba(22, 22, 22, 0.1);
+    --thema-default-filter-title-border-cl: var(
+        --thema-dark-filter-title-border-cl
+    );
+
     --thema-light-filter-modal-border-cl: #fcfcfc;
     --thema-dark-filter-modal-border-cl: rgba(190, 219, 176, 0.5);
     --thema-violet-filter-modal-border-cl: #fcfcfc;
@@ -161,10 +168,38 @@
     --thema-default-filter-modal-bg-cl: var(--thema-dark-filter-modal-bg-cl);
 
     --thema-light-filter-modal-close-btn-cl: rgb(0, 0, 0);
-    --thema-dark-filter-modal-close-btn-cl: var(--black-form);
+    --thema-dark-filter-modal-close-btn-cl: var(--white);
     --thema-violet-filter-modal-close-btn-cl: rgb(0, 0, 0);
     --thema-default-filter-modal-close-btn-cl: var(
         --thema-dark-filter-modal-close-btn-cl
+    );
+
+    --thema-light-filter-modal-close-icon-cl: var(--black);
+    --thema-dark-filter-modal-close-icon-cl: var(--white);
+    --thema-violet-filter-modal-close-icon-cl: var(--black);
+    --thema-default-filter-modal-close-icon-cl: var(
+        --thema-dark-filter-modal-close-icon-cl
+    );
+
+    --thema-light-filter-modal-show-cl: rgba(22, 22, 22, 0.5);
+    --thema-dark-filter-modal-show-cl: var(--dark-grey);
+    --thema-violet-filter-modal-show-cl: rgba(22, 22, 22, 0.5);
+    --thema-default-filter-modal-show-cl: var(
+        --thema-dark-filter-modal-show-cl
+    );
+
+    --thema-light-filter-modal-radio-text-cl: rgba(22, 22, 22, 0.5);
+    --thema-dark-filter-modal-radio-text-cl: var(--dark-grey);
+    --thema-violet-filter-modal-radio-text-cl: rgba(22, 22, 22, 0.5);
+    --thema-default-filter-modal-radio-text-cl: var(
+        --thema-dark-filter-modal-radio-text-cl
+    );
+
+    --thema-light-filter-modal-radio-text-checked-cl: var(--black);
+    --thema-dark-filter-modal-radio-text-checked-cl: var(--white);
+    --thema-violet-filter-modal-radio-text-checked-cl: var(--black);
+    --thema-default-filter-modal-radio-text-checked-cl: var(
+        --thema-dark-filter-modal-radio-text-checked-cl
     );
 }
 

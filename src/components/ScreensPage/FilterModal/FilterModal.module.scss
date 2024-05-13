@@ -53,7 +53,7 @@
 .close__icon {
     width: 18px;
     height: 18px;
-    stroke: var(--white);
+    stroke: var(--thema-default-filter-modal-close-icon-cl);
 }
 
 .title {
@@ -61,7 +61,7 @@
     font-size: 18px;
     letter-spacing: -0.02em;
     padding-bottom: 14px;
-    border-bottom: 1px solid var(--dark-grey-line);
+    border-bottom: 1px solid var(--thema-default-filter-title-border-cl);
     color: var(--thema-default-filter-title-cl);
 }
 
@@ -84,7 +84,7 @@
     letter-spacing: -0.02em;
     text-decoration: underline;
     text-decoration-skip-ink: none;
-    color: var(--dark-grey);
+    color: var(--thema-default-filter-modal-show-cl);
 }
 
 .colorSelector {
@@ -131,11 +131,11 @@ input[type='radio']:checked + .radioBtn::before {
 .radioText {
     font-size: 12px;
     letter-spacing: -0.02em;
-    color: var(--dark-grey);
+    color: var(--thema-dark-filter-modal-radio-text-cl);
     display: flex;
     align-items: center;
 }
 
 .radioText input[type='radio']:checked + .radioBtn + .radioLabel {
-    color: var(--white);
+    color: var(--thema-default-filter-modal-radio-text-checked-cl);
 }

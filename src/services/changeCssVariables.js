@@ -94,11 +94,31 @@ export const changeCssVariables = theme => {
         `var(--thema-${theme}-filter-title-cl)`
     );
     root.style.setProperty(
+        '--thema-default-filter-title-border-cl',
+        `var(--thema-${theme}-filter-title-border-cl)`
+    );
+    root.style.setProperty(
         '--thema-default-filter-modal-border-cl',
         `var(--thema-${theme}-filter-modal-border-cl)`
     );
     root.style.setProperty(
         '--thema-default-filter-modal-bg-cl',
         `var(--thema-${theme}-filter-modal-bg-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-close-icon-cl',
+        `var(--thema-${theme}-filter-modal-close-icon-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-show-cl',
+        `var(--thema-${theme}-filter-modal-show-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-radio-text-cl',
+        `var(--thema-${theme}-filter-modal-radio-text-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-radio-text-checked-cl',
+        `var--thema-${theme}-filter-modal-radio-text-checked-cl)`
     );
 };
