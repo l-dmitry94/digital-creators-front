@@ -35,10 +35,21 @@
     --theme-violet-header-bg: var(--white);
     --theme-default-header-bg: var(--theme-dark-header-bg);
 
-    --theme-light-select-header: rgba(22, 22, 22, 0.8);
-    --theme-dark-select-header: var(--white);
-    --theme-violet-select-header: rgba(22, 22, 22, 0.8);
-    --theme-default-select-header: var(--theme-dark-select-header);
+    //Thema select
+    --theme-light-select-bg: #fcfcfc;
+    --theme-dark-select-bg: var(var(--black-form));
+    --theme-violet-select-bg: #fcfcfc;
+    --theme-default-select-bg: var(--theme-dark-select-bg);
+
+    --theme-light-select-boarder: var(--light-green);
+    --theme-dark-select-boarder: var(--light-green);
+    --theme-violet-select-boarder: var(--violet-bg);
+    --theme-default-select-boarder: var(--theme-dark-select-boarder);
+
+    --thema-light-option-hover-cl: var(--light-green);
+    --thema-dark-option-hover-cl: var(--light-green);
+    --thema-violet-option-hover-cl: var(--dark-violet);
+    --thema-default-option-hover-cl: var(--thema-dark-option-hover-cl);
 
     //Sidebar
     --theme-light-sidebar-bg: var(--theme-light-header-bg);

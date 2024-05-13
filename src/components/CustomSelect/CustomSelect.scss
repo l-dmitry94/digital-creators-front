@@ -20,9 +20,9 @@
             top: calc(100% + 6px);
             right: 0;
             min-width: 100px;
-            background-color: var(--black);
+            background-color: var(--theme-default-select-bg);
             border-radius: 8px;
-            border: 1px solid var(--light-green);
+            border: 1px solid var(--theme-default-select-boarder);
             padding: 18px;
         }
 
@@ -37,11 +37,11 @@
             @include transition(color);
 
             &:is(:hover, :focus) {
-                color: var(--light-green);
+                color: var(--thema-default-option-hover-cl);
             }
 
             &--is-selected {
-                color: var(--light-green);
+                color: var(--thema-default-option-hover-cl);
             }
         }
     }
