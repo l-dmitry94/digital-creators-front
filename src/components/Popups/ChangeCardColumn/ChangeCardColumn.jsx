@@ -11,7 +11,7 @@ const ChangeCardColumn = ({ boardId, cardId, columnId, onClose }) => {
     const filteredColumns = columns.filter(({ _id }) => columnId !== _id);
 
     const dispatchChangedColumnCard = (id, cardId, boardId, columnId) => {
-        dispatch(
+        const dispatchResult = dispatch(
             changeCardColumnById({
                 newColumn: id,
                 card_id: cardId,
@@ -19,6 +19,10 @@ const ChangeCardColumn = ({ boardId, cardId, columnId, onClose }) => {
                 columnId,
             })
         );
+
+        if (dispatchResult) {
+            onClose();
+        }
     };
 
     const columnsList = filteredColumns.map(({ column_name, _id }) => (
