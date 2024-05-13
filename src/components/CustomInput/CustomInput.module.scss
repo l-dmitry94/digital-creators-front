@@ -8,7 +8,7 @@
     border-radius: 8px;
     outline: transparent;
     letter-spacing: -0.02em;
-    color: var(--white);
+    color: var(--theme-default-modal-color);
     background-color: var(--theme-default-input-bg);
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
     @include transition(border-color);

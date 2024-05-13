@@ -62,6 +62,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-createbutton-focusbg)`
     );
     root.style.setProperty(
+        '--theme-default-controlicon-color',
+        `var(--theme-${theme}-controlicon-color)`
+    );
+    root.style.setProperty(
         '--theme-default-createbutton-color',
         `var(--theme-${theme}-createbutton-color)`
     );

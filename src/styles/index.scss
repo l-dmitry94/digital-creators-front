@@ -109,6 +109,11 @@
         --theme-dark-createbutton-focusbg
     );
 
+    --theme-light-controlicon-color: rgba(22, 22, 22, 0.5);
+    --theme-dark-controlicon-color: rgba(255, 255, 255, 0.5);
+    --theme-violet-controlicon-color: rgba(255, 255, 255, 0.5);
+    --theme-default-controlicon-color: var(--theme-dark-controlicon-color);
+
     --theme-light-needhelp-bg: var(--light-bg);
     --theme-dark-needhelp-bg: var(--dark-bg);
     --theme-violet-needhelp-bg: rgba(236, 237, 253, 0.4);
