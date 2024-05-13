@@ -18,6 +18,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-select-border)`
     );
     root.style.setProperty(
+        '--thema-default-option-hover-cl',
+        `var(--thema-${theme}-option-hover-cl)`
+    );
+    root.style.setProperty(
         '--theme-default-sidebar-bg',
         `var(--theme-${theme}-sidebar-bg)`
     );
