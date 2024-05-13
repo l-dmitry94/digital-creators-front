@@ -6,6 +6,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-body)`
     );
     root.style.setProperty(
+        '--thema-default-bg-cl',
+        `var(--thema-${theme}-bg-cl)`
+    );
+    root.style.setProperty(
         '--theme-default-header-bg',
         `var(--theme-${theme}-header-bg)`
     );
@@ -82,7 +86,50 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-button-bg)`
     );
     root.style.setProperty(
+
         '--theme-default-button-text',
         `var(--theme-${theme}-button-text)`
+        '--thema-default-filter-btn-cl',
+        `var(--thema-${theme}-filter-btn-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-icon-cl',
+        `var(--thema-${theme}-filter-icon-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-overlay-cl',
+        `var(--thema-${theme}-filter-modal-overlay-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-title-cl',
+        `var(--thema-${theme}-filter-title-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-title-border-cl',
+        `var(--thema-${theme}-filter-title-border-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-border-cl',
+        `var(--thema-${theme}-filter-modal-border-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-bg-cl',
+        `var(--thema-${theme}-filter-modal-bg-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-close-icon-cl',
+        `var(--thema-${theme}-filter-modal-close-icon-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-show-cl',
+        `var(--thema-${theme}-filter-modal-show-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-radio-text-cl',
+        `var(--thema-${theme}-filter-modal-radio-text-cl)`
+    );
+    root.style.setProperty(
+        '--thema-default-filter-modal-radio-text-checked-cl',
+        `var--thema-${theme}-filter-modal-radio-text-checked-cl)`
     );
 };
