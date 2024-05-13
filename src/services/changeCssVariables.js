@@ -86,9 +86,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-button-bg)`
     );
     root.style.setProperty(
-
         '--theme-default-button-text',
         `var(--theme-${theme}-button-text)`
+    );
+    root.style.setProperty(
         '--thema-default-filter-btn-cl',
         `var(--thema-${theme}-filter-btn-cl)`
     );
