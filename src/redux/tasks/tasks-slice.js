@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 // import { initialState } from './tasks-initialState.js';
 
@@ -37,6 +38,7 @@ const tasksSlice = createSlice({
                     state.boards.items = payload;
                     state.boards.isLoading = false;
                     state.boards.error = null;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -53,6 +55,7 @@ const tasksSlice = createSlice({
                     state.boards.error = null;
                     state.boards.isLoading = false;
                     state.boards.items = payload;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -66,6 +69,7 @@ const tasksSlice = createSlice({
                     state.boards.isLoading = false;
                     state.boards.items.push(payload);
                     state.boards.error = null;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(boardsOperations.addBoard.rejected, status.rejectedBoard)
@@ -75,6 +79,7 @@ const tasksSlice = createSlice({
                 (state, { payload }) => {
                     state.boards.isLoading = false;
                     state.boards.items.filter(({ _id }) => _id !== payload);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -91,6 +96,7 @@ const tasksSlice = createSlice({
                         board => board._id === payload._id
                     );
                     state.boards.items.splice(index, 1, payload);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(boardsOperations.editBoard.rejected, status.rejectedBoard)
@@ -104,6 +110,7 @@ const tasksSlice = createSlice({
                     state.columns.isLoading = false;
                     state.columns.error = null;
                     state.columns.items = payload;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -117,6 +124,7 @@ const tasksSlice = createSlice({
                     state.columns.isLoading = false;
                     state.columns.error = null;
                     state.columns.items.push(payload);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -133,6 +141,7 @@ const tasksSlice = createSlice({
                     state.columns.isLoading = false;
                     state.columns.error = null;
                     state.columns.items.filter(({ _id }) => _id !== payload);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -149,6 +158,7 @@ const tasksSlice = createSlice({
                         column => column._id === payload._id
                     );
                     state.columns.items.splice(index, 1, payload);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(
@@ -162,6 +172,7 @@ const tasksSlice = createSlice({
                     state.cards.isLoading = false;
                     state.cards.error = null;
                     state.cards.items = payload;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(cardsOperations.fetchCards.rejected, status.rejectedCard)
@@ -172,6 +183,7 @@ const tasksSlice = createSlice({
                     state.cards.items.push(payload);
                     state.cards.isLoading = false;
                     state.cards.error = null;
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(cardsOperations.addCard.rejected, status.rejectedCard)
@@ -182,6 +194,7 @@ const tasksSlice = createSlice({
                     state.cards.isLoading = false;
                     state.cards.error = null;
                     state.cards.items.filter(({ _id }) => _id !== payload._id);
+                    toast.success(`Operation success`);
                 }
             )
             .addCase(cardsOperations.removeCard.rejected, status.rejectedCard)
@@ -194,6 +207,8 @@ const tasksSlice = createSlice({
                     const index = state.cards.items.findIndex(
                         card => card._id === payload._id
                     );
+                    state.cards.items.splice(index, 1, payload);
+                    toast.success(`Operation success`);
                     state.cards.items[index] = payload;
                 }
             );
