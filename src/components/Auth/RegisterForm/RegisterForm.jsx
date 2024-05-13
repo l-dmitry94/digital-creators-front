@@ -8,6 +8,7 @@ import CustomInput from '../../CustomInput/CustomInput';
 import CustomForm from '../../CustomForm/CustomForm';
 import css from './RegisterForm.module.scss';
 import icons from '../../../assets/icons/icons.svg';
+import Errors from '../../Errors/Errors.jsx';
 
 import * as yup from 'yup';
 import { useAuth } from '../../../hooks/useAuth';
@@ -87,10 +88,11 @@ const RegistrationForm = () => {
                                         value={formik.values.username}
                                         placeholder="Enter your name"
                                     />
-                                    {formik.errors.username &&
-                                        formik.touched.username && (
-                                            <div>{formik.errors.username}</div>
-                                        )}
+                                    <Errors
+                                        error={formik.errors}
+                                        touched={formik.touched}
+                                        errorMessage="username"
+                                    />
                                 </div>
 
                                 <div>
@@ -102,10 +104,11 @@ const RegistrationForm = () => {
                                         value={formik.values.email}
                                         placeholder="Enter your email"
                                     />
-                                    {formik.errors.email &&
-                                        formik.touched.email && (
-                                            <div>{formik.errors.email}</div>
-                                        )}
+                                    <Errors
+                                        error={formik.errors}
+                                        touched={formik.touched}
+                                        errorMessage="email"
+                                    />
                                 </div>
 
                                 <div>
@@ -134,11 +137,11 @@ const RegistrationForm = () => {
                                             </svg>
                                         </button>
                                     </div>
-
-                                    {formik.errors.password &&
-                                        formik.touched.password && (
-                                            <div>{formik.errors.password}</div>
-                                        )}
+                                    <Errors
+                                        error={formik.errors}
+                                        touched={formik.touched}
+                                        errorMessage="password"
+                                    />
                                 </div>
                             </div>
                         )}

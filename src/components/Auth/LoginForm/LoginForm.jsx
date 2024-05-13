@@ -7,6 +7,7 @@ import { login } from '../../../redux/auth/auth-operations';
 import { selectToken } from '../../../redux/auth/auth-selectors';
 import Container from '../../Container';
 import css from '../RegisterForm/RegisterForm.module.scss';
+import Errors from '../../Errors/Errors.jsx';
 import icons from '../../../assets/icons/icons.svg';
 import CustomForm from '../../CustomForm/CustomForm';
 import CustomInput from '../../CustomInput/CustomInput';
@@ -85,10 +86,11 @@ export const LoginForm = () => {
                                         value={formik.values.email}
                                         placeholder="Enter your email"
                                     />
-                                    {formik.errors.email &&
-                                        formik.touched.email && (
-                                            <div>{formik.errors.email}</div>
-                                        )}
+                                    <Errors
+                                        error={formik.errors}
+                                        touched={formik.touched}
+                                        errorMessage="email"
+                                    />
                                 </div>
 
                                 <div>
@@ -117,11 +119,11 @@ export const LoginForm = () => {
                                             </svg>
                                         </button>
                                     </div>
-
-                                    {formik.errors.password &&
-                                        formik.touched.password && (
-                                            <div>{formik.errors.password}</div>
-                                        )}
+                                    <Errors
+                                        error={formik.errors}
+                                        touched={formik.touched}
+                                        errorMessage="password"
+                                    />
                                 </div>
                             </div>
                         )}
