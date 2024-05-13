@@ -29,10 +29,5 @@ export const selectFilteredCards = store => {
         return items;
     }
     const filteredCards = items.filter(item => item.priority === filter);
-    // const filteredCards = items.filter(({ priority }) => {
-    //     card => card.priority === selectedPriority;
-    //     // const normalizedName = name.toLowerCase();
-    //     // return normalizedName.includes(normalizedFilter);
-    // });
     return filteredCards;
 };

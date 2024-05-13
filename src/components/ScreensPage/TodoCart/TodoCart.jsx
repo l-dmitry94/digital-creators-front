@@ -9,7 +9,7 @@ import {
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { useEffect, useState } from 'react';
 import ChangeCardColumn from '../../Popups/ChangeCardColumn/ChangeCardColumn';
-//*, priorityColor
+
 const TodoCart = ({
     title,
     descr,

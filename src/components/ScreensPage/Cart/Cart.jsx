@@ -3,10 +3,7 @@ import TodoCart from '../TodoCart/TodoCart';
 import scss from './Cart.module.scss';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import {
-    // selectCardItems,
-    selectFilteredCards,
-} from '../../../redux/tasks/tasks-selectors';
+import { selectFilteredCards } from '../../../redux/tasks/tasks-selectors';
 
 const Cart = ({ columnId }) => {
     const items = useSelector(selectFilteredCards);
