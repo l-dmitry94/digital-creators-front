@@ -7,7 +7,6 @@ import {
     fetchCards,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { useEffect } from 'react';
-import { fetchColumns } from '../../../redux/tasks/tasks-operations/tasks-columns-operations';
 
 const ChangeCardColumn = ({ boardId, cardId, columnId, onClose }) => {
     const columns = useSelector(selectColumnItems);

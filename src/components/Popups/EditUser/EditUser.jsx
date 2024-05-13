@@ -57,11 +57,13 @@ const EditUser = ({ closeModal }) => {
         }
     }, [imagePreview, userInfo.avatarURL]);
 
+    console.log(userInfo);
+
     return (
         <Formik
             initialValues={{
-                username: '',
-                email: '',
+                username: userInfo.username,
+                email: userInfo.email,
                 password: '',
                 avatarURL: userInfo.avatarURL,
                 avatar: null,

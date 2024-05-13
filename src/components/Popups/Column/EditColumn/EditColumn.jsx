@@ -18,7 +18,7 @@ const EditColumn = ({ boardId, columnId, onClose }) => {
         column_name: column.column_name,
     };
 
-    console.log(initialValues)
+    console.log(initialValues);
 
     const validationSchema = yup.object().shape({
         column_name: yup.string().required('Title required'),
