@@ -76,13 +76,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                         defaultValue={'rgba(255, 255, 255, 0.3)'}
                     />
                     <div className={scss.datePickerBlock}>
-                        <MyDatePicker
-                            title={'Deadline'}
-                            selected={formik.values.deadline}
-                            onChange={date =>
-                                formik.setFieldValue('deadline', date)
-                            }
-                        />
+                        <MyDatePicker title={'Deadline'} formik={formik} />
                     </div>
                 </div>
             )}
