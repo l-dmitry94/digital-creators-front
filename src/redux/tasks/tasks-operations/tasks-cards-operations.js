@@ -66,11 +66,11 @@ export const editCard = createAsyncThunk(
 
 export const changeCardColumnById = createAsyncThunk(
     'tasks/changeColumn',
-    async (body, { rejectWithValue }) => {
+    async ({ newColumn, card_id, boardId, columnId }, { rejectWithValue }) => {
         try {
             const { data } = await axios.patch(
-                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`,
-                body.values
+                `${baseURL}/boards/${boardId}/columns/${columnId}/cards`,
+                { card_id, newColumn }
             );
             return data;
         } catch (error) {
