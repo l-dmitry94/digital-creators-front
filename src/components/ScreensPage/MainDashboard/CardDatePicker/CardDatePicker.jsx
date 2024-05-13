@@ -88,7 +88,7 @@ const MyDatePicker = ({ title, formik }) => {
                 dateFormat="MM/dd/yyyy"
                 calendarClassName="react-calendar"
             />
-            </div>
+        </div>
     );
 };
 
