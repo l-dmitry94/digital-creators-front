@@ -68,7 +68,7 @@ const App = () => {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             )}
-            <ToastContainer position="top-center" />
+            <ToastContainer position="top-center" autoClose={1000} />
         </>
     );
 };

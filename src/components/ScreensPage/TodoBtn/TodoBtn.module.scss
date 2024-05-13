@@ -1,11 +1,20 @@
+@import 'src/styles/mixins.scss';
 .todoIcon {
     width: 16px;
     height: 16px;
     stroke: var(--thema-default-filter-modal-show-cl);
+    @include transition(all);
+
     fill: transparent;
 }
-
+.todoIcon:hover {
+    stroke: var(--theme-default-button-bg);
+}
 .bellIcon {
     stroke: var(--theme-default-button-bg);
+    @include transition(all);
     composes: todoIcon;
+}
+.bellIcon:hover {
+    stroke: var(--theme-default-button-bg);
 }
