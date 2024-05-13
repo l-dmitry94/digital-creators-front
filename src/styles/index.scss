@@ -29,6 +29,11 @@
     --theme-violet-body: var(--black);
     --theme-default-body: var(--theme-dark-body);
 
+    --thema-light-bg-cl: var(--light-bg);
+    --thema-dark-bg-cl: var(--dark-bg);
+    --thema-violet-bg-cl: var(--violet-bg);
+    --thema-default-bg-cl: var(--thema-dark-bg-cl);
+
     //Header
     --theme-light-header-bg: #fcfcfc;
     --theme-dark-header-bg: var(--black);
@@ -90,7 +95,9 @@
     --theme-light-createbutton-focusbg: var(--dark-green);
     --theme-dark-createbutton-focusbg: var(--dark-green);
     --theme-violet-createbutton-focusbg: #979cea;
-    --theme-default-createbutton-focusbg: var(--theme-dark-createbutton-focusbg);
+    --theme-default-createbutton-focusbg: var(
+        --theme-dark-createbutton-focusbg
+    );
 
     --theme-light-needhelp-bg: var(--light-bg);
     --theme-dark-needhelp-bg: var(--dark-bg);
@@ -117,12 +124,54 @@
     --theme-dark-button-bg: var(--light-green);
     --theme-violet-button-bg: var(--dark-violet);
     --theme-default-button-bg: var(--theme-dark-input-bg);
+
+    //Filter
+    --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);
+    --thema-dark-filter-btn-cl: rgba(255, 255, 255, 0.8);
+    --thema-violet-filter-btn-cl: rgba(22, 22, 22, 0.8);
+    --thema-default-filter-btn-cl: var(--thema-dark-filter-btn-cl);
+
+    --thema-light-filter-icon-cl: rgba(22, 22, 22, 0.8);
+    --thema-dark-filter-icon-cl: rgba(255, 255, 255, 0.8);
+    --thema-violet-filter-icon-cl: rgba(22, 22, 22, 0.8);
+    --thema-default-filter-icon-cl: var(--thema-dark-filter-icon-cl);
+
+    --thema-light-filter-modal-overlay-cl: rgba(252, 252, 252, 0.5);
+    --thema-dark-filter-modal-overlay-cl: rgba(0, 0, 0, 0.5);
+    --thema-violet-filter-modal-overlay-cl: rgba(252, 252, 252, 0.5);
+    --thema-default-filter-modal-overlay-cl: var(
+        --thema-dark-filter-modal-overlay-cl
+    );
+
+    --thema-light-filter-title-cl: var(--black);
+    --thema-dark-filter-title-cl: var(--white);
+    --thema-violet-filter-title-cl: var(--black);
+    --thema-default-filter-title-cl: var(--thema-dark-filter-title-cl);
+
+    --thema-light-filter-modal-border-cl: #fcfcfc;
+    --thema-dark-filter-modal-border-cl: rgba(190, 219, 176, 0.5);
+    --thema-violet-filter-modal-border-cl: #fcfcfc;
+    --thema-default-filter-modal-border-cl: var(
+        --thema-dark-filter-modal-border-cl
+    );
+
+    --thema-light-filter-modal-bg-cl: rgb(0, 0, 0);
+    --thema-dark-filter-modal-bg-cl: var(--black-form);
+    --thema-violet-filter-modal-bg-cl: rgb(0, 0, 0);
+    --thema-default-filter-modal-bg-cl: var(--thema-dark-filter-modal-bg-cl);
+
+    --thema-light-filter-modal-close-btn-cl: rgb(0, 0, 0);
+    --thema-dark-filter-modal-close-btn-cl: var(--black-form);
+    --thema-violet-filter-modal-close-btn-cl: rgb(0, 0, 0);
+    --thema-default-filter-modal-close-btn-cl: var(
+        --thema-dark-filter-modal-close-btn-cl
+    );
 }
 
 body {
     font-family: var(--font-family);
     font-size: 14px;
     color: var(--theme-default-body);
-    background-color: var(--dark-bg);
+    background-color: var(--thema-default-bg-cl);
     overflow-x: hidden;
 }
