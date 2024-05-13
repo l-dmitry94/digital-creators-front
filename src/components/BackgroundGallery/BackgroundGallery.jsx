@@ -4,7 +4,7 @@ import scss from './BackgroundGallery.module.scss';
 import blockImage from '../../assets/images/block.svg';
 import axios from 'axios';
 
-const BackgroundRadioGroup = ({ formik }) => {
+const BackgroundRadioGroup = ({ formik, editBoard }) => {
     const defaultImage = {
         public_id: 'default/default',
         secure_url: blockImage,
@@ -12,7 +12,9 @@ const BackgroundRadioGroup = ({ formik }) => {
 
     const [backgrounds, setBackgrounds] = useState([defaultImage]);
     const [selectedOption, setSelectedOption] = useState(
-        backgrounds[0].public_id.split('/')[1]
+        editBoard
+            ? formik.values.background
+            : backgrounds[0].public_id.split('/')[1]
     );
 
     const baseURL = import.meta.env.VITE_BACKEND_URL;
@@ -23,6 +25,7 @@ const BackgroundRadioGroup = ({ formik }) => {
             .then(response => {
                 const data = response.data;
                 const newBackgrounds = [defaultImage, ...data.resources];
+
                 setBackgrounds(newBackgrounds);
             })
             .catch(error => {

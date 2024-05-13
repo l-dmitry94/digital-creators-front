@@ -1,6 +1,6 @@
 import scss from './TodoCart.module.scss';
 import TodoBtn from '../TodoBtn/TodoBtn';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CustomModal from '../../CustomModal/CustomModal';
 import EditCard from '../../EditCard/EditCard';
 import {
@@ -9,6 +9,7 @@ import {
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { useEffect, useState } from 'react';
 import ChangeCardColumn from '../../Popups/ChangeCardColumn/ChangeCardColumn';
+import { selectColumnItems } from '../../../redux/tasks/tasks-selectors';
 
 const TodoCart = ({
     title,
@@ -43,6 +44,7 @@ const TodoCart = ({
     const [cardModalIsOpen, setCardModalIsOpen] = useState(false);
     const [changeCardModalIsOpen, setChangeCardModalIsOpen] = useState(false);
     const [isDeadlineToday, setIsDeadlineToday] = useState(false);
+    const columns = useSelector(selectColumnItems);
 
     useEffect(() => {
         const today = new Date();
@@ -108,10 +110,13 @@ const TodoCart = ({
                         </div>
                     )}
                     <div className={scss.btnSetting}>
-                        <TodoBtn
-                            iconName={'icon-arrow'}
-                            onClick={changeCardOpenModal}
-                        />
+                        {columns.length > 1 && (
+                            <TodoBtn
+                                iconName={'icon-arrow'}
+                                onClick={changeCardOpenModal}
+                            />
+                        )}
+
                         <TodoBtn
                             onClick={cardOpenModal}
                             iconName={'icon-pencil'}

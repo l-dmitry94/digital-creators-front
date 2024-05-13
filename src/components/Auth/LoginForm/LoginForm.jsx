@@ -74,6 +74,7 @@ export const LoginForm = () => {
                         validationSchema={LogInschema}
                         operation={login}
                         buttonText="Log In Now"
+                        onClose={() => {}}
                     >
                         {formik => (
                             <div className={css.auth_form}>
