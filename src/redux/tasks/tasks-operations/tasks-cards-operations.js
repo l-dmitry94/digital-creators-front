@@ -63,3 +63,18 @@ export const editCard = createAsyncThunk(
         }
     }
 );
+
+export const changeCardColumnById = createAsyncThunk(
+    'tasks/changeColumn',
+    async (body, { rejectWithValue }) => {
+        try {
+            const { data } = await axios.patch(
+                `${baseURL}/boards/${body.boardId}/columns/${body.columnId}/cards`,
+                body.values
+            );
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.response.data.message);
+        }
+    }
+);

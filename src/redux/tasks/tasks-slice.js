@@ -196,6 +196,22 @@ const tasksSlice = createSlice({
                     );
                     state.cards.items[index] = payload;
                 }
+            )
+            .addCase(
+                cardsOperations.changeCardColumnById.pending,
+                status.pendingCard
+            )
+            .addCase(
+                cardsOperations.changeCardColumnById.rejected,
+                status.rejectedCard
+            )
+            .addCase(
+                cardsOperations.changeCardColumnById.fulfilled,
+                (state, { payload }) => {
+                    state.cards.isLoading = false;
+                    state.cards.error = null;
+                    state.cards.items = payload;
+                }
             );
     },
 });
