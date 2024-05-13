@@ -20,24 +20,24 @@ const TodoCart = ({
     boardId,
     cardId,
 }) => {
-    let priorityText;
+    let priorityColor;
 
     switch (priority) {
-        case '#8FA1D0':
-            priorityText = 'Low';
+        case 'Low':
+            priorityColor = '#8FA1D0';
             break;
-        case '#E09CB5':
-            priorityText = 'Medium';
+        case 'Medium':
+            priorityColor = '#E09CB5';
             break;
-        case '#BEDBB0':
-            priorityText = 'High';
+        case 'High':
+            priorityColor = '#BEDBB0';
             break;
-        case 'rgba(255, 255, 255, 0.3)':
-            priorityText = 'Without priority';
+        case 'Without':
+            priorityColor = 'var(--theme-default-card-board)';
             break;
         default:
-            priority = 'rgba(255, 255, 255, 0.3)';
-            priorityText = 'Without priority';
+            priority = 'Without';
+            priorityColor = 'rgba(255, 255, 255, 0.3)';
             break;
     }
 
@@ -80,7 +80,7 @@ const TodoCart = ({
     return (
         <div
             className={scss.todoCart}
-            style={{ borderLeft: `4px solid ${priority}` }}
+            style={{ borderLeft: `4px solid ${priorityColor}` }}
         >
             <div className={scss.cartTask}>
                 <h4 className={scss.title}>{title}</h4>
@@ -93,9 +93,9 @@ const TodoCart = ({
                         <p className={scss.priorityContainer}>
                             <span
                                 className={scss.priorityDot}
-                                style={{ backgroundColor: priority }}
+                                style={{ backgroundColor: priorityColor }}
                             ></span>
-                            {priorityText}
+                            {priority}
                         </p>
                     </li>
                     <li>

@@ -12,7 +12,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
     const initialValues = {
         card_name: '',
         description: '',
-        priority: 'rgba(255, 255, 255, 0.3)',
+        priority: 'Without',
         deadline: '',
     };
 
@@ -22,7 +22,6 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
             .label('Invalid title')
             .required('Title is required'),
         description: yup.string().required('Description is required'),
-        // startDate: yup.date(),
         priority: yup.string(),
         deadline: yup.string().required('Deadline is required'),
     });
@@ -73,7 +72,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
-                        defaultValue={'rgba(255, 255, 255, 0.3)'}
+                        defaultValue={'Without'}
                     />
                     <div className={scss.datePickerBlock}>
                         <MyDatePicker title={'Deadline'} formik={formik} />
