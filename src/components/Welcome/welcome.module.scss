@@ -1,90 +1,110 @@
-@import "../../styles/mixins";
+@import '../../styles/mixins';
 
 .welcome_page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #F6F6F7, #E2E6E1, #BFDBB2);
-  color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f6f6f7, #e2e6e1, #bfdbb2);
+    color: black;
 }
 
 .wrapper {
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
 
-  @include media-rules(tablet) {
-    max-width: 438px;
-  }
+    @include media-rules(tablet) {
+        max-width: 438px;
+    }
 }
 
 .welcome_image {
-  margin: 0 auto;
-  margin-bottom: 14px;
-  width: 124px;
-  height: 124px;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    width: 124px;
+    height: 124px;
 
-  @include media-rules(tablet) {
-    width: 162px;
-    height: 162px;
-    margin-bottom: 24px;
-  }
+    @include media-rules(tablet) {
+        width: 162px;
+        height: 162px;
+        margin-bottom: 24px;
+    }
 }
 
 .welcome_title_wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
 }
 
 .icon_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 8px;
 }
 
 .welcome_icon {
-  width: 15px;
-  height: 20px;
-  fill: var(--white);
+    width: 15px;
+    height: 20px;
+    fill: var(--white);
 }
 
 .descr {
-  margin-bottom: 48px;
+    margin-bottom: 48px;
 }
 
 .link_wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .link_signup {
-  background-color: black;
-  color: white;
-  width: 100%;
-  padding: 14px 0;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.02em;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    @include transition(all);
 
-  @include media-rules(tablet) {
-    width: 344px;
-    margin: 0 auto;
-  }
+    @include media-rules(tablet) {
+        width: 344px;
+        margin: 0 auto;
+    }
+}
+
+.link_signup:hover {
+    background: var(--dark-green);
+    color: var(--black);
 }
 
 .link_login {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: #161616;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 100%;
+    letter-spacing: -0.02em;
+    color: #161616;
+
+    padding: 14px 0;
+    @include media-rules(tablet) {
+        width: 344px;
+        margin: 0 auto;
+    }
+    @include transition(all);
+}
+
+.link_login:hover {
+    background: var(--dark-green);
+    color: var(--black);
 }
