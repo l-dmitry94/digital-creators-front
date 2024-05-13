@@ -55,4 +55,8 @@
         max-width: 1440px;
         // padding-right: 24px;
     }
+
+    & .simplebar-track.simplebar-horizontal {
+        pointer-events: all;
+    }
 }
