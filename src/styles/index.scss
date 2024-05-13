@@ -92,6 +92,11 @@
     --theme-violet-indicator-color: var(--white);
     --theme-default-indicator-color: var(--theme-dark-indicator-color);
 
+    --theme-light-line-color: rgba(22, 22, 22, 0.1);
+    --theme-dark-line-color: var(--dark-grey-line);
+    --theme-violet-line-color: var(--dark-grey-line);
+    --theme-default-line-color: var(--theme-dark-line-color);
+
     --theme-light-createbutton-color: var(--black);
     --theme-dark-createbutton-color: var(--black);
     --theme-violet-createbutton-color: var(--white);
@@ -144,6 +149,26 @@
     --theme-dark-button-text: var(--black);
     --theme-violet-button-text: var(--white);
     --theme-default-button-text: var(--theme-dark-button-text);
+
+    --theme-light-bgicon-color: rgba(22, 22, 22, 0.5);
+    --theme-dark-bgicon-color: rgba(255, 255, 255, 0.5);
+    --theme-violet-bgicon-color: rgba(22, 22, 22, 0.5);;
+    --theme-default-bgicon-color: var(--theme-dark-bgicon-color);
+
+    --theme-light-bgicon-checkcolor: var(--black);
+    --theme-dark-bgicon-checkcolor: var(--white);
+    --theme-violet-bgicon-checkcolor: var(--black);
+    --theme-default-bgicon-checkcolor: var(--theme-dark-bgicon-checkcolor);
+
+    --theme-light-plus-bg: var(--black);
+    --theme-dark-plus-bg: var(--black);
+    --theme-violet-plus-bg: var(--white);
+    --theme-default-plus-bg: var(--theme-dark-plus-bg);
+
+    --theme-light-plus-color: var(--white);
+    --theme-dark-plus-color: var(--white);
+    --theme-violet-plus-color: var(--black);
+    --theme-default-plus-color: var(--theme-dark-plus-color);
 
     //Filter
     --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);
