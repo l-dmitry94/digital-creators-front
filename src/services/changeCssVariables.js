@@ -22,6 +22,30 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-sidebar-text)`
     );
     root.style.setProperty(
+        '--theme-default-indicator-color',
+        `var(--theme-${theme}-indicator-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-logo-color',
+        `var(--theme-${theme}-logo-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-logo-bg',
+        `var(--theme-${theme}-logo-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-createbutton-bg',
+        `var(--theme-${theme}-createbutton-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-createbutton-focusbg',
+        `var(--theme-${theme}-createbutton-focusbg)`
+    );
+    root.style.setProperty(
+        '--theme-default-createbutton-color',
+        `var(--theme-${theme}-createbutton-color)`
+    );
+    root.style.setProperty(
         '--theme-default-needhelp-bg',
         `var(--theme-${theme}-needhelp-bg)`
     );
