@@ -19,7 +19,6 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
         icon: editBoard ? boardById.icon : 'icon-project',
         background: editBoard ? boardById.background : 'default',
     };
-    console.log(initialValues);
     const validationSchema = yup.object().shape({
         board_name: yup.string().required('Title is required'),
         icon: yup.string().required('Icon is required'),

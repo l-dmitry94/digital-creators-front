@@ -27,7 +27,6 @@ const CustomForm = ({
             const dispatchResult = dispatch(
                 operation({ id, columnId, cardId, values })
             );
-            console.log(`id: ${id}, columnId; ${columnId}, ${cardId}`);
             if (dispatchResult) {
                 onClose();
             }
