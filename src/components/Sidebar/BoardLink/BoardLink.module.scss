@@ -14,7 +14,8 @@
     padding: 20px 24px;
 
     &:global(.active) {
-        background-color: rgba(#1f1f1f, 0.4);
+        background-color: var(--theme-default-link-bg ,
+            0.4);
 
         &::after {
             content: '';
@@ -28,11 +29,11 @@
         }
 
         & .linkTitle {
-            color: var(--theme-default-sidebar-text);
+            color: var(--theme-default-link-text);
         }
 
         & .svgIcon {
-            stroke: var(--theme-default-sidebar-text);
+            stroke: var(--theme-default-link-text);
         }
 
         & .control {
@@ -59,7 +60,7 @@
     font-family: var(--font-family);
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(22, 22, 22, 0.5);
 }
 
 .control {
@@ -76,5 +77,5 @@
     width: 16px;
     height: 16px;
     fill: transparent;
-    stroke: rgba(255, 255, 255, 0.5);
+    stroke: var(--theme-default-link-text);
 }

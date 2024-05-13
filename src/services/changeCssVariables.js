@@ -42,6 +42,14 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-logo-bg)`
     );
     root.style.setProperty(
+        '--theme-default-link-bg',
+        `var(--theme-${theme}-link-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-link-text',
+        `var(--theme-${theme}-link-text)`
+    );
+    root.style.setProperty(
         '--theme-default-createbutton-bg',
         `var(--theme-${theme}-createbutton-bg)`
     );
@@ -72,5 +80,9 @@ export const changeCssVariables = theme => {
     root.style.setProperty(
         '--theme-default-button-bg',
         `var(--theme-${theme}-button-bg)`
+    );
+    root.style.setProperty(
+        '--theme-default-button-text',
+        `var(--theme-${theme}-button-text)`
     );
 };
