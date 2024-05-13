@@ -21,3 +21,20 @@ export const selectCardItems = state => state.tasks.cards.items;
 export const selectCardIsLoading = state => state.tasks.cards.isLoading;
 
 export const selectCardError = state => state.tasks.cards.error;
+
+export const selectFilteredCards = store => {
+    const { tasks, filter } = store;
+    const { items } = tasks.cards;
+    if (!filter) {
+        return items;
+    }
+    const filteredCards = items.filter(item => item.priority === filter);
+    console.log(filteredCards);
+    // const filteredCards = items.filter(({ priority }) => {
+    //     card => card.priority === selectedPriority;
+    //     console.log(priority);
+    //     // const normalizedName = name.toLowerCase();
+    //     // return normalizedName.includes(normalizedFilter);
+    // });
+    return filteredCards;
+};

@@ -3,14 +3,19 @@ import TodoCart from '../TodoCart/TodoCart';
 import scss from './Cart.module.scss';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import { selectCardItems } from '../../../redux/tasks/tasks-selectors';
+import {
+    // selectCardItems,
+    selectFilteredCards,
+} from '../../../redux/tasks/tasks-selectors';
 
 const Cart = ({ columnId }) => {
-    const cards = useSelector(selectCardItems);
-    const filteredCards = cards.filter(
+    // const cards = useSelector(selectCardItems);
+    const items = useSelector(selectFilteredCards);
+
+    const filteredCards = items.filter(
         ({ ref_column }) => ref_column === columnId
     );
-    // console.log(filteredCards);
+
     // const dispatch = useDispatch();
     // useEffect(() => {
     //     if (columns) {
