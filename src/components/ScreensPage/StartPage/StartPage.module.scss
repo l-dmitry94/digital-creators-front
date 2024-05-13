@@ -1,9 +1,12 @@
+@import 'src/styles/mixins';
+
 .startPage {
-    // display: flex;
+    display: flex;
+    justify-content: space-around;
     // justify-content: center;
     // align-items: center;
     // height: 90vh;
-    /////////
+    // ///////
     // position: relative;
     // height: 100vh;
     // width: 335px;
@@ -16,10 +19,12 @@
     text-align: center;
     color: var(--dark-grey);
     margin-top: 258px;
-    // position: absolute;
-    // top: 50%;
-    // // left: 50%;
-    // transform: translate(0%, -50%);
+
+    @include media-rules(tablet) {
+        font-size: 14px;
+        line-height: 129%;
+        width: 486px;
+    }
 }
 
 .span {

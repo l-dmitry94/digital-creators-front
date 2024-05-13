@@ -17,10 +17,7 @@ const FilterModal = ({ isOpen, onClose }) => {
     const handleReset = () => {
         setSelectedPriority('');
     };
-    const toChangeFitler = () => dispatch(changeFitler(selectedPriority));
-    console.log(toChangeFitler());
-    // console.log(items);
-
+    dispatch(changeFitler(selectedPriority));
     return (
         <Modal
             isOpen={isOpen}

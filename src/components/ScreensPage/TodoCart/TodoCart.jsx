@@ -8,7 +8,7 @@ import {
     removeCard,
 } from '../../../redux/tasks/tasks-operations/tasks-cards-operations';
 import { useEffect, useState } from 'react';
-//*, priorityColor
+
 const TodoCart = ({
     title,
     descr,
