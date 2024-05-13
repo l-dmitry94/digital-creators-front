@@ -47,16 +47,14 @@ const FilterModal = ({ isOpen, onClose }) => {
                     <input
                         type="radio"
                         name="color"
-                        value="rgba(255, 255, 255, 0.3)"
+                        value="Without"
                         onChange={handleColorChange}
-                        checked={
-                            selectedPriority === 'rgba(255, 255, 255, 0.3)'
-                        }
+                        checked={selectedPriority === 'Without'}
                     />
                     <span
                         className={scss.radioBtn}
                         style={{
-                            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                            backgroundColor: 'var( --theme-default-card-board)',
                         }}
                     ></span>
                     <span className={scss.radioLabel}> Without priority</span>
@@ -65,9 +63,9 @@ const FilterModal = ({ isOpen, onClose }) => {
                     <input
                         type="radio"
                         name="color"
-                        value="#8FA1D0"
+                        value="Low"
                         onChange={handleColorChange}
-                        checked={selectedPriority === '#8FA1D0'}
+                        checked={selectedPriority === 'Low'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -79,9 +77,9 @@ const FilterModal = ({ isOpen, onClose }) => {
                     <input
                         type="radio"
                         name="color"
-                        value="#E09CB5"
+                        value="Medium"
                         onChange={handleColorChange}
-                        checked={selectedPriority === '#E09CB5'}
+                        checked={selectedPriority === 'Medium'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -93,9 +91,9 @@ const FilterModal = ({ isOpen, onClose }) => {
                     <input
                         type="radio"
                         name="color"
-                        value="#BEDBB0"
+                        value="High"
                         onChange={handleColorChange}
-                        checked={selectedPriority === '#BEDBB0'}
+                        checked={selectedPriority === 'High'}
                     />
                     <span
                         className={scss.radioBtn}
