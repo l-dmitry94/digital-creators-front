@@ -20,25 +20,28 @@ const ScreensPage = () => {
     return (
         <>
             <div className="wrapper">
-                <picture>
-                    <source
-                        media="(min-width: 1440px )"
-                        srcSet={`${board?.background?.desktop} 1x`}
-                    />
-                    <source
-                        media="(min-width: 768px )"
-                        srcSet={`${board?.background?.tablet} 1x`}
-                    />
-                    <source
-                        media="(min-width: 320px )"
-                        srcSet={`${board?.background?.mobile} 1x`}
-                    />
-                    <img
-                        className="image"
-                        src={board?.background?.mobile}
-                        alt={board?.background?.board_name}
-                    />
-                </picture>
+                {board && (
+                    <picture>
+                        <source
+                            media="(min-width: 1440px )"
+                            srcSet={`${board?.background?.desktop} 1x`}
+                        />
+                        <source
+                            media="(min-width: 768px )"
+                            srcSet={`${board?.background?.tablet} 1x`}
+                        />
+                        <source
+                            media="(min-width: 320px )"
+                            srcSet={`${board?.background?.mobile} 1x`}
+                        />
+                        <img
+                            className="image"
+                            src={board?.background?.mobile}
+                            alt={board?.background?.board_name}
+                        />
+                    </picture>
+                )}
+
                 <HeaderDashboard boardName={board?.board_name} />
 
                 {!boards.length ? (
