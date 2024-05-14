@@ -95,21 +95,12 @@ const EditUser = ({ closeModal }) => {
                     return;
                 }
 
-                // Перевірка чи є зміни в імені або електронній пошті
-                if (
-                    values.username === userInfo.username ||
-                    values.email === userInfo.email
-                ) {
-                    toast.error('Value name or email is the same');
-                    return;
-                }
-
                 try {
-                    await dispatch(updateUser(formatData));
-                    if (error) {
-                        return;
+                    const dispatchResult = dispatch(updateUser(formatData));
+
+                    if (dispatchResult) {
+                        closeModal();
                     }
-                    closeModal();
                 } catch (error) {
                     console.log(error);
                 }
