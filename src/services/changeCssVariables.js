@@ -197,4 +197,9 @@ export const changeCssVariables = theme => {
         '--theme-default-column-plus',
         `var(--theme-${theme}-column-plus)`
     );
+
+    root.style.setProperty(
+        '--theme-default-editB-icon',
+        `var(--theme-${theme}-editB-icon)`
+    );
 };

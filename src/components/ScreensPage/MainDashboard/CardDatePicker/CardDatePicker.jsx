@@ -61,8 +61,6 @@ const MyDatePicker = ({ title, formik }) => {
             >
                 <path
                     d="M4.5 7.25L9 11.75L13.5 7.25"
-                    stroke="#BEDBB0"
-                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                 />

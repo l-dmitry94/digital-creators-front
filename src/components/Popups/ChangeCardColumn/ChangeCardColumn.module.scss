@@ -10,17 +10,13 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    // -webkit-box-orient: vertical;
-    // display: -webkit-box;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
 
     &:is(:hover, :focus) .text {
-        color: var(--light-green);
+        color: var(--theme-default-button-bg);
     }
 
     &:is(:hover, :focus) .icon {
-        stroke: var(--light-green);
+        stroke: var(--theme-default-button-bg);
     }
 }
 
@@ -32,6 +28,6 @@
     width: 16px;
     height: 16px;
     fill: transparent;
-    stroke: rgba(255, 255, 255, 0.5);
+    stroke: var(--theme-default-bgicon-color);
     @include transition(stroke);
 }
