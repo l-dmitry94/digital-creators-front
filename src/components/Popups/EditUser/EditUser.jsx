@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
-import { selectError, selectUser } from '../../../redux/auth/auth-selectors';
+import { selectUser } from '../../../redux/auth/auth-selectors';
 import { updateUser } from '../../../redux/auth/auth-operations';
 
 import {
@@ -39,7 +39,6 @@ const validationSchema = Yup.object().shape({
 
 const EditUser = ({ closeModal }) => {
     const userInfo = useSelector(selectUser);
-    const error = useSelector(selectError);
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [showPassword, setShowPassword] = useState(false);
 
