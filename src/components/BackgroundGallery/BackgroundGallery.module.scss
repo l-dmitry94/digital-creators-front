@@ -29,17 +29,18 @@
     width: 28px;
     height: 28px;
     cursor: pointer;
-    border: 2px solid transparent;
+    background-color: var(--theme-default-editB-icon);
+    // border: 2px solid transparent;
 }
 
 .icon {
     width: 14px;
     height: 14px;
-    stroke: grey;
+    stroke: var(--thema-default-filter-modal-show-cl);
     background-color: transparent;
     fill: transparent;
 }
 
 .input:checked + .label .image {
-    border-color: var(--light-green);
+    border: 2px solid var(--theme-default-createbutton-bg);
 }

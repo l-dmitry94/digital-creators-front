@@ -13,7 +13,6 @@
     overflow: hidden;
     overflow-y: auto;
     z-index: 999;
-    // opacity: 0;
     @include transition(opacity);
 }
 
@@ -29,7 +28,7 @@
     position: relative;
     max-width: 350px;
     width: 100%;
-    border: 1px solid rgba(190, 219, 176, 0.5);
+    border: 1px solid var(--thema-default-filter-modal-border-cl);
     border-radius: 8px;
     background-color: var(--theme-default-modal-bg);
     transform: translateY(50px);

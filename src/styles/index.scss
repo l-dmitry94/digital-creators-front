@@ -162,7 +162,7 @@
 
     --theme-light-bgicon-color: rgba(22, 22, 22, 0.5);
     --theme-dark-bgicon-color: rgba(255, 255, 255, 0.5);
-    --theme-violet-bgicon-color: rgba(22, 22, 22, 0.5);;
+    --theme-violet-bgicon-color: rgba(22, 22, 22, 0.5);
     --theme-default-bgicon-color: var(--theme-dark-bgicon-color);
 
     --theme-light-bgicon-checkcolor: var(--black);
@@ -179,11 +179,13 @@
     --theme-dark-plus-color: var(--white);
     --theme-violet-plus-color: var(--black);
     --theme-default-plus-color: var(--theme-dark-plus-color);
-    
+
     --theme-light-inputborder-focuscolor: var(--light-green);
     --theme-dark-inputborder-focuscolor: var(--light-green);
     --theme-violet-inputborder-focuscolor: #5255bc;
-    --theme-default-inputborder-focuscolor: var(--theme-dark-inputborder-focuscolor);
+    --theme-default-inputborder-focuscolor: var(
+        --theme-dark-inputborder-focuscolor
+    );
 
     //Filter
     --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);
@@ -301,6 +303,11 @@
     --theme-dark-column-plus: var(--white);
     --theme-violet-column-plus: var(--dark-violet);
     --theme-default-column-plus: var(--theme-dark-column-plus);
+
+    --theme-light-editB-icon: var(--light-bg);
+    --theme-dark-editB-icon: var(--dark-bg);
+    --theme-violet-editB-icon: #ecedfd;
+    --theme-default-editB-icon: var(--theme-dark-editB-icon);
 }
 
 body {

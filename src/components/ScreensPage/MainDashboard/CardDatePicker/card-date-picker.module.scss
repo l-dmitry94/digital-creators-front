@@ -17,7 +17,7 @@
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: #bedbb0;
+    color: var(--thema-default-option-hover-cl);
 }
 
 .customInput {
@@ -32,7 +32,7 @@
     top: 50%;
     transform: translateY(-50%);
     fill: none;
-    stroke: #bedbb0;
+    stroke: var(--thema-default-option-hover-cl);
     stroke-width: 2px;
 }
 
@@ -42,7 +42,5 @@
     font-weight: 400;
     font-size: 12px;
     letter-spacing: -0.02em;
-    color: var(--theme-default-bgicon-color);;
+    color: var(--theme-default-bgicon-color);
 }
-
-
