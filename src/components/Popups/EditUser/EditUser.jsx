@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 
 import defaultImage from '../../../assets/images/user@1x-min.png';
 
-import { selectError, selectUser } from '../../../redux/auth/auth-selectors';
+import { selectUser } from '../../../redux/auth/auth-selectors';
 import { updateUser } from '../../../redux/auth/auth-operations';
 
 import {
@@ -39,7 +39,6 @@ const validationSchema = Yup.object().shape({
 
 const EditUser = ({ closeModal }) => {
     const userInfo = useSelector(selectUser);
-    const error = useSelector(selectError);
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -56,8 +55,6 @@ const EditUser = ({ closeModal }) => {
             setImagePreview(userInfo.avatarURL);
         }
     }, [imagePreview, userInfo.avatarURL]);
-
-    console.log(userInfo);
 
     return (
         <Formik
@@ -97,21 +94,12 @@ const EditUser = ({ closeModal }) => {
                     return;
                 }
 
-                // Перевірка чи є зміни в імені або електронній пошті
-                if (
-                    values.username === userInfo.username ||
-                    values.email === userInfo.email
-                ) {
-                    toast.error('Value name or email is the same');
-                    return;
-                }
-
                 try {
-                    await dispatch(updateUser(formatData));
-                    if (error) {
-                        return;
+                    const dispatchResult = dispatch(updateUser(formatData));
+
+                    if (dispatchResult) {
+                        closeModal();
                     }
-                    closeModal();
                 } catch (error) {
                     console.log(error);
                 }

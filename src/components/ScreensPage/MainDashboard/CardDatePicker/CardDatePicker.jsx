@@ -6,7 +6,12 @@ import { useState } from 'react';
 //*, selected, onChange
 
 const MyDatePicker = ({ title, formik }) => {
-    const [startDate, setStartDate] = useState(new Date());
+    const initialDeadline = formik.values.deadline; // Assuming formik.values.deadline is in format "DD/MM/YYYY"
+    const [startDate, setStartDate] = useState(
+        initialDeadline
+            ? new Date(initialDeadline.split('/').reverse().join('-'))
+            : new Date()
+    );
     const today = new Date();
 
     const getMonthName = date => {

@@ -12,8 +12,6 @@ const EditColumn = ({ boardId, columnId, onClose }) => {
 
     const column = columns.find(({ _id }) => columnId === _id);
 
-    console.log(column.column_name);
-
     const initialValues = {
         column_name: column.column_name,
     };

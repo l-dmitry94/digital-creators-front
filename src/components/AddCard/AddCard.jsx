@@ -72,7 +72,7 @@ const AddCard = ({ boardId: id, columnId, onClose }) => {
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
-                        defaultValue={'Without'}
+                        defaultValue={formik.values.priority}
                     />
                     <div className={scss.datePickerBlock}>
                         <MyDatePicker title={'Deadline'} formik={formik} />
