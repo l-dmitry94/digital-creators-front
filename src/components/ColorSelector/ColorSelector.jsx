@@ -1,6 +1,6 @@
 import scss from './ColorSelector.module.scss';
 
-const ColorSelector = ({ title, onChange }) => {
+const ColorSelector = ({ title, onChange, defaultValue }) => {
     const handleColorChange = event => {
         onChange(event.target.value || 'Without');
     };
@@ -11,10 +11,12 @@ const ColorSelector = ({ title, onChange }) => {
             <div className={scss.buttonsContainer}>
                 <label>
                     <input
+                        className={scss.input}
                         type="radio"
                         name="priority"
                         value="Low"
                         onChange={handleColorChange}
+                        checked={defaultValue === 'Low'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -23,10 +25,12 @@ const ColorSelector = ({ title, onChange }) => {
                 </label>
                 <label>
                     <input
+                        className={scss.input}
                         type="radio"
                         name="priority"
                         value="Medium"
                         onChange={handleColorChange}
+                        checked={defaultValue === 'Medium'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -35,10 +39,12 @@ const ColorSelector = ({ title, onChange }) => {
                 </label>
                 <label>
                     <input
+                        className={scss.input}
                         type="radio"
                         name="priority"
                         value="High"
                         onChange={handleColorChange}
+                        checked={defaultValue === 'High'}
                     />
                     <span
                         className={scss.radioBtn}
@@ -47,10 +53,12 @@ const ColorSelector = ({ title, onChange }) => {
                 </label>
                 <label>
                     <input
+                        className={scss.input}
                         type="radio"
                         name="priority"
                         value="Without"
                         onChange={handleColorChange}
+                        checked={defaultValue === 'Without'}
                     />
                     <span
                         className={scss.radioBtn}
