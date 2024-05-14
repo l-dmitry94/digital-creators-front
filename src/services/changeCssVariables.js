@@ -78,6 +78,14 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-needhelp-bg)`
     );
     root.style.setProperty(
+        '--theme-default-logout-color',
+        `var(--theme-${theme}-logout-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-logout-focuscolor',
+        `var(--theme-${theme}-logout-focuscolor)`
+    );
+    root.style.setProperty(
         '--theme-default-modal-bg',
         `var(--theme-${theme}-modal-bg)`
     );
