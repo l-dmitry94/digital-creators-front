@@ -19,7 +19,7 @@ const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
         card_name: card.card_name,
         description: card.description,
         priority: card.priority,
-        deadline: '',
+        deadline: card.deadline,
     };
 
     const validationSchema = yup.object().shape({
@@ -77,6 +77,7 @@ const EditCard = ({ boardId: id, columnId, cardId, onClose }) => {
                         onChange={color =>
                             formik.setFieldValue('priority', color)
                         }
+                        defaultValue={formik.values.priority}
                     />
                     <div className={scss.datePickerBlock}>
                         <MyDatePicker title={'Deadline'} formik={formik} />

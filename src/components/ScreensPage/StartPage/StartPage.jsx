@@ -19,10 +19,10 @@ const StartPage = () => {
         <Container>
             <div className={scss.startPage}>
                 <p className={scss.text}>
-                    Before starting your project, it is essential
+                    Before starting your project, it is essential{' '}
                     <span className={scss.span} onClick={openModal}>
                         to create a board
-                    </span>
+                    </span>{' '}
                     to visualize and track all the necessary tasks and
                     milestones. This board serves as a powerful tool to organize
                     the workflow and ensure effective collaboration among team

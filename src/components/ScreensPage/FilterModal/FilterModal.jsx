@@ -8,16 +8,17 @@ import { changeFitler } from '../../../redux/tasks/filter-slice';
 const FilterModal = ({ isOpen, onClose }) => {
     const [selectedPriority, setSelectedPriority] = useState('');
     const dispatch = useDispatch();
+
     const handlePriorityChange = priority => {
         setSelectedPriority(priority);
+        dispatch(changeFitler(priority));
     };
-    const handleColorChange = event => {
-        handlePriorityChange(event.target.value);
-    };
+
     const handleReset = () => {
         setSelectedPriority('');
+        dispatch(changeFitler(''));
     };
-    dispatch(changeFitler(selectedPriority));
+
     return (
         <Modal
             isOpen={isOpen}
@@ -48,7 +49,7 @@ const FilterModal = ({ isOpen, onClose }) => {
                         type="radio"
                         name="color"
                         value="Without"
-                        onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('Without')}
                         checked={selectedPriority === 'Without'}
                     />
                     <span
@@ -64,7 +65,7 @@ const FilterModal = ({ isOpen, onClose }) => {
                         type="radio"
                         name="color"
                         value="Low"
-                        onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('Low')}
                         checked={selectedPriority === 'Low'}
                     />
                     <span
@@ -78,7 +79,7 @@ const FilterModal = ({ isOpen, onClose }) => {
                         type="radio"
                         name="color"
                         value="Medium"
-                        onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('Medium')}
                         checked={selectedPriority === 'Medium'}
                     />
                     <span
@@ -92,7 +93,7 @@ const FilterModal = ({ isOpen, onClose }) => {
                         type="radio"
                         name="color"
                         value="High"
-                        onChange={handleColorChange}
+                        onChange={() => handlePriorityChange('High')}
                         checked={selectedPriority === 'High'}
                     />
                     <span

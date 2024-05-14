@@ -17,7 +17,7 @@ const CreateNewBoard = ({ onClose, editBoard, id }) => {
     const initialValues = {
         board_name: editBoard ? boardById?.board_name : '',
         icon: editBoard ? boardById.icon : 'icon-project',
-        background: editBoard ? boardById?.image : 'default',
+        background: editBoard ? boardById?.image : 'default/default',
     };
 
     const validationSchema = yup.object().shape({
