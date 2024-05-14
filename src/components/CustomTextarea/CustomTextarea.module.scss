@@ -16,7 +16,7 @@
     padding: 14px 54px 0 18px;
     resize: none;
     &:focus {
-        border-color: var(--light-green);
+        border-color: var(--theme-default-inputborder-focuscolor);
     }
 }
 

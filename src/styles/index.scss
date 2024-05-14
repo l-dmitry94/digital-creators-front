@@ -179,6 +179,11 @@
     --theme-dark-plus-color: var(--white);
     --theme-violet-plus-color: var(--black);
     --theme-default-plus-color: var(--theme-dark-plus-color);
+    
+    --theme-light-inputborder-focuscolor: var(--light-green);
+    --theme-dark-inputborder-focuscolor: var(--light-green);
+    --theme-violet-inputborder-focuscolor: #5255bc;
+    --theme-default-inputborder-focuscolor: var(--theme-dark-inputborder-focuscolor);
 
     //Filter
     --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);

@@ -122,6 +122,10 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-plus-color)`
     );
     root.style.setProperty(
+        '--theme-default-inputborder-focuscolor',
+        `var(--theme-${theme}-inputborder-focuscolor)`
+    );
+    root.style.setProperty(
         '--thema-default-filter-btn-cl',
         `var(--thema-${theme}-filter-btn-cl)`
     );
