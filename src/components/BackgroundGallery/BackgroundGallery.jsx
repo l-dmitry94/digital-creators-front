@@ -19,6 +19,7 @@ const BackgroundRadioGroup = ({ formik, editBoard }) => {
             : backgrounds[0].public_id.split('/')[1]
     );
 
+
     const baseURL = import.meta.env.VITE_BACKEND_URL;
 
     useEffect(() => {
