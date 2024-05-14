@@ -20,7 +20,7 @@ const ScreensPage = () => {
     return (
         <>
             <div className="wrapper">
-                {board && (
+                {board && board.background !== 'default' && (
                     <picture>
                         <source
                             media="(min-width: 1440px )"
