@@ -38,7 +38,7 @@
 - Олександр Канюка **Backend**
 - Олексій Орел **Backend**
 - Влад Сіденко **Frontend**
-- Петро Бродетський **Frontend**
+- Петро Бродецький **Frontend**
 - Любов Погудіна **Backend**
 - Олександр Василенко **Backend**
 - Данило Кулак **Frontend**
@@ -81,7 +81,7 @@ Open a web browser and go to https://l-dmitry94.github.io/digital-creators-front
 - Alexander Kanyuka: **Backend**
 - Oleksii Orel: **Backend**
 - Vlad Sidenko: **Frontend**
-- Petro Brodetsky: **Frontend**
+- Petro Brodetskyi: **Frontend**
 - Lyubov Pohudina: **Backend**
 - Alexander Vasilenko: **Backend**
 - Danilo Kulak: **Frontend**
