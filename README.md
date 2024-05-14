@@ -34,15 +34,15 @@
 
 2. Розробник(и)
 - Дмитро Люба **Frontend(Team Lead)**
-- Олексій Орел **Backend**
 - Колесник Дарина **Frontend**
 - Олександр Канюка **Backend**
+- Олексій Орел **Backend**
 - Влад Сіденко **Frontend**
-- Петро Бродетський **Frontend**
+- Петро Бродецький **Frontend**
 - Любов Погудіна **Backend**
 - Олександр Василенко **Backend**
 - Данило Кулак **Frontend**
-- Поліна  **Frontend**
+- Поліна Лінінг  **Frontend**
 
 ________________________________
 # Task Pro (English version)
@@ -77,12 +77,12 @@ Open a web browser and go to https://l-dmitry94.github.io/digital-creators-front
 ## Developers
 
 - Dmitry Lyuba: **Frontend(Team Lead)**
-- Oleksii Orel: **Backend**
 - Darina Kolesnyk: **Frontend**
 - Alexander Kanyuka: **Backend**
+- Oleksii Orel: **Backend**
 - Vlad Sidenko: **Frontend**
-- Petro Brodetsky: **Frontend**
+- Petro Brodetskyi: **Frontend**
 - Lyubov Pohudina: **Backend**
 - Alexander Vasilenko: **Backend**
 - Danilo Kulak: **Frontend**
-- Polina: **Frontend**
+- Polina Lining: **Frontend**
