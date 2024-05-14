@@ -125,32 +125,29 @@ const TodoCart = ({
                             onClick={handleDelete}
                             iconName={'icon-trash'}
                         />
-                        <CustomModal
-                            isOpen={cardModalIsOpen}
-                            onClose={cardCloseModal}
-                            title={'Edit card'}
-                        >
-                            <EditCard
-                                boardId={boardId}
-                                columnId={columnId}
-                                cardId={cardId}
-                                onClose={cardCloseModal}
-                            />
-                        </CustomModal>
-                        <CustomModal
-                            isOpen={changeCardModalIsOpen}
-                            onClose={changeCardCloseModal}
-                        >
-                            <ChangeCardColumn
-                                boardId={boardId}
-                                columnId={columnId}
-                                cardId={cardId}
-                                onClose={changeCardCloseModal}
-                            />
-                        </CustomModal>
                     </div>
                 </div>
             </div>
+            <CustomModal
+                isOpen={cardModalIsOpen}
+                onClose={cardCloseModal}
+                title={'Edit card'}
+            >
+                <EditCard
+                    boardId={boardId}
+                    columnId={columnId}
+                    cardId={cardId}
+                    onClose={cardCloseModal}
+                />
+            </CustomModal>
+
+            <ChangeCardColumn
+                isOpen={changeCardModalIsOpen}
+                boardId={boardId}
+                columnId={columnId}
+                cardId={cardId}
+                onClose={changeCardCloseModal}
+            />
         </div>
     );
 };

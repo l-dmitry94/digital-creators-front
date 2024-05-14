@@ -11,7 +11,7 @@
     height: 12px !important;
     bottom: -36px;
     border-radius: 12px;
-    background-color: var(--dark-grey-line);
+    background-color: var(--theme-default-scroll-bg);
 
     @include media-rules(tablet) {
         bottom: -64px;
