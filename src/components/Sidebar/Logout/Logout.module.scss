@@ -6,6 +6,11 @@
     @include media-rules(tablet) {
         padding: 0 24px;
     }
+
+    &:hover .logoutIcon,
+    &:focus .logoutIcon {
+        stroke: var(--theme-default-logout-focuscolor);
+    }
 }
 
 .logoutButtonFlex {
@@ -17,13 +22,8 @@
 .logoutIcon {
     width: 32px;
     height: 32px;
-    stroke: var(--light-green);
+    stroke: var(--theme-default-logout-color);
     @include transition(all);
-}
-
-.logoutIcon:hover,
-.logoutIcon:focus {
-    stroke: var(--dark-green);
 }
 
 .textButtonLogout {

@@ -124,6 +124,16 @@
     --theme-violet-needhelp-bg: rgba(236, 237, 253, 0.4);
     --theme-default-needhelp-bg: var(--theme-dark-needhelp-bg);
 
+    --theme-light-logout-color: var(--light-green);
+    --theme-dark-logout-color: var(--light-green);
+    --theme-violet-logout-color: var(--white);
+    --theme-default-logout-color: var(--theme-dark-logout-color);
+
+    --theme-light-logout-focuscolor: var(--dark-green);
+    --theme-dark-logout-focuscolor: var(--dark-green);
+    --theme-violet-logout-focuscolor: #b8bcfd;
+    --theme-default-logout-focuscolor: var(--theme-dark-logout-focuscolor);
+
     //Modal
     --theme-light-modal-bg: var(--white);
     --theme-dark-modal-bg: var(--black);
@@ -169,6 +179,11 @@
     --theme-dark-plus-color: var(--white);
     --theme-violet-plus-color: var(--black);
     --theme-default-plus-color: var(--theme-dark-plus-color);
+    
+    --theme-light-inputborder-focuscolor: var(--light-green);
+    --theme-dark-inputborder-focuscolor: var(--light-green);
+    --theme-violet-inputborder-focuscolor: #5255bc;
+    --theme-default-inputborder-focuscolor: var(--theme-dark-inputborder-focuscolor);
 
     //Filter
     --thema-light-filter-btn-cl: rgba(22, 22, 22, 0.8);

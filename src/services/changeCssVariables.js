@@ -78,6 +78,14 @@ export const changeCssVariables = theme => {
         `var(--theme-${theme}-needhelp-bg)`
     );
     root.style.setProperty(
+        '--theme-default-logout-color',
+        `var(--theme-${theme}-logout-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-logout-focuscolor',
+        `var(--theme-${theme}-logout-focuscolor)`
+    );
+    root.style.setProperty(
         '--theme-default-modal-bg',
         `var(--theme-${theme}-modal-bg)`
     );
@@ -112,6 +120,10 @@ export const changeCssVariables = theme => {
     root.style.setProperty(
         '--theme-default-plus-color',
         `var(--theme-${theme}-plus-color)`
+    );
+    root.style.setProperty(
+        '--theme-default-inputborder-focuscolor',
+        `var(--theme-${theme}-inputborder-focuscolor)`
     );
     root.style.setProperty(
         '--thema-default-filter-btn-cl',

@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment, useEffect, useState } from 'react';
 import scss from './BackgroundGallery.module.scss';
-import blockImage from '../../assets/images/block.svg';
 import axios from 'axios';
+
+import icons from '../../assets/icons/icons.svg';
+import blockImage from '../../assets/images/block.svg';
 
 const BackgroundRadioGroup = ({ formik, editBoard }) => {
     const defaultImage = {
@@ -24,7 +26,9 @@ const BackgroundRadioGroup = ({ formik, editBoard }) => {
             .get(`${baseURL}/user/folders/tablet_bg`)
             .then(response => {
                 const data = response.data;
-                const newBackgrounds = [defaultImage, ...data.resources];
+                const newBackgrounds = [...data.resources];
+
+                newBackgrounds.unshift(defaultImage);
 
                 setBackgrounds(newBackgrounds);
             })
@@ -58,12 +62,20 @@ const BackgroundRadioGroup = ({ formik, editBoard }) => {
                         htmlFor={public_id.split('/')[1]}
                         className={scss.label}
                     >
-                        <img
-                            className={scss.image}
-                            src={secure_url}
-                            alt={public_id.split('/')[1]}
-                            loading="lazy"
-                        />
+                        {public_id === 'default/default' ? (
+                            <div className={scss.image}>
+                                <svg className={scss.icon}>
+                                    <use href={`${icons}#icon-block`}></use>
+                                </svg>
+                            </div>
+                        ) : (
+                            <img
+                                className={scss.image}
+                                src={secure_url}
+                                alt={public_id.split('/')[1]}
+                                loading="lazy"
+                            />
+                        )}
                     </label>
                 </Fragment>
             ))}
