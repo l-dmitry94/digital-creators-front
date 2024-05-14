@@ -22,11 +22,22 @@
 }
 
 .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 6px;
     width: 28px;
     height: 28px;
     cursor: pointer;
     border: 2px solid transparent;
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    stroke: grey;
+    background-color: transparent;
+    fill: transparent;
 }
 
 .input:checked + .label .image {
