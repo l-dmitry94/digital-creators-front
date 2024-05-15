@@ -9,7 +9,7 @@ import filterReducer from './tasks/filter-slice.js';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['token'],
+    whitelist: ['token', 'thema'],
 };
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);

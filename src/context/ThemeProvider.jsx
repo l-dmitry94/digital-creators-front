@@ -3,22 +3,22 @@ import { changeCssVariables } from '../services/changeCssVariables.js';
 
 import { THEME_DARK } from '../constants/themeConstants';
 import { useSelector } from 'react-redux';
-import { selectThema } from '../redux/auth/auth-selectors.js';
+import { selectUser } from '../redux/auth/auth-selectors.js';
 
 export const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children, ...props }) => {
     const localThema = localStorage.getItem('thema');
-    const savedThema = useSelector(selectThema);
-    const currentThema = localThema ? selectThema : savedThema;
-    const [theme, setTheme] = useState(
-        currentThema ? currentThema : THEME_DARK
-    );
+    const user = useSelector(selectUser);
+    const { thema: savedThema } = user;
+    const selectedThema = localThema ? localThema : savedThema;
+    const currentThema = selectedThema ? selectedThema : THEME_DARK;
+    const [theme, setTheme] = useState(currentThema);
 
-    const change = selectedTheme => {
-        setTheme(selectedTheme);
-        localStorage.setItem('thema', selectThema);
-        changeCssVariables(selectedTheme);
+    const change = newTheme => {
+        setTheme(newTheme);
+        localStorage.setItem('thema', newTheme);
+        changeCssVariables(newTheme);
     };
 
     return (
