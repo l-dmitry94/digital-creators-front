@@ -92,15 +92,7 @@ const BoardLink = () => {
     ));
 
     return (
-        <SimpleBar
-            className={scss.scroll}
-            style={
-                {
-                    // maxHeight: 180,
-                    // overflow: isScrollBarHidden ? 'hidden' : ' auto',
-                }
-            }
-        >
+        <div>
             <ul className={scss.linkFlex}>{list}</ul>
             <CustomModal
                 isOpen={modalIsOpen}
@@ -113,7 +105,7 @@ const BoardLink = () => {
                     id={id}
                 />
             </CustomModal>
-        </SimpleBar>
+        </div>
     );
 };
 
