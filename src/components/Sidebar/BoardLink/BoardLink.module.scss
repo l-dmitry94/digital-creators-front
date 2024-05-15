@@ -23,7 +23,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 24px;
+    padding: 20px 14px;
+
+    @include media-rules(tablet) {
+        padding: 20px 24px;
+    }
 
     &:global(.active) {
         background-color: var(--theme-default-link-bg, 0.4);
