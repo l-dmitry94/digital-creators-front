@@ -38,7 +38,7 @@ const Cart = ({ columnId }) => {
         )
     );
     return (
-        <SimpleBar style={{ maxHeight: 435 }}>
+        <SimpleBar className={scss.cartScroll}>
             <ul className={scss.cartList}>{cartsList}</ul>
         </SimpleBar>
     );

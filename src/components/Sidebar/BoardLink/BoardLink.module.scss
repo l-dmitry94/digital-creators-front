@@ -4,18 +4,19 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    height: 256px;
+    height: 192px;
     overflow: auto;
-
+    @include media-rules(tablet) {
+        height: 252px;
+    }
     @include media-rules(desktop) {
-        height: 192px;
+        height: 126px;
     }
 }
 
 .linkFlex::-webkit-scrollbar {
     display: none;
 }
-
 
 .linkItem {
     position: relative;
