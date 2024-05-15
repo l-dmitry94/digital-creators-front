@@ -59,6 +59,10 @@
     font-family: var(--font-family);
     font-weight: 500;
     letter-spacing: -0.02em;
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--theme-default-controlicon-color);
 }
 
@@ -82,4 +86,9 @@
 
 .controlIcon:hover {
     stroke: var(--theme-default-button-bg);
+}
+
+.scroll {
+    max-height: 120px;
+    // overflow: hidden;
 }

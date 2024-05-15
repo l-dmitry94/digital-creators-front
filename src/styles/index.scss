@@ -308,6 +308,11 @@
     --theme-dark-editB-icon: var(--dark-bg);
     --theme-violet-editB-icon: #ecedfd;
     --theme-default-editB-icon: var(--theme-dark-editB-icon);
+
+    --thema-light-sidebar-title: rgba(22, 22, 22, 0.5);
+    --thema-dark-sidebar-title: var(--dark-grey);
+    --thema-violet-sidebar-title: rgba(255, 255, 255, 0.5);
+    --thema-default-sidebar-title: var(--thema-dark-sidebar-title);
 }
 
 body {

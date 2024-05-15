@@ -13,6 +13,8 @@ import {
     removeBoard,
 } from '../../../redux/tasks/tasks-operations/tasks-boards-operations';
 import { useAuth } from '../../../hooks/useAuth';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 
 const BoardLink = () => {
     const boards = useSelector(selectBoardItems);
@@ -54,56 +56,64 @@ const BoardLink = () => {
         }
     }, [boards]);
 
-    return (
-        <>
-            <ul className={scss.linkFlex}>
-                {boards.map(({ _id, board_name, icon }) => (
-                    <NavLink
-                        key={_id}
-                        to={board_name.toLowerCase()}
-                        className={scss.linkItem}
-                    >
-                        <div className={scss.linkWrapper}>
-                            <svg className={scss.svgIcon}>
-                                <use href={`${sprite}#${icon}`}></use>
-                            </svg>
+    const list = boards.map(({ _id, board_name, icon }) => (
+        <NavLink
+            key={_id}
+            to={board_name.toLowerCase()}
+            className={scss.linkItem}
+        >
+            <div className={scss.linkWrapper}>
+                <svg className={scss.svgIcon}>
+                    <use href={`${sprite}#${icon}`}></use>
+                </svg>
 
-                            <p className={scss.linkTitle}>{board_name}</p>
-                        </div>
+                <p className={scss.linkTitle}>{board_name}</p>
+            </div>
 
-                        <div className={scss.control}>
-                            <button
-                                className={scss.controlButton}
-                                onClick={() => openModal(_id)}
-                            >
-                                <svg className={scss.controlIcon}>
-                                    <use href={`${sprite}#icon-pencil`}></use>
-                                </svg>
-                            </button>
-                            <button
-                                className={scss.controlButton}
-                                onClick={() => deleteBoard(_id)}
-                            >
-                                <svg className={scss.controlIcon}>
-                                    <use href={`${sprite}#icon-trash`}></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </NavLink>
-                ))}
-                <CustomModal
-                    isOpen={modalIsOpen}
-                    onClose={closeModal}
-                    title="Edit Board"
+            <div className={scss.control}>
+                <button
+                    className={scss.controlButton}
+                    onClick={() => openModal(_id)}
                 >
-                    <CreateNewBoard
-                        editBoard={editBoard}
-                        onClose={closeModal}
-                        id={id}
-                    />
-                </CustomModal>
-            </ul>
-        </>
+                    <svg className={scss.controlIcon}>
+                        <use href={`${sprite}#icon-pencil`}></use>
+                    </svg>
+                </button>
+                <button
+                    className={scss.controlButton}
+                    onClick={() => deleteBoard(_id)}
+                >
+                    <svg className={scss.controlIcon}>
+                        <use href={`${sprite}#icon-trash`}></use>
+                    </svg>
+                </button>
+            </div>
+        </NavLink>
+    ));
+
+    return (
+        <SimpleBar
+            className={scss.scroll}
+            style={
+                {
+                    // maxHeight: 180,
+                    // overflow: isScrollBarHidden ? 'hidden' : ' auto',
+                }
+            }
+        >
+            <ul className={scss.linkFlex}>{list}</ul>
+            <CustomModal
+                isOpen={modalIsOpen}
+                onClose={closeModal}
+                title="Edit Board"
+            >
+                <CreateNewBoard
+                    editBoard={editBoard}
+                    onClose={closeModal}
+                    id={id}
+                />
+            </CustomModal>
+        </SimpleBar>
     );
 };
 
