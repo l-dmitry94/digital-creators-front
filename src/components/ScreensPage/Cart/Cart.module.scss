@@ -1,6 +1,18 @@
+@import 'src/styles/mixins.scss';
+
 .cartList {
     display: flex;
     flex-direction: column;
     gap: 8px;
     position: relative;
+}
+
+.cartScroll {
+    max-height: 420px;
+    @include media-rules(tablet) {
+        max-height: 570px;
+    }
+    @include media-rules(desktop) {
+        max-height: 420px;
+    }
 }
