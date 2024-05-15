@@ -17,7 +17,6 @@ const CustomForm = ({
     const dispatch = useDispatch();
 
     const onSubmit = async values => {
-        console.log(values);
         if (handleSubmit) {
             handleSubmit(values);
             return;
