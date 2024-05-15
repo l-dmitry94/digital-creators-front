@@ -8,6 +8,8 @@ export const selectLogin = state => state.auth.isLogin;
 
 export const selectUser = state => state.auth.user;
 
+export const selectThema = state => state.auth.user.thema;
+
 export const selectToken = state => state.auth.token;
 
 export const selectIsRefreshing = state => state.auth.isRefreshing;
