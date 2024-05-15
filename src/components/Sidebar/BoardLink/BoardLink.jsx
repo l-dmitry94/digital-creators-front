@@ -13,7 +13,6 @@ import {
     removeBoard,
 } from '../../../redux/tasks/tasks-operations/tasks-boards-operations';
 import { useAuth } from '../../../hooks/useAuth';
-import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 
 const BoardLink = () => {
@@ -92,15 +91,7 @@ const BoardLink = () => {
     ));
 
     return (
-        <SimpleBar
-            className={scss.scroll}
-            style={
-                {
-                    // maxHeight: 180,
-                    // overflow: isScrollBarHidden ? 'hidden' : ' auto',
-                }
-            }
-        >
+        <div>
             <ul className={scss.linkFlex}>{list}</ul>
             <CustomModal
                 isOpen={modalIsOpen}
@@ -113,7 +104,7 @@ const BoardLink = () => {
                     id={id}
                 />
             </CustomModal>
-        </SimpleBar>
+        </div>
     );
 };
 
