@@ -13,7 +13,6 @@ import {
     removeBoard,
 } from '../../../redux/tasks/tasks-operations/tasks-boards-operations';
 import { useAuth } from '../../../hooks/useAuth';
-import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 
 const BoardLink = () => {
