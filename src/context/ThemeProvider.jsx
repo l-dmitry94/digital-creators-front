@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { changeCssVariables } from '../services/changeCssVariables.js';
 
-import { THEME_DARK } from '../constants/themeConstants';
-import { useSelector } from 'react-redux';
-import { selectThema } from '../redux/auth/auth-selectors.js';
+import { THEME_DARK } from '../constants/themeConstants'; // Додайте всі можливі теми
 
 export const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children, ...props }) => {
-    const localThema = localStorage.getItem('thema');
-    const savedThema = useSelector(selectThema);
-    const currentThema = localThema ? selectThema : savedThema;
-    const [theme, setTheme] = useState(
-        currentThema ? currentThema : THEME_DARK
-    );
+    const savedTheme = localStorage.getItem('app-theme') || THEME_DARK;
+    const [theme, setTheme] = useState(savedTheme);
+
+    useEffect(() => {
+        changeCssVariables(theme);
+    }, [theme]);
 
     const change = selectedTheme => {
         setTheme(selectedTheme);
-        localStorage.setItem('thema', selectThema);
         changeCssVariables(selectedTheme);
+        localStorage.setItem('app-theme', selectedTheme);
     };
 
     return (
