@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 export const pendingBoard = state => {
     state.boards.isLoading = true;
     state.boards.error = null;
@@ -16,6 +17,7 @@ export const pendingColumn = state => {
 export const rejectedColumn = (state, { payload }) => {
     state.columns.isLoading = false;
     state.columns.error = payload;
+    toast.error(`${payload}`);
 };
 
 export const pendingCard = state => {
