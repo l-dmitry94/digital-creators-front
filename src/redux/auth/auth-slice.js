@@ -90,7 +90,8 @@ const authSlice = createSlice({
             .addCase(updateUser.rejected, rejected)
             .addCase(updateThema.pending, pending)
             .addCase(updateThema.fulfilled, (state, { payload }) => {
-                state.isLogin = false;
+                toast.dismiss();
+                state.isLoading = false;
                 state.error = null;
                 state.user.thema = payload;
             })
