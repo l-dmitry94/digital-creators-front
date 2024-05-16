@@ -91,3 +91,15 @@ export const updateUser = createAsyncThunk(
         }
     }
 );
+
+export const updateThema = createAsyncThunk(
+    'auth/thema',
+    async (body, { rejectWithValue }) => {
+        try {
+            const { data } = await axios.patch(`${baseURL}/auth/thema`, body);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    }
+);

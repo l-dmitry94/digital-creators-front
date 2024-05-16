@@ -11,6 +11,7 @@ import {
     current,
     logout,
     updateUser,
+    updateThema,
 } from './auth-operations.js';
 
 const initialState = {
@@ -86,7 +87,14 @@ const authSlice = createSlice({
                 state.isLogin = true;
                 state.error = null;
             })
-            .addCase(updateUser.rejected, rejected);
+            .addCase(updateUser.rejected, rejected)
+            .addCase(updateThema.pending, pending)
+            .addCase(updateThema.fulfilled, (state, { payload }) => {
+                state.isLogin = false;
+                state.error = null;
+                state.user.thema = payload;
+            })
+            .addCase(updateThema.rejected, rejected);
     },
 });
 
